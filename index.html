@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="NETOPS // Cisco Networking Track — self-paced Networking Basics, Networking Essentials, and SRWE (CCNA 2) with 47 guided Packet Tracer labs. Aligned to CCNA 200-301 v1.1 (2026)." />
+<title>NETOPS // Cisco Networking Track — 2026 v1.1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@500;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#070b11;--bg-grid:#0d121b;--surface:#10161f;--surface-2:#161d28;--border:#1c2734;--border-bright:#2a3a4d;--text:#e8eef5;--text-dim:#9ba8b8;--text-mute:#65717f;--neon:#00ffd1;--neon-dim:#00b894;--neon-glow:rgba(0,255,209,0.4);--magenta:#ff2e63;--yellow:#f9e64f;--blue:#4dabff;--amber:#ffaa3b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'IBM Plex Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;min-height:100vh;background-image:linear-gradient(var(--bg-grid) 1px,transparent 1px),linear-gradient(90deg,var(--bg-grid) 1px,transparent 1px);background-size:48px 48px;background-position:-1px -1px}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,255,209,0.05),transparent 70%);pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,0.012) 0,rgba(255,255,255,0.012) 1px,transparent 1px,transparent 3px);pointer-events:none;z-index:0;animation:scan 8s linear infinite}
+@keyframes scan{0%{transform:translateY(0)}100%{transform:translateY(3px)}}
+.container{max-width:1320px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
+header{border-bottom:1px solid var(--border);background:rgba(7,11,17,0.88);backdrop-filter:blur(14px);position:sticky;top:0;z-index:90}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:24px;flex-wrap:wrap}
+.brand-block{display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;letter-spacing:0.05em}
+.brand-mark{width:30px;height:30px;background:var(--neon);color:var(--bg);display:grid;place-items:center;font-weight:800;border-radius:4px;box-shadow:0 0 24px var(--neon-glow);position:relative}
+.brand-mark::after{content:'';position:absolute;inset:-2px;border:1px solid var(--neon);border-radius:6px;opacity:0;animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:0;transform:scale(1)}50%{opacity:0.5;transform:scale(1.15)}}
+.brand-name span{color:var(--neon)}
+.status-pill{display:inline-flex;align-items:center;gap:8px;padding:5px 10px;border:1px solid var(--neon-dim);background:rgba(0,255,209,0.06);border-radius:99px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;color:var(--neon)}
+.status-dot{width:6px;height:6px;border-radius:50%;background:var(--neon);box-shadow:0 0 8px var(--neon);animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.4}}
+.header-prog{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-mute);display:flex;align-items:center;gap:14px;letter-spacing:0.05em}
+.header-prog .bar{width:140px;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.header-prog .bar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--neon),var(--blue));transition:width 0.6s cubic-bezier(.4,0,.2,1);box-shadow:0 0 8px var(--neon-glow)}
+.header-prog b{color:var(--neon);font-weight:700}
+.hero{padding:96px 0 80px;border-bottom:1px solid var(--border);position:relative}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.25em;color:var(--neon);text-transform:uppercase;margin-bottom:28px;display:flex;align-items:center;gap:14px}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--neon)}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(46px,8.5vw,116px);line-height:0.9;letter-spacing:-0.035em;margin-bottom:28px}
+.hero h1 .accent{background:linear-gradient(135deg,var(--neon) 0%,var(--blue) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-style:italic}
+.cursor{display:inline-block;width:0.55ch;height:0.9em;background:var(--neon);vertical-align:-0.05em;margin-left:6px;animation:caret 1s steps(2) infinite;box-shadow:0 0 12px var(--neon-glow)}
+@keyframes caret{50%{opacity:0}}
+.hero p{font-size:19px;color:var(--text-dim);max-width:780px;margin-bottom:40px}
+.hero p strong{color:var(--text);font-weight:500}
+.hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+.hb{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;padding:6px 12px;border:1px solid var(--border-bright);border-radius:99px;color:var(--text-dim)}
+.hb.live{border-color:var(--neon-dim);color:var(--neon);background:rgba(0,255,209,0.04)}
+.hb.amber{border-color:var(--amber);color:var(--amber);background:rgba(255,170,59,0.04)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-top:32px}
+.stat{background:var(--surface);padding:30px 26px;position:relative;overflow:hidden}
+.stat::before{content:'';position:absolute;top:0;left:0;width:24px;height:2px;background:var(--neon)}
+.stat-value{font-family:'Syne',sans-serif;font-weight:800;font-size:52px;line-height:1;color:var(--neon);margin-bottom:10px;letter-spacing:-0.02em}
+.stat-label{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.18em;color:var(--text-mute);text-transform:uppercase}
+.tab-section{padding:56px 0 32px}
+.tab-bar{display:flex;border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;position:sticky;top:64px;background:rgba(7,11,17,0.92);backdrop-filter:blur(10px);z-index:80}
+.tab-bar::-webkit-scrollbar{display:none}
+.tab{background:none;border:none;color:var(--text-mute);font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:500;padding:18px 24px;cursor:pointer;letter-spacing:0.05em;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap}
+.tab:hover{color:var(--text)}
+.tab.active{color:var(--neon);border-bottom-color:var(--neon)}
+.tab .num{color:var(--text-mute);margin-right:8px;font-weight:400}
+.tab.active .num{color:var(--neon)}
+.tab-content{display:none;padding-top:48px}
+.tab-content.active{display:block;animation:fadeIn 0.4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.search-bar{display:flex;gap:12px;align-items:center;margin:0 0 36px;padding:14px 18px;background:var(--surface);border:1px solid var(--border);border-radius:6px;flex-wrap:wrap}
+.search-wrap{flex:1 1 240px;display:flex;align-items:center;gap:10px}
+.search-icon{color:var(--text-mute);font-family:'JetBrains Mono',monospace;font-size:14px}
+.search-input{flex:1;background:transparent;border:none;outline:none;color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:14.5px}
+.search-input::placeholder{color:var(--text-mute)}
+.search-kbd{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-mute);padding:3px 7px;border:1px solid var(--border-bright);border-radius:4px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.05em;padding:6px 12px;border:1px solid var(--border-bright);background:transparent;color:var(--text-dim);border-radius:99px;cursor:pointer;transition:all 0.18s;text-transform:uppercase}
+.chip:hover{color:var(--text);border-color:var(--text-dim)}
+.chip.active{color:var(--bg);background:var(--neon);border-color:var(--neon);font-weight:700}
+.empty-state{padding:48px 24px;text-align:center;color:var(--text-mute);font-family:'JetBrains Mono',monospace;font-size:13px;border:1px dashed var(--border-bright);border-radius:6px}
+.empty-state strong{color:var(--text);display:block;margin-bottom:8px;font-size:15px}
+.course-header{margin-bottom:48px;display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}
+.course-id{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.22em;color:var(--magenta);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.course-id::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--magenta),transparent);max-width:200px}
+.course-title{font-family:'Syne',sans-serif;font-weight:800;font-size:56px;line-height:1;letter-spacing:-0.025em;margin-bottom:20px}
+.course-desc{color:var(--text-dim);font-size:17px;max-width:660px}
+.course-meta{background:var(--surface);border:1px solid var(--border);padding:24px;position:relative}
+.course-meta::before{content:'';position:absolute;top:-1px;left:-1px;width:32px;height:32px;border-top:2px solid var(--neon);border-left:2px solid var(--neon)}
+.meta-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--border);font-family:'JetBrains Mono',monospace;font-size:12px}
+.meta-row:last-of-type{border-bottom:none}
+.meta-row .k{color:var(--text-mute);letter-spacing:0.1em;text-transform:uppercase}
+.meta-row .v{color:var(--text);font-weight:600}
+.meta-row .v.neon{color:var(--neon)}
+.course-bar{height:8px;background:var(--border);border-radius:4px;overflow:hidden;margin-top:18px}
+.course-bar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--neon),var(--blue));transition:width 0.6s;box-shadow:0 0 8px var(--neon-glow)}
+.objectives{background:var(--surface);border-left:3px solid var(--neon);padding:24px 28px;margin-bottom:48px}
+.objectives h3{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.18em;color:var(--neon);margin-bottom:18px;text-transform:uppercase}
+.objectives ul{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:12px 32px}
+.objectives li{color:var(--text-dim);font-size:14px;padding-left:22px;position:relative}
+.objectives li::before{content:'›';position:absolute;left:0;color:var(--neon);font-weight:700;font-size:15px}
+.modules-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px;padding-bottom:18px;border-bottom:1px solid var(--border)}
+.modules-header h2{font-family:'Syne',sans-serif;font-weight:700;font-size:30px;letter-spacing:-0.01em}
+.progress-info{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-mute);letter-spacing:0.08em}
+.progress-info span{color:var(--neon);font-weight:700}
+.module{border:1px solid var(--border);background:var(--surface);margin-bottom:10px;transition:border-color 0.25s;position:relative}
+.module:hover{border-color:var(--border-bright)}
+.module.done{border-left:3px solid var(--neon)}
+.module.hidden{display:none}
+.module-head{display:grid;grid-template-columns:auto 1fr auto auto auto auto;gap:20px;align-items:center;padding:22px 28px;cursor:pointer;user-select:none;transition:background 0.2s}
+.module-head:hover{background:rgba(0,255,209,0.025)}
+.module-num{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--text-mute);font-weight:600;letter-spacing:0.04em;min-width:42px}
+.module.done .module-num{color:var(--neon)}
+.module-title{font-size:16px;font-weight:500;line-height:1.4}
+.module-badge{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.1em;padding:5px 10px;border:1px solid var(--border-bright);color:var(--text-mute);text-transform:uppercase;border-radius:3px}
+.module-badge.lab{color:var(--neon);border-color:var(--neon-dim)}
+.module-badge.v11{color:var(--amber);border-color:var(--amber)}
+.module-time{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-mute);min-width:52px;text-align:right}
+.module-toggle{width:28px;height:28px;display:grid;place-items:center;color:var(--text-mute);transition:transform 0.35s,color 0.2s}
+.module.open .module-toggle{transform:rotate(180deg);color:var(--neon)}
+.module-body{max-height:0;overflow:hidden;transition:max-height 0.5s cubic-bezier(.4,0,.2,1)}
+.module.open .module-body{max-height:7000px}
+.module-content{padding:0 28px 28px;border-top:1px dashed var(--border);padding-top:24px}
+.module-overview{color:var(--text-dim);margin-bottom:24px;font-size:15px}
+.module-overview .tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--amber);border:1px solid var(--amber);padding:2px 7px;border-radius:3px;margin-right:8px;letter-spacing:0.08em;text-transform:uppercase;vertical-align:1px}
+.module-section{margin-bottom:24px}
+.module-section h4{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;color:var(--text-mute);text-transform:uppercase;margin-bottom:14px}
+.module-section ul{list-style:none}
+.module-section li{color:var(--text-dim);font-size:14px;padding:6px 0 6px 22px;position:relative}
+.module-section li::before{content:'─';position:absolute;left:0;color:var(--text-mute)}
+.labs-grid{display:grid;gap:10px}
+.lab{background:var(--surface-2);border:1px solid var(--border);padding:16px 20px;display:grid;grid-template-columns:auto 1fr auto auto;gap:18px;align-items:center;transition:all 0.2s;border-radius:3px}
+.lab:hover{border-color:var(--neon-dim);transform:translateX(2px)}
+.lab.lab-done{border-left:3px solid var(--neon);background:linear-gradient(90deg,rgba(0,255,209,0.04),transparent 30%)}
+.lab-tag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bg);background:var(--neon);padding:5px 9px;font-weight:700;letter-spacing:0.1em;white-space:nowrap;border-radius:2px}
+.lab-title{font-size:14px;color:var(--text);font-weight:500}
+.lab-desc{font-size:13px;color:var(--text-mute);margin-top:4px;line-height:1.5}
+.lab-difficulty{display:flex;gap:3px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border-bright);transition:all 0.3s}
+.dot.on{background:var(--neon);box-shadow:0 0 6px var(--neon)}
+.lab:hover .dot.on{transform:scale(1.2)}
+.lab-open{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;padding:8px 14px;border:1px solid var(--neon-dim);background:transparent;color:var(--neon);cursor:pointer;text-transform:uppercase;transition:all 0.2s;white-space:nowrap;border-radius:3px}
+.lab-open:hover{background:var(--neon);color:var(--bg);box-shadow:0 0 16px var(--neon-glow)}
+.module-actions{display:flex;gap:12px;margin-top:24px;padding-top:20px;border-top:1px dashed var(--border);flex-wrap:wrap}
+.btn{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;padding:10px 20px;border:1px solid var(--border-bright);background:transparent;color:var(--text);cursor:pointer;text-transform:uppercase;transition:all 0.2s;text-decoration:none;display:inline-block;border-radius:3px}
+.btn:hover{border-color:var(--neon);color:var(--neon)}
+.btn.primary{background:var(--neon);color:var(--bg);border-color:var(--neon);font-weight:700}
+.btn.primary:hover{background:transparent;color:var(--neon);box-shadow:0 0 16px var(--neon-glow)}
+.path-section{padding:0 0 80px}
+.dash{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:56px}
+.dash-card{background:var(--surface);padding:30px;position:relative}
+.dash-card .dc-id{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--magenta);letter-spacing:0.12em;margin-bottom:10px}
+.dash-card .dc-name{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;margin-bottom:18px}
+.dash-card .dc-pct{font-family:'Syne',sans-serif;font-weight:800;font-size:44px;color:var(--neon);line-height:1}
+.dash-card .dc-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-mute);margin-top:6px;letter-spacing:0.05em}
+.dash-card .bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:18px}
+.dash-card .bar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--neon),var(--blue));transition:width 0.6s;box-shadow:0 0 8px var(--neon-glow)}
+.path-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:48px 0}
+.path-card{background:var(--surface);border:1px solid var(--border);padding:32px 28px;position:relative;transition:all 0.3s;cursor:pointer;overflow:hidden}
+.path-card:hover{border-color:var(--neon);transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,255,209,0.08)}
+.path-card::before{content:attr(data-num);position:absolute;top:24px;right:24px;font-family:'Syne',sans-serif;font-weight:800;font-size:80px;line-height:1;color:var(--border);transition:color 0.3s;letter-spacing:-0.04em}
+.path-card:hover::before{color:var(--neon-dim)}
+.path-card .pc-id{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--magenta);letter-spacing:0.16em;margin-bottom:18px}
+.path-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:24px;line-height:1.15;margin-bottom:16px;max-width:78%;letter-spacing:-0.01em}
+.path-card p{font-size:14px;color:var(--text-dim);margin-bottom:24px;line-height:1.55}
+.path-card .pc-stats{display:flex;gap:24px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-mute);letter-spacing:0.08em;padding-bottom:16px;border-bottom:1px dashed var(--border);margin-bottom:16px}
+.path-card .pc-stats strong{display:block;color:var(--text);font-size:20px;font-family:'Syne',sans-serif;margin-bottom:2px}
+.cert-line{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--yellow);letter-spacing:0.05em}
+.approach{margin-top:80px}
+.approach h2{font-family:'Syne',sans-serif;font-weight:800;font-size:42px;margin-bottom:36px;letter-spacing:-0.02em}
+.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.approach-item{padding:24px 0;border-top:1px solid var(--border);position:relative}
+.approach-item::before{content:'';position:absolute;top:-1px;left:0;width:40px;height:2px;background:var(--neon)}
+.approach-item h4{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--neon);letter-spacing:0.18em;margin-bottom:14px;text-transform:uppercase}
+.approach-item p{color:var(--text-dim);font-size:15px}
+.currency-banner{margin-top:64px;background:linear-gradient(135deg,rgba(255,170,59,0.05),rgba(0,255,209,0.04));border:1px solid var(--border);padding:32px 36px;border-radius:4px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.currency-banner .icon{font-family:'JetBrains Mono',monospace;font-size:48px;font-weight:800;color:var(--neon);line-height:1;letter-spacing:-0.04em}
+.currency-banner h3{font-family:'Syne',sans-serif;font-size:22px;margin-bottom:8px;letter-spacing:-0.01em}
+.currency-banner p{color:var(--text-dim);font-size:14.5px;line-height:1.55}
+.currency-banner p strong{color:var(--amber);font-weight:600}
+.prereqs{margin-top:48px;background:var(--surface);border:1px solid var(--border);padding:40px}
+.prereqs h3{font-family:'Syne',sans-serif;font-size:26px;margin-bottom:24px;letter-spacing:-0.01em}
+.prereqs-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 32px}
+.prereq-item{display:flex;gap:12px;font-size:14px;color:var(--text-dim);line-height:1.5}
+.prereq-item .check{color:var(--neon);font-family:'JetBrains Mono',monospace;font-weight:700;flex-shrink:0}
+.prereq-item a{color:var(--blue);text-decoration:none;border-bottom:1px dotted var(--blue)}
+.prereq-item a:hover{color:var(--neon);border-bottom-color:var(--neon)}
+footer{border-top:1px solid var(--border);padding:56px 0 64px;margin-top:88px;background:var(--surface)}
+.footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px}
+.foot-col h5{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--text-mute);text-transform:uppercase;margin-bottom:14px}
+.foot-col p,.foot-col a{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);display:block;padding:4px 0;text-decoration:none;line-height:1.5}
+.foot-col a:hover{color:var(--neon)}
+.foot-col .logo{font-weight:700;color:var(--text);font-size:13px;letter-spacing:0.05em;margin-bottom:8px}
+.foot-bottom{margin-top:40px;padding-top:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-mute);flex-wrap:wrap;gap:12px}
+.reset-btn{background:none;border:1px solid var(--border-bright);color:var(--text-mute);font-family:'JetBrains Mono',monospace;font-size:11px;padding:6px 14px;cursor:pointer;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s;border-radius:3px}
+.reset-btn:hover{color:var(--magenta);border-color:var(--magenta)}
+.kbd-hint{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(7,11,17,0.92);backdrop-filter:blur(10px);border:1px solid var(--border-bright);padding:8px 16px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text-mute);display:flex;gap:14px;align-items:center;border-radius:99px;z-index:50;letter-spacing:0.04em;opacity:0;transition:opacity 0.3s}
+.kbd-hint.show{opacity:1}
+.kbd-hint kbd{font-family:inherit;font-size:10px;color:var(--text);background:var(--surface-2);padding:2px 6px;border:1px solid var(--border-bright);border-radius:3px;margin-right:4px}
+.modal-overlay{position:fixed;inset:0;background:rgba(3,6,10,0.86);backdrop-filter:blur(8px);z-index:1000;display:none;opacity:0;transition:opacity 0.25s}
+.modal-overlay.open{display:block;opacity:1}
+.modal{position:fixed;top:0;right:0;bottom:0;width:min(760px,100%);background:var(--bg);border-left:1px solid var(--border-bright);z-index:1001;transform:translateX(100%);transition:transform 0.4s cubic-bezier(.4,0,.2,1);overflow-y:auto;box-shadow:-40px 0 80px rgba(0,0,0,0.5)}
+.modal.open{transform:translateX(0)}
+.modal-top{position:sticky;top:0;background:rgba(7,11,17,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:24px 32px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;z-index:2}
+.modal-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--bg);background:var(--neon);padding:5px 10px;font-weight:700;letter-spacing:0.1em;display:inline-block;margin-bottom:10px;border-radius:2px}
+.modal-top h2{font-family:'Syne',sans-serif;font-weight:800;font-size:25px;line-height:1.1;letter-spacing:-0.01em}
+.modal-close{background:none;border:1px solid var(--border-bright);color:var(--text-mute);width:38px;height:38px;border-radius:4px;cursor:pointer;font-size:18px;flex-shrink:0;transition:all 0.2s}
+.modal-close:hover{color:var(--magenta);border-color:var(--magenta)}
+.modal-body{padding:32px}
+.guide-meta{display:flex;gap:24px;margin-bottom:28px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-mute);letter-spacing:0.05em;padding-bottom:20px;border-bottom:1px dashed var(--border);flex-wrap:wrap}
+.guide-meta b{color:var(--neon)}
+.guide-h{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.18em;color:var(--neon);text-transform:uppercase;margin:28px 0 14px;display:flex;align-items:center;gap:10px}
+.guide-h::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--neon-dim),transparent)}
+.guide-obj{color:var(--text-dim);font-size:15px;line-height:1.65}
+.topo{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:18px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);white-space:pre;overflow-x:auto;line-height:1.5}
+.steps{counter-reset:step}
+.step{position:relative;padding:0 0 22px 46px}
+.step::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:30px;height:30px;background:var(--surface-2);border:1px solid var(--neon-dim);color:var(--neon);border-radius:50%;display:grid;place-items:center;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:700}
+.step:not(:last-child)::after{content:'';position:absolute;left:14px;top:32px;bottom:0;width:1px;background:var(--border)}
+.step p{color:var(--text-dim);font-size:14px;margin-bottom:10px;line-height:1.6}
+.step p strong{color:var(--text)}
+pre.cmd{background:#040608;border:1px solid var(--border);border-radius:4px;padding:14px 16px;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--neon);white-space:pre;overflow-x:auto;line-height:1.6;margin-bottom:8px}
+.verify-list{list-style:none}
+.verify-list li{font-size:14px;color:var(--text-dim);padding:8px 0 8px 24px;position:relative;line-height:1.55}
+.verify-list li::before{content:'✓';position:absolute;left:0;color:var(--neon);font-weight:700}
+.verify-list code{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--yellow);background:var(--surface-2);padding:1px 6px;border-radius:2px}
+.success-box{background:rgba(0,255,209,0.06);border:1px solid var(--neon-dim);border-radius:4px;padding:16px 18px;font-size:14px;color:var(--text-dim);line-height:1.55}
+.challenge-box{background:rgba(255,46,99,0.06);border:1px solid var(--magenta);border-radius:4px;padding:16px 18px;font-size:14px;color:var(--text-dim);line-height:1.55}
+.modal-foot{padding:24px 32px 40px;border-top:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap}
+@media (max-width:1000px){.footer-inner{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){.container{padding:0 20px}.hero{padding:56px 0 48px}.hero p{font-size:17px}.stats{grid-template-columns:repeat(2,1fr)}.stat-value{font-size:42px}.course-header{grid-template-columns:1fr;gap:24px}.course-title{font-size:38px}.objectives ul{grid-template-columns:1fr}.module-head{grid-template-columns:1fr auto;gap:8px;padding:18px 20px}.module-num,.module-time{display:none}.module-badge{font-size:9px;padding:4px 8px}.module-content{padding:16px 20px 20px}.dash{grid-template-columns:1fr}.path-flow{grid-template-columns:1fr}.approach-grid{grid-template-columns:1fr}.prereqs-list{grid-template-columns:1fr}.prereqs{padding:28px 24px}.header-prog .bar{display:none}.header-prog{font-size:10.5px}.lab{grid-template-columns:auto 1fr;padding:14px 16px;gap:12px}.lab-difficulty{display:none}.lab-open{grid-column:1 / -1;text-align:center;padding:10px}.modal{width:100%}.modal-body{padding:24px 20px}.modal-top{padding:20px}.currency-banner{grid-template-columns:1fr;gap:14px;padding:24px}.footer-inner{grid-template-columns:1fr;gap:24px}.approach h2{font-size:32px}.modules-header h2{font-size:24px}.search-bar{padding:12px 14px}.search-kbd{display:none}.chip{font-size:10.5px;padding:5px 10px}.tab-bar{top:60px}.kbd-hint{display:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container header-inner">
+    <div class="brand-block">
+      <div class="brand"><div class="brand-mark">N</div><div>NETOPS<span>//</span>CISCO TRACK</div></div>
+      <div class="status-pill"><span class="status-dot"></span>ONLINE · v1.1 · 2026</div>
+    </div>
+    <div class="header-prog"><span>OVERALL <b class="hp-pct">0%</b></span><span class="bar"><i class="hp-bar"></i></span></div>
+  </div>
+</header>
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">Networking Basics · Networking Essentials · SRWE (CCNA 2)</div>
+    <h1>Basics. Essentials.<br><span class="accent">Switching, routing<br>&amp; wireless.</span><span class="cursor"></span></h1>
+    <p>A three-course Cisco NetAcad foundation, rebuilt as a fully interactive, self-paced track. Every lab opens a complete step-by-step guide with real IOS commands, verification, and a stretch challenge. <strong>Aligned to the CCNA 200-301 v1.1 blueprint</strong> and updated for Packet Tracer 9.0 with WPA3, Rapid PVST+, and modern security defaults.</p>
+    <div class="hero-badges"><span class="hb live">● 2026 CONTENT</span><span class="hb">CCNA 200-301 v1.1</span><span class="hb">Packet Tracer 9.0+</span><span class="hb amber">WPA3 · Rapid PVST+</span></div>
+    <div class="stats">
+      <div class="stat"><div class="stat-value" data-count="3">0</div><div class="stat-label">Cisco Courses</div></div>
+      <div class="stat"><div class="stat-value" data-count="37">0</div><div class="stat-label">Modules</div></div>
+      <div class="stat"><div class="stat-value" data-count="47">0</div><div class="stat-label">Guided Labs</div></div>
+      <div class="stat"><div class="stat-value">~190h</div><div class="stat-label">Total Effort</div></div>
+    </div>
+  </div>
+</section>
+<section class="tab-section"><div class="container">
+  <div class="tab-bar" role="tablist">
+    <button class="tab active" data-tab="overview"><span class="num">00</span>OVERVIEW</button>
+    <button class="tab" data-tab="course-1"><span class="num">01</span>NETWORKING BASICS</button>
+    <button class="tab" data-tab="course-2"><span class="num">02</span>NETWORKING ESSENTIALS</button>
+    <button class="tab" data-tab="course-3"><span class="num">03</span>SWITCHING · ROUTING · WIRELESS</button>
+  </div>
+  <div class="tab-content active" id="overview"><div class="path-section">
+    <div class="course-header"><div>
+      <div class="course-id">// LIVE PROGRESS</div>
+      <h2 class="course-title">Your dashboard.</h2>
+      <p class="course-desc">Mark modules complete as you go and check off labs from their guides. Everything below updates live and saves to your browser automatically.</p>
+    </div></div>
+    <div class="dash">
+      <div class="dash-card"><div class="dc-id">// 01 · NETWORKING BASICS</div><div class="dc-name">Foundations</div><div class="dc-pct dp-c1">0%</div><div class="dc-sub"><span class="ds-c1">0/8</span> modules</div><div class="bar"><i class="db-c1"></i></div></div>
+      <div class="dash-card"><div class="dc-id">// 02 · NETWORKING ESSENTIALS</div><div class="dc-name">The Bridge</div><div class="dc-pct dp-c2">0%</div><div class="dc-sub"><span class="ds-c2">0/13</span> modules</div><div class="bar"><i class="db-c2"></i></div></div>
+      <div class="dash-card"><div class="dc-id">// 03 · SRWE (CCNA 2)</div><div class="dc-name">CCNA Depth</div><div class="dc-pct dp-c3">0%</div><div class="dc-sub"><span class="ds-c3">0/16</span> modules</div><div class="bar"><i class="db-c3"></i></div></div>
+    </div>
+    <div class="path-flow">
+      <div class="path-card" data-num="01" onclick="switchTab('course-1')"><div class="pc-id">CISCO // NETWORKING BASICS</div><h3>Networking Basics</h3><p>Your entry point. Home networks, components and types, wireless and mobile, connecting to the internet, IP addressing fundamentals, and basic security.</p><div class="pc-stats"><div><strong>8</strong>MODULES</div><div><strong>9</strong>LABS</div><div><strong>~40h</strong>EFFORT</div></div><span class="cert-line">↳ no prerequisites</span></div>
+      <div class="path-card" data-num="02" onclick="switchTab('course-2')"><div class="pc-id">CISCO // NETWORKING ESSENTIALS</div><h3>Networking Essentials</h3><p>The bridge to CCNA. Protocols and models, media, the access layer, IPv4/IPv6, DHCP, ARP, routing, TCP/UDP, and building a small Cisco network.</p><div class="pc-stats"><div><strong>13</strong>MODULES</div><div><strong>17</strong>LABS</div><div><strong>~70h</strong>EFFORT</div></div><span class="cert-line">↳ preps for CCST Networking</span></div>
+      <div class="path-card" data-num="03" onclick="switchTab('course-3')"><div class="pc-id">CISCO // SRWE (CCNA 2)</div><h3>Switching, Routing &amp; Wireless Essentials</h3><p>CCNA-level depth. VLANs, inter-VLAN routing, STP &amp; Rapid PVST+, EtherChannel, DHCP, FHRP, LAN + switch security, WLAN (WPA3), static routing.</p><div class="pc-stats"><div><strong>16</strong>MODULES</div><div><strong>22</strong>LABS</div><div><strong>~80h</strong>EFFORT</div></div><span class="cert-line">↳ builds toward CCNA 200-301 v1.1</span></div>
+    </div>
+    <div class="approach"><h2>How this works.</h2><div class="approach-grid">
+      <div class="approach-item"><h4>// 01 · Read the module</h4><p>Each module gives concise concept notes, objectives, and topics — what it is, why it matters, where it shows up in production today.</p></div>
+      <div class="approach-item"><h4>// 02 · Open the lab guide</h4><p>Click any lab to open a full walkthrough: topology, numbered steps with real IOS commands, verification, success criteria, and a stretch challenge.</p></div>
+      <div class="approach-item"><h4>// 03 · Build &amp; document</h4><p>Build it in Packet Tracer 9, mark it done, and capture it in a GitHub repo. By the end you have 47 documented builds.</p></div>
+    </div></div>
+    <div class="currency-banner"><div class="icon">v1.1</div><div><h3>Current for 2026 — built to age well</h3><p>Aligned to the <strong>CCNA 200-301 v1.1</strong> blueprint (Feb 2026 content refresh, valid through 2027+). v1.1 additions are baked in where they fit: <strong>Rapid PVST+</strong> in STP, <strong>WPA3</strong> as the default wireless security, and cloud / automation context in the design and capstone modules. The fundamentals — switching, routing, VLANs, subnetting, IPv6, FHRP — are stable knowledge.</p></div></div>
+    <div class="prereqs"><h3>Before you start</h3><div class="prereqs-list">
+      <div class="prereq-item"><span class="check">[✓]</span><span>Install <a href="https://www.netacad.com/courses/packet-tracer" target="_blank" rel="noopener">Cisco Packet Tracer 9.0+</a> (free with NetAcad; Windows / macOS 10.14+ / Ubuntu 20.04+)</span></div>
+      <div class="prereq-item"><span class="check">[✓]</span><span>Install <a href="https://www.virtualbox.org/" target="_blank" rel="noopener">VirtualBox</a> 7+ with a Windows 10/11 client VM</span></div>
+      <div class="prereq-item"><span class="check">[✓]</span><span>A note system (Obsidian, Notion, or markdown in a repo)</span></div>
+      <div class="prereq-item"><span class="check">[✓]</span><span>A <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> account for portfolio documentation</span></div>
+      <div class="prereq-item"><span class="check">[✓]</span><span>Optional: free <a href="https://www.netacad.com/" target="_blank" rel="noopener">NetAcad</a> enrollment for assessments + CCST/CCNA paths</span></div>
+      <div class="prereq-item"><span class="check">[✓]</span><span>4–8 hours per week, sustained for ~5–6 months</span></div>
+    </div></div>
+  </div></div>
+  <div class="tab-content" id="course-1">
+    <div class="course-header"><div><div class="course-id">// CISCO NETWORKING BASICS</div><h2 class="course-title">Networking<br>Basics.</h2><p class="course-desc">The on-ramp. No prerequisites. Learn what a network is, how the pieces connect, how data moves, and how to build and secure a small home network — most of it simulated in Packet Tracer 9.</p></div>
+    <div class="course-meta"><div class="meta-row"><span class="k">Modules</span><span class="v">8</span></div><div class="meta-row"><span class="k">PT Labs</span><span class="v neon">9</span></div><div class="meta-row"><span class="k">Effort</span><span class="v">~40 hours</span></div><div class="meta-row"><span class="k">Level</span><span class="v">Beginner</span></div><div class="meta-row"><span class="k">Cisco Map</span><span class="v">Net Basics</span></div><div class="meta-row"><span class="k">Updated</span><span class="v neon">2026</span></div><div class="course-bar"><i class="cb-c1"></i></div></div></div>
+    <div class="search-bar"><div class="search-wrap"><span class="search-icon">⌕</span><input class="search-input" data-course="c1" type="text" placeholder="Search modules, topics, or labs..." /><span class="search-kbd">/</span></div><div class="chips" data-course="c1"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="labs">Labs</button><button class="chip" data-filter="cli">With CLI</button><button class="chip" data-filter="in-progress">In progress</button><button class="chip" data-filter="done">Complete</button></div></div>
+    <div class="objectives"><h3>// Learning Outcomes</h3><ul><li>Explain how devices communicate on a network</li><li>Identify network components, types, and media</li><li>Describe wireless and mobile network operation</li><li>Build and simulate a small home network in PT</li><li>Explain how a device gets online and gets an IP</li><li>Apply WPA3-era security to a home network</li></ul></div>
+    <div class="modules-header"><h2>Modules</h2><div class="progress-info">PROGRESS <span class="prog-c1">0/8</span> COMPLETE</div></div>
+    <div id="modules-c1"></div>
+  </div>
+  <div class="tab-content" id="course-2">
+    <div class="course-header"><div><div class="course-id">// CISCO NETWORKING ESSENTIALS</div><h2 class="course-title">Networking<br>Essentials.</h2><p class="course-desc">The bridge into CCNA. Go under the hood — protocols and models, media and the access layer, the full IP story, DHCP, ARP, routing between networks, transport protocols, and your first real Cisco IOS configuration.</p></div>
+    <div class="course-meta"><div class="meta-row"><span class="k">Modules</span><span class="v">13</span></div><div class="meta-row"><span class="k">PT Labs</span><span class="v neon">17</span></div><div class="meta-row"><span class="k">Effort</span><span class="v">~70 hours</span></div><div class="meta-row"><span class="k">Level</span><span class="v">Beginner→Inter.</span></div><div class="meta-row"><span class="k">Cisco Map</span><span class="v">Net Essentials</span></div><div class="meta-row"><span class="k">Updated</span><span class="v neon">2026</span></div><div class="course-bar"><i class="cb-c2"></i></div></div></div>
+    <div class="search-bar"><div class="search-wrap"><span class="search-icon">⌕</span><input class="search-input" data-course="c2" type="text" placeholder="Search modules, topics, or labs..." /><span class="search-kbd">/</span></div><div class="chips" data-course="c2"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="labs">Labs</button><button class="chip" data-filter="cli">With CLI</button><button class="chip" data-filter="in-progress">In progress</button><button class="chip" data-filter="done">Complete</button></div></div>
+    <div class="objectives"><h3>// Learning Outcomes</h3><ul><li>Explain protocols, OSI/TCP-IP models, and encapsulation</li><li>Describe media and the access layer with Ethernet switching</li><li>Work fluently with IPv4 addressing and segmentation</li><li>Apply IPv6 addressing formats and rules</li><li>Explain DHCP, ARP, and how gateways route between networks</li><li>Compare TCP and UDP and identify app-layer services</li><li>Use network testing utilities to troubleshoot</li><li>Build and verify a small Cisco network in PT</li></ul></div>
+    <div class="modules-header"><h2>Modules</h2><div class="progress-info">PROGRESS <span class="prog-c2">0/13</span> COMPLETE</div></div>
+    <div id="modules-c2"></div>
+  </div>
+  <div class="tab-content" id="course-3">
+    <div class="course-header"><div><div class="course-id">// CISCO SRWE · CCNA 2 · v1.1</div><h2 class="course-title">Switching, Routing<br>&amp; Wireless Essentials.</h2><p class="course-desc">CCNA-level depth on switching and router operations for SMB networks. The 16-module SRWE sequence with v1.1 updates (Rapid PVST+, WPA3, cloud context): VLANs and inter-VLAN routing, STP, EtherChannel, dynamic addressing, FHRP, LAN and switch security, wireless with a WLC, and static routing — capped with a full campus build.</p></div>
+    <div class="course-meta"><div class="meta-row"><span class="k">Modules</span><span class="v">16</span></div><div class="meta-row"><span class="k">PT Labs</span><span class="v neon">22</span></div><div class="meta-row"><span class="k">Effort</span><span class="v">~80 hours</span></div><div class="meta-row"><span class="k">Level</span><span class="v">Intermediate</span></div><div class="meta-row"><span class="k">Cisco Map</span><span class="v">SRWE v7+v1.1</span></div><div class="meta-row"><span class="k">Updated</span><span class="v neon">2026</span></div><div class="course-bar"><i class="cb-c3"></i></div></div></div>
+    <div class="search-bar"><div class="search-wrap"><span class="search-icon">⌕</span><input class="search-input" data-course="c3" type="text" placeholder="Search modules, topics, or labs..." /><span class="search-kbd">/</span></div><div class="chips" data-course="c3"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="labs">Labs</button><button class="chip" data-filter="cli">With CLI</button><button class="chip" data-filter="v11">v1.1 New</button><button class="chip" data-filter="in-progress">In progress</button><button class="chip" data-filter="done">Complete</button></div></div>
+    <div class="objectives"><h3>// Learning Outcomes</h3><ul><li>Configure VLANs and inter-VLAN routing securely</li><li>Troubleshoot inter-VLAN routing on L3 devices</li><li>Build redundancy with STP / Rapid PVST+ and EtherChannel</li><li>Support reliable networks with dynamic addressing and FHRP</li><li>Configure dynamic address allocation in IPv6</li><li>Configure a WLAN using a WLC with WPA3 security</li><li>Configure switch security to mitigate LAN attacks</li><li>Configure IPv4 and IPv6 static routing</li></ul></div>
+    <div class="modules-header"><h2>Modules</h2><div class="progress-info">PROGRESS <span class="prog-c3">0/16</span> COMPLETE</div></div>
+    <div id="modules-c3"></div>
+  </div>
+</div></section>
+<footer><div class="container">
+  <div class="footer-inner">
+    <div class="foot-col"><div class="logo">NETOPS // CISCO TRACK</div><p>A self-paced Cisco networking foundation for IT professionals re-entering or sharpening switching, routing, and wireless skills.</p><p style="margin-top:12px;color:var(--text-mute);">Reviewed against Cisco blueprint:<br><b style="color:var(--neon);">May 2026 · CCNA 200-301 v1.1</b></p></div>
+    <div class="foot-col"><h5>// Cisco Resources</h5><a href="https://www.netacad.com/" target="_blank" rel="noopener">NetAcad Home ↗</a><a href="https://www.netacad.com/courses/packet-tracer" target="_blank" rel="noopener">Packet Tracer 9.0 ↗</a><a href="https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html" target="_blank" rel="noopener">CCNA 200-301 ↗</a><a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/entry/ccst-networking.html" target="_blank" rel="noopener">CCST Networking ↗</a></div>
+    <div class="foot-col"><h5>// Tools</h5><a href="https://www.virtualbox.org/" target="_blank" rel="noopener">VirtualBox ↗</a><a href="https://obsidian.md/" target="_blank" rel="noopener">Obsidian ↗</a><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a><a href="https://learningnetwork.cisco.com/" target="_blank" rel="noopener">Cisco Learning ↗</a></div>
+    <div class="foot-col"><h5>// Progress</h5><p>Saves to your browser via localStorage. Wipes with the reset button or clearing site data.</p><button class="reset-btn" style="margin-top:14px;" onclick="resetProgress()">Reset Progress</button></div>
+  </div>
+  <div class="foot-bottom"><span>© NETOPS · Aligned to Cisco NetAcad &amp; CCNA 200-301 v1.1 · Self-paced</span><span>Ship a portfolio repo →</span></div>
+</div></footer>
+<div class="kbd-hint" id="kbdHint"><span><kbd>/</kbd>search</span><span><kbd>1-3</kbd>tabs</span><span><kbd>0</kbd>overview</span><span><kbd>Esc</kbd>close</span></div>
+<div class="modal-overlay" id="overlay" onclick="closeGuide()"></div>
+<aside class="modal" id="modal">
+  <div class="modal-top"><div><span class="modal-tag" id="g-tag">LAB</span><h2 id="g-title">Lab</h2></div><button class="modal-close" onclick="closeGuide()" aria-label="Close">✕</button></div>
+  <div class="modal-body" id="g-body"></div>
+  <div class="modal-foot"><button class="btn primary" id="g-done" onclick="toggleLabDone()">Mark Lab Complete</button><button class="btn" onclick="closeGuide()">Close</button></div>
+</aside>
+<script>
+const courses = {
+  c1: [
+    { n:'1.1', title:'Communications in a Connected World', time:'4h', labs:1, hasCli:false,
+      overview:'How the modern connected world communicates — networks of all sizes, the data that flows across them, and the bandwidth, throughput, and latency concepts that describe how well they perform.',
+      objectives:['Describe network types (home, small office, medium-large, worldwide)','Explain bandwidth, throughput, and latency','Identify the kinds of data that traverse networks','Recognize the role of the internet in daily life'],
+      topics:['Network sizes and scope','Data: voice, video, text','Bandwidth vs throughput vs latency','Local vs remote resources','Bits, bytes, and units'],
+      labsList:[{id:'NB-L1',title:'Explore the Packet Tracer 9 Workspace',desc:'Open PT 9, place end devices, learn the realtime/simulation toggle, and send your first ping.',diff:1}] },
+    { n:'1.2', title:'Network Components, Types & Connections', time:'5h', labs:1, hasCli:false,
+      overview:'The building blocks. Hosts and peripherals, intermediary devices like switches and routers, the media that connects them, and physical vs logical topology.',
+      objectives:['Identify end devices and intermediary devices','Compare wired vs wireless media','Read physical and logical topology diagrams','Explain client/server vs peer-to-peer'],
+      topics:['Hosts, servers, peripherals','Switches, routers, APs','Copper, fiber, wireless','Physical vs logical topologies','LAN, WAN, internet, intranet'],
+      labsList:[{id:'NB-L2',title:'Build a Two-Device LAN',desc:'Connect 2 PCs through a switch, assign static IPs, ping. Watch ARP in Simulation mode.',diff:1}] },
+    { n:'1.3', title:'Wireless & Mobile Networks', time:'4h', labs:1, hasCli:false,
+      overview:'How devices connect without wires. Wi-Fi standards and bands (including 6 GHz / Wi-Fi 6E), SSIDs, wireless components, and how cellular and other mobile technologies fit in.',
+      objectives:['Describe how Wi-Fi networks operate','Identify SSID, channels, and 2.4/5/6 GHz bands','Compare Wi-Fi, cellular (5G), Bluetooth, NFC','Explain mobile connectivity options'],
+      topics:['802.11 (a/b/g/n/ac/ax/be)','2.4 / 5 / 6 GHz bands','SSID and association','Cellular (LTE, 5G)','Bluetooth, NFC, RFID'],
+      labsList:[{id:'NB-L3',title:'Add Wireless to a Home Network',desc:'Configure a home wireless router SSID + WPA3 (or WPA2 fallback), associate a laptop and a smartphone in PT.',diff:2}] },
+    { n:'1.4', title:'Build a Home Network', time:'6h', labs:2, hasCli:false,
+      overview:'Put it together. The integrated wireless router at the center of most homes — DHCP, NAT, and Wi-Fi — and how to lay out a small network for several devices.',
+      objectives:['Identify home wireless router functions','Configure DHCP and an address scheme','Connect wired and wireless clients','Verify connectivity across the network'],
+      topics:['Integrated services router','DHCP on a home router','Default gateway','Wired + wireless coexistence','Guest networks'],
+      labsList:[{id:'NB-L4a',title:'Home Router DHCP Setup',desc:'Configure the LAN side of a home router with a DHCP pool; clients pull leases automatically.',diff:2},{id:'NB-L4b',title:'Full Home Network Build',desc:'2 wired PCs, 1 laptop, 1 phone, 1 printer — all communicating through one home router.',diff:2}] },
+    { n:'1.5', title:'Connect to the Internet', time:'4h', labs:1, hasCli:false,
+      overview:'How your home network reaches the wider world. ISP connection types (fiber, cable, fixed wireless, 5G home), the modem/router handoff, public vs private addressing, and the role of NAT.',
+      objectives:['Compare ISP connection types','Explain the modem-to-router relationship','Differentiate public and private IPs','Describe NAT conceptually'],
+      topics:['ISP / last-mile tech (incl. 5G home)','Modems and ONTs','Public vs private (RFC1918)','NAT overview','DNS at home'],
+      labsList:[{id:'NB-L5',title:'Home Network to "Internet"',desc:'Connect the WAN side to a simulated ISP cloud; verify a client reaches a remote server.',diff:2}] },
+    { n:'1.6', title:'IP Addressing Fundamentals', time:'5h', labs:1, hasCli:false,
+      overview:'The numbers that make it work. Binary basics, IPv4 address and subnet mask structure, network vs host portions, and a first look at IPv6 (now mandatory thinking).',
+      objectives:['Convert binary ↔ decimal','Identify network and host portions','Explain the subnet mask role','Recognize IPv6 format'],
+      topics:['Binary refresher','IPv4 dotted-decimal','Subnet mask basics','Default gateway','IPv6 intro'],
+      labsList:[{id:'NB-L6',title:'Manual IP Assignment',desc:'Assign static IPs, masks, and gateways by hand; verify and fix a misconfigured host.',diff:2}] },
+    { n:'1.7', title:'Network Security Basics', time:'4h', labs:1, hasCli:false,
+      overview:'The threats every small network faces and the simple, high-impact defenses: strong passwords, firmware updates, WPA3 Wi-Fi encryption, and the firewall. WPA3 is now the modern default — WPA2 is the legacy fallback only.',
+      objectives:['Identify common home-network threats','Apply strong authentication and MFA','Configure WPA3 (or WPA2 as fallback)','Explain the firewall role'],
+      topics:['Malware, phishing, supply-chain','Wi-Fi security: WPA3 first, WPA2 legacy','Default credential risk','Firmware updates','Firewall concepts'],
+      labsList:[{id:'NB-L7',title:'Harden the Home Network',desc:'Change default creds, enable WPA3 (or WPA2 if device-limited), disable WPS, restrict admin access. Document before/after.',diff:2}] },
+    { n:'1.8', title:'Capstone — Design & Simulate a Home Network', time:'8h', labs:1, hasCli:false,
+      overview:'Bring the course together. Take a short requirements brief and design, build, secure, and document a home network end to end in Packet Tracer.',
+      objectives:['Translate requirements into a design','Implement addressing, DHCP, Wi-Fi (WPA3)','Apply the security checklist','Document for a GitHub repo'],
+      topics:['Requirements gathering','Addressing plan','Implementation order','Security pass','README + topology shot'],
+      labsList:[{id:'NB-CAP',title:'Connected Home Capstone',desc:'Family of 5 + home office: desktops, laptops, phones, printer, NAS, guest Wi-Fi. Secure + document.',diff:3}] }
+  ],
+  c2: [
+    { n:'2.1', title:'Communications Principles, Protocols & Models', time:'6h', labs:1, hasCli:false,
+      overview:'The rules that make communication reliable. Protocols, the OSI and TCP/IP models, PDU naming, and end-to-end encapsulation.',
+      objectives:['Explain the purpose of protocols and standards','Recite OSI and TCP/IP layers in order','Map protocols to their layer','Walk through encapsulation/decapsulation'],
+      topics:['Protocols and standards bodies','OSI 7-layer model','TCP/IP 4-layer model','PDUs','Encapsulation'],
+      labsList:[{id:'NE-L1',title:'Trace a PDU in Simulation Mode',desc:'Capture one HTTPS request and inspect how each layer wraps the data hop by hop.',diff:2}] },
+    { n:'2.2', title:'Network Media', time:'4h', labs:1, hasCli:false,
+      overview:'The physical carriers of every bit. Copper categories and limits, fiber single- vs multi-mode, wireless, and choosing the right cable.',
+      objectives:['Compare copper, fiber, wireless','Identify cable types','Explain attenuation, EMI, distance','Select media for a scenario'],
+      topics:['UTP categories (incl. Cat 6A/8)','Straight-through vs crossover (auto-MDIX era)','Single vs multi-mode fiber','Connectors','Media tradeoffs'],
+      labsList:[{id:'NE-L2',title:'Cable Selection Lab',desc:'A topology with wrong cable types causing failures. Identify and correct each one.',diff:2}] },
+    { n:'2.3', title:'The Access Layer & Ethernet Switching', time:'6h', labs:1, hasCli:true,
+      overview:'Where hosts meet the network. Ethernet frames, MAC addresses, how a switch learns and builds its MAC table, and collision/broadcast domains.',
+      objectives:['Read Ethernet II frame fields','Explain MAC structure (OUI + device)','Describe MAC table learning','Differentiate collision vs broadcast domains'],
+      topics:['Ethernet frame format','MAC addressing','Switch learning/forwarding','MAC aging','Collision vs broadcast domains'],
+      labsList:[{id:'NE-L3',title:'Watch a Switch Learn',desc:'In Simulation mode, observe a switch flood, learn, then forward unicast from its MAC table.',diff:2}] },
+    { n:'2.4', title:'The Internet Protocol (IPv4)', time:'5h', labs:1, hasCli:true,
+      overview:'The packet that crosses the internet. The IPv4 header, how routers forward, TTL, fragmentation, and routed vs routing protocols.',
+      objectives:['Identify key IPv4 header fields','Explain router forwarding','Describe TTL','Differentiate connectionless vs connection-oriented'],
+      topics:['IPv4 header fields','Best-effort delivery','TTL / hop count','Fragmentation','Routed vs routing protocols'],
+      labsList:[{id:'NE-L4',title:'Packet Across Routers',desc:'Two-router topology; trace a packet end to end and watch TTL decrement at each hop.',diff:2}] },
+    { n:'2.5', title:'IPv4 Addressing & Network Segmentation', time:'9h', labs:2, hasCli:true,
+      overview:'The highest-value skill in networking. Address structure, network/host/broadcast, subnetting, and VLSM. Drill until automatic — subnetting is on every CCNA exam, every job interview.',
+      objectives:['Identify network/host/broadcast addresses','Subnet for required subnets or hosts','Apply VLSM to unequal sizes','Use the magic-number method'],
+      topics:['CIDR','Subnet math (2ⁿ, 2ⁿ-2)','Fixed-length subnetting','VLSM','/30 and /31 links'],
+      labsList:[{id:'NE-L5a',title:'Subnetting Speed Drill',desc:'20 questions: network, broadcast, host range, usable count. Target under 15 min. Repeat weekly.',diff:2},{id:'NE-L5b',title:'VLSM Department Plan',desc:'Given a /24 and four departments of different sizes, design a VLSM plan and implement it.',diff:3}] },
+    { n:'2.6', title:'IPv6 Addressing Formats & Rules', time:'5h', labs:1, hasCli:true,
+      overview:'Production networks in 2026 are dual-stack — IPv6 is no longer optional. Address structure and compression, address types, link-local, and how hosts get IPv6 addresses.',
+      objectives:['Write and compress IPv6 addresses','Identify GUA, LLA, ULA, multicast','Configure static and EUI-64 IPv6','Explain SLAAC vs DHCPv6'],
+      topics:['128-bit format + compression','Address types','Link-local FE80::/10','EUI-64','SLAAC and RAs'],
+      labsList:[{id:'NE-L6',title:'Dual-Stack a Topology',desc:'Add IPv6 alongside IPv4 on a routed network; verify with ping and show ipv6 interface brief.',diff:2}] },
+    { n:'2.7', title:'Dynamic Addressing with DHCP', time:'4h', labs:1, hasCli:true,
+      overview:'Automatic address assignment at scale. The DORA exchange, scope contents, lease lifecycle, and reservations vs exclusions.',
+      objectives:['Walk through DORA','Identify scope options','Configure a DHCP server','Explain reservations vs exclusions'],
+      topics:['DORA process','Scope and options','Lease lifecycle','Reservations vs exclusions','Server vs router DHCP'],
+      labsList:[{id:'NE-L7',title:'Stand Up DHCP',desc:'Configure a DHCP server with a scope; clients receive address, gateway, and DNS automatically.',diff:2}] },
+    { n:'2.8', title:'Gateways & The ARP Process', time:'4h', labs:1, hasCli:true,
+      overview:'How a host reaches another device. The default gateway decision, ARP request/reply, the ARP cache, and ARP-based attacks.',
+      objectives:['Explain the gateway decision','Walk through ARP request/reply','Inspect the ARP cache','Recognize ARP spoofing'],
+      topics:['Default gateway','Local vs remote decision','ARP request/reply','ARP cache','Gratuitous ARP / spoofing'],
+      labsList:[{id:'NE-L8',title:'Capture the ARP Exchange',desc:'Capture ARP for a local target and observe gateway use for a remote one in Simulation mode.',diff:2}] },
+    { n:'2.9', title:'Routing Between Networks', time:'5h', labs:1, hasCli:true,
+      overview:'How packets cross networks. The routing table, connected vs static vs dynamic routes, administrative distance, and the default route.',
+      objectives:['Read a routing table','Differentiate route types','Configure static and default routes','Explain administrative distance'],
+      topics:['Routing table structure','Connected routes','Static routes','Default route','Administrative distance'],
+      labsList:[{id:'NE-L9',title:'Static Routing Across Three Routers',desc:'Write all routes by hand on a 3-router topology, add a default route at the edge, verify reachability.',diff:2}] },
+    { n:'2.10', title:'TCP and UDP', time:'5h', labs:1, hasCli:false,
+      overview:'The transport layer decides whether reliability matters. TCP\'s handshake, sequencing, and flow control vs UDP\'s lean speed. Ports and sockets.',
+      objectives:['Compare TCP and UDP','Walk through the 3-way handshake','Explain windowing and ACKs','Identify well-known ports'],
+      topics:['TCP segment / UDP datagram','3-way handshake + teardown','Sliding window','Ports and sockets','Well-known ports'],
+      labsList:[{id:'NE-L10',title:'Capture a TCP Handshake',desc:'Capture a full TCP open, data exchange, and FIN close; identify each flag in Simulation mode.',diff:2}] },
+    { n:'2.11', title:'Application Layer Services & Network Testing', time:'5h', labs:2, hasCli:false,
+      overview:'The services users touch and the tools to verify them. DNS, HTTPS, email, plus ping, traceroute, and the troubleshooting mindset.',
+      objectives:['Explain DNS resolution and records','Describe HTTPS and email protocols','Use ping/traceroute/nslookup','Apply a structured method'],
+      topics:['DNS records (A, AAAA, MX, CNAME)','HTTPS + TLS 1.3','SMTP/IMAP (POP3 fading)','ping, tracert, nslookup','Top-down vs bottom-up'],
+      labsList:[{id:'NE-L11a',title:'Build the Service Stack',desc:'Configure DNS + DHCP + HTTP on a server; a client gets an address, resolves a name, loads a page.',diff:3},{id:'NE-L11b',title:'Troubleshoot a Broken Network',desc:'A topology with several planted faults; isolate and fix each using testing utilities.',diff:3}] },
+    { n:'2.12', title:'Network Design, Cloud & Virtualization', time:'4h', labs:1, hasCli:false,
+      overview:'Zoom out to structure and where networks live now. The access/distribution/core model, redundancy, and the basics of cloud and virtualization. v1.1 emphasizes cloud-managed networking — Meraki, Catalyst Center, IaaS/PaaS/SaaS.',
+      objectives:['Describe the 3-tier hierarchy','Explain redundancy design','Define cloud models (IaaS/PaaS/SaaS)','Explain virtualization and SDN at a high level'],
+      topics:['Hierarchical design','Redundancy / fault tolerance','IaaS/PaaS/SaaS','Cloud-managed networking (Meraki, Catalyst Center)','Hypervisors and VMs'],
+      labsList:[{id:'NE-L12',title:'Hierarchical Topology Sketch',desc:'Build a small 3-tier topology (access → distribution → core) and verify end-to-end paths.',diff:2}] },
+    { n:'2.13', title:'Capstone — Build a Small Cisco Network', time:'8h', labs:2, hasCli:true,
+      overview:'Your first all-Cisco build. Configure IOS devices from scratch — hostnames, secure access (SSH only), addressing, routing, verification — and document it.',
+      objectives:['Apply initial IOS configuration','Configure SSH (Telnet disabled)','Implement addressing and routing','Verify, troubleshoot, document'],
+      topics:['IOS modes and CLI','Hostname, banners, passwords','SSH v2 config','Interface addressing','copy run start'],
+      labsList:[{id:'NE-CAP-a',title:'IOS From Zero',desc:'Take a fresh router + switch to fully configured: hostname, SSH only, secured lines, addressed interfaces, saved.',diff:2},{id:'NE-CAP-b',title:'Small Business Cisco Network',desc:'2 routers, 2 switches, 3 subnets, static routing, SSH, DHCP. Full GitHub writeup.',diff:3}] }
+  ],
+  c3: [
+    { n:'3.1', title:'Basic Device Configuration', time:'4h', labs:2, hasCli:true,
+      overview:'Day-one switch and router work done right. Management access, secure passwords, SSH (Telnet disabled), banners, and SVIs — the config every device should have before it ships.',
+      objectives:['Configure hostname, banners, passwords','Set up SSH with local users','Configure a management SVI','Save, back up, restore configs'],
+      topics:['IOS modes','Console/VTY/enable security','SSH v2 only','Management SVI','service password-encryption'],
+      labsList:[{id:'SRWE-L1a',title:'Secure Initial Config',desc:'Fresh switch + router → SSH only, banner, secure passwords, management SVI, saved.',diff:1},{id:'SRWE-L1b',title:'Config Backup & Restore',desc:'Back up running config, wipe, then restore. Practice the recovery workflow.',diff:2}] },
+    { n:'3.2', title:'Switching Concepts', time:'3h', labs:1, hasCli:true,
+      overview:'How switches move frames. Learning and forwarding, the MAC table, frame switching methods, and collision/broadcast behavior.',
+      objectives:['Explain learning and forwarding','Compare store-and-forward vs cut-through','Describe MAC table aging','Analyze collision/broadcast domains'],
+      topics:['Frame forwarding logic','Store-and-forward vs cut-through','MAC aging','Duplex and speed','Buffering'],
+      labsList:[{id:'SRWE-L2',title:'Inspect Switch Behavior',desc:'Observe MAC learning, flooding, and unicast forwarding; read show mac address-table.',diff:1}] },
+    { n:'3.3', title:'VLANs', time:'6h', labs:2, hasCli:true,
+      overview:'Logical segmentation at L2 — the 80% of campus switch work. Access vs trunk ports, 802.1Q tagging, native VLAN, voice VLANs, and DTP (disable in prod for security).',
+      objectives:['Create VLANs and assign access ports','Configure 802.1Q trunks','Set and verify the native VLAN','Diagnose VLAN/trunk misconfig'],
+      topics:['VLAN database','Access vs trunk','802.1Q + native VLAN','Voice VLANs','DTP (disable in prod)'],
+      labsList:[{id:'SRWE-L3a',title:'Multi-VLAN Campus',desc:'2 switches, 3 VLANs, 802.1Q trunk. Verify with show vlan brief and show int trunk.',diff:2},{id:'SRWE-L3b',title:'Trunk Troubleshooting',desc:'Native VLAN mismatch + wrong allowed list + missing trunk mode. Find and fix all three.',diff:3}] },
+    { n:'3.4', title:'Inter-VLAN Routing', time:'6h', labs:2, hasCli:true,
+      overview:'VLANs split broadcast domains; routing lets them talk again. Three approaches — legacy, router-on-a-stick, L3 switch SVIs — and when each is right. L3 switch SVIs are the modern default.',
+      objectives:['Configure router-on-a-stick','Configure SVIs on an L3 switch','Compare the three methods','Troubleshoot inter-VLAN routing'],
+      topics:['Legacy inter-VLAN','Router-on-a-stick subinterfaces','L3 switch SVIs','Per-VLAN gateways','Verification'],
+      labsList:[{id:'SRWE-L4a',title:'Router-on-a-Stick',desc:'1 router, 1 switch, 3 VLANs, a subinterface per VLAN. PCs across VLANs ping through the router.',diff:2},{id:'SRWE-L4b',title:'Layer 3 Switch Rebuild',desc:'Swap the router for an L3 switch with SVIs. Same outcome, fewer hops.',diff:3}] },
+    { n:'3.5', title:'STP Concepts + Rapid PVST+', time:'6h', labs:1, hasCli:true, v11:true,
+      overview:'The protocol that keeps L2 loops from melting the network. Root bridge election, port roles and states, and tuning with PortFast and BPDU Guard. v1.1 emphasizes Rapid PVST+ — the modern Cisco default that converges in seconds, not 30+.',
+      objectives:['Explain root bridge election','Identify port roles and states','Force root bridge placement','Enable Rapid PVST+, PortFast and BPDU Guard'],
+      topics:['STP / Rapid PVST+ / PVST+','Root election','Port roles/states','Path cost and timers','PortFast, BPDU/Root Guard'],
+      labsList:[{id:'SRWE-L5',title:'Tune Rapid PVST+ on a Switch Triangle',desc:'Enable Rapid PVST+, force a specific root, verify the blocked port, add PortFast + BPDU Guard on access ports.',diff:3}] },
+    { n:'3.6', title:'EtherChannel', time:'4h', labs:1, hasCli:true,
+      overview:'Bundle physical links into one logical link for bandwidth and redundancy. LACP vs PAgP, channel-group modes, and consistency rules. LACP is the open standard choice in 2026.',
+      objectives:['Configure a LACP EtherChannel','Compare LACP and PAgP modes','Diagnose channel mismatches','Verify with show etherchannel summary'],
+      topics:['Link aggregation','LACP / PAgP modes','channel-group config','Load balancing','Consistency rules'],
+      labsList:[{id:'SRWE-L6',title:'LACP Trunk Bundle',desc:'Bundle two links into a Port-Channel with LACP; force traffic over it and verify.',diff:2}] },
+    { n:'3.7', title:'DHCPv4 Configuration', time:'4h', labs:1, hasCli:true,
+      overview:'Centralized IPv4 assignment on Cisco gear. Configure a pool on a router, exclude addresses, and use DHCP relay across subnets.',
+      objectives:['Configure a DHCPv4 pool','Exclude addresses and set options','Configure ip helper-address relay','Verify and troubleshoot'],
+      topics:['Router DHCP pool','Excluded addresses','Pool options','DHCP relay','show ip dhcp binding'],
+      labsList:[{id:'SRWE-L7',title:'DHCP Across Subnets',desc:'DHCP pool on Router-A; clients on Router-B\'s LAN. Configure relay and verify cross-subnet leases.',diff:2}] },
+    { n:'3.8', title:'SLAAC and DHCPv6', time:'4h', labs:1, hasCli:true,
+      overview:'Dynamic addressing for IPv6. How SLAAC uses RAs, stateless vs stateful DHCPv6, and configuring each on Cisco routers.',
+      objectives:['Explain SLAAC and the RA process','Differentiate stateless/stateful DHCPv6','Configure both on a router','Verify IPv6 assignment'],
+      topics:['ICMPv6 ND, RA/RS','SLAAC','Stateless DHCPv6','Stateful DHCPv6','M and O flags'],
+      labsList:[{id:'SRWE-L8',title:'IPv6 Dynamic Addressing',desc:'Configure SLAAC, then stateful DHCPv6; confirm how each client obtains its address.',diff:3}] },
+    { n:'3.9', title:'FHRP Concepts (HSRP)', time:'4h', labs:1, hasCli:true,
+      overview:'Default-gateway redundancy. FHRPs share a virtual IP across two routers so a gateway failure is invisible to hosts. HSRP in depth; VRRP is the open standard alternative.',
+      objectives:['Explain virtual IP/MAC and roles','Configure HSRP with priority/preempt','Verify failover','Compare HSRP, VRRP, GLBP'],
+      topics:['FHRP purpose','HSRP active/standby','Priority and preempt','Interface tracking','VRRP / GLBP'],
+      labsList:[{id:'SRWE-L9',title:'HSRP Failover',desc:'Two routers sharing a virtual IP. Set priority, shut the active uplink, watch standby take over, restore + preempt.',diff:3}] },
+    { n:'3.10', title:'LAN Security Concepts', time:'4h', labs:1, hasCli:false,
+      overview:'Know the attacks before you defend. MAC flooding, VLAN hopping, DHCP spoofing, ARP attacks, and the AAA/802.1X concepts behind LAN defense.',
+      objectives:['Describe common LAN attacks','Explain mitigation for each','Describe AAA and 802.1X','Identify access-layer best practices'],
+      topics:['MAC flooding','VLAN hopping','DHCP spoofing/starvation','ARP spoofing','AAA, 802.1X'],
+      labsList:[{id:'SRWE-L10',title:'Demonstrate a LAN Attack',desc:'Simulate MAC flooding / DHCP starvation to see the impact before mitigating it next module.',diff:2}] },
+    { n:'3.11', title:'Switch Security Configuration', time:'5h', labs:2, hasCli:true,
+      overview:'Lock the switch down the way it should ship. Port security with sticky MACs, DHCP snooping, DAI, BPDU Guard, and disabling unused ports.',
+      objectives:['Configure port security + violation modes','Enable DHCP snooping','Configure DAI','Apply BPDU Guard, disable unused ports'],
+      topics:['Port security modes','Sticky MACs','DHCP snooping','DAI','Disabling unused interfaces'],
+      labsList:[{id:'SRWE-L11a',title:'Port Security Lab',desc:'Sticky MACs on all access ports; plug in a rogue device, verify err-disable and recovery.',diff:2},{id:'SRWE-L11b',title:'Full Switch Hardening',desc:'Apply DHCP snooping + DAI + BPDU Guard across an access layer; verify each protection.',diff:3}] },
+    { n:'3.12', title:'WLAN Concepts', time:'4h', labs:1, hasCli:false, v11:true,
+      overview:'Wireless without hand-waving. 802.11 standards including Wi-Fi 6/6E/7, 2.4/5/6 GHz bands, channels and interference, autonomous vs controller-based APs, and WLAN security with WPA3 as the modern default.',
+      objectives:['Compare 802.11 standards/bands (incl. Wi-Fi 6E/7)','Explain non-overlapping channels','Differentiate autonomous vs lightweight APs','Compare WPA2 and WPA3 (WPA3 default)'],
+      topics:['802.11 a/b/g/n/ac/ax/be','2.4 / 5 / 6 GHz','Channel planning','APs + WLC','WPA3 (default) / WPA2 (legacy)'],
+      labsList:[{id:'SRWE-L12',title:'Wireless Site Plan',desc:'Lay out APs and assign non-overlapping channels for a small office (incl. 6 GHz if available); document the rationale.',diff:2}] },
+    { n:'3.13', title:'WLAN Configuration', time:'6h', labs:2, hasCli:true, v11:true,
+      overview:'Build a real wireless LAN. Configure a WLC, register a lightweight AP, create a WPA3-secured WLAN, and associate clients — the enterprise model.',
+      objectives:['Configure a WLC + register an AP','Create a WPA3 WLAN','Map WLAN to a VLAN','Associate and verify clients'],
+      topics:['WLC setup','AP registration','WLAN/SSID creation','WPA3 PSK / Enterprise','VLAN-to-WLAN mapping'],
+      labsList:[{id:'SRWE-L13a',title:'WLAN with a WLC',desc:'Configure a WLC, register an AP, create a WPA3-Personal WLAN, associate a wireless client.',diff:3},{id:'SRWE-L13b',title:'Enterprise WLAN',desc:'Map a WLAN to a dedicated VLAN with WPA3-Enterprise (802.1X) auth; verify segmentation.',diff:3}] },
+    { n:'3.14', title:'Routing Concepts', time:'4h', labs:1, hasCli:true,
+      overview:'How a router decides. The routing table in depth, longest-prefix match, route sources, administrative distance, and packet forwarding.',
+      objectives:['Explain packet forwarding','Interpret every routing-table field','Apply longest-prefix match','Compare route sources / AD'],
+      topics:['Path determination','Routing table codes','Longest-prefix match','Administrative distance','Static vs dynamic sources'],
+      labsList:[{id:'SRWE-L14',title:'Read the Routing Table',desc:'Predict the chosen path for several destinations, then verify with traceroute.',diff:2}] },
+    { n:'3.15', title:'IP Static Routing (IPv4 & IPv6)', time:'6h', labs:2, hasCli:true,
+      overview:'Write routes by hand and know exactly what they do. Standard, default, summary, and floating static routes — for IPv4 and IPv6.',
+      objectives:['Configure IPv4 static/default/summary routes','Configure IPv6 static routes','Configure floating static for failover','Verify intent in the table'],
+      topics:['Next-hop vs exit-interface','Default route','Summary/aggregate routes','Floating static (AD)','IPv6 static syntax'],
+      labsList:[{id:'SRWE-L15a',title:'Dual-Stack Static Mesh',desc:'Three routers; full IPv4 + IPv6 static reachability plus a default route at the edge.',diff:2},{id:'SRWE-L15b',title:'Floating Static Failover',desc:'Add a backup floating static; fail the primary link and confirm the backup activates.',diff:3}] },
+    { n:'3.16', title:'Troubleshoot Static Routes + SRWE Capstone', time:'8h', labs:1, hasCli:true,
+      overview:'Diagnose routing the way you will on the job, then prove it all on a campus capstone integrating switching, routing, wireless, and security.',
+      objectives:['Apply a routing troubleshooting method','Diagnose missing/wrong/floating routes','Integrate all SRWE domains','Document a complete build'],
+      topics:['Troubleshooting methodology','Common static-route errors','show ip route diagnosis','End-to-end verification','Portfolio docs'],
+      labsList:[{id:'SRWE-CAP',title:'SMB Campus Capstone',desc:'Access + L3 distribution, VLANs, inter-VLAN routing, EtherChannel, Rapid PVST+, WLAN (WPA3), DHCP, FHRP, static routing, full security. Document it all.',diff:3}] }
+  ]
+};
+const GUIDES = {
+  'NB-L1':{obj:'Re-acquaint yourself with the Packet Tracer 9 workspace and confirm two PCs can communicate.',topo:'[PC0]───[Switch0]───[PC1]',steps:[{t:'Open Packet Tracer 9. From the bottom-left device bar, drag two <strong>PC</strong> end devices and one <strong>2960 switch</strong> onto the canvas.'},{t:'Select the <strong>Copper Straight-Through</strong> cable. Click PC0 → FastEthernet0, then Switch0 → an open port. Repeat for PC1. Wait for the link lights to turn green.'},{t:'Click PC0 → <strong>Desktop → IP Configuration</strong>. Set a static address.',c:'IP Address: 192.168.1.10\nSubnet Mask: 255.255.255.0'},{t:'Do the same on PC1 with <strong>192.168.1.11</strong> / 255.255.255.0.'},{t:'Open PC0 → <strong>Desktop → Command Prompt</strong> and ping PC1.',c:'ping 192.168.1.11'},{t:'Switch to <strong>Simulation mode</strong> (bottom-right). Send a simple PDU from PC0 to PC1 and step through to watch the ARP request and ICMP echo travel.'}],verify:['<code>ping</code> returns 4 replies (first may time out during ARP)','Link lights are green on both PCs and the switch','In Simulation mode you can see the ARP broadcast then the ICMP reply'],success:'Both PCs reply to ping and you can describe what ARP did on the first attempt.',challenge:'Add a third PC, change its mask to /25, and explain why it still pings the others on this flat network.'},
+  'NB-L2':{obj:'Build a small LAN, address it, and observe ARP resolving a MAC for the first packet.',topo:'[PC0]\n   \\\n  [Switch0]──[PC2]\n   /\n[PC1]',steps:[{t:'Place three PCs and one 2960 switch. Cable all three PCs to the switch with copper straight-through cables.'},{t:'Address the PCs in the same subnet: 192.168.10.1, .2, .3, all with mask 255.255.255.0.'},{t:'From PC0, clear and inspect the ARP cache before pinging.',c:'arp -d *\narp -a'},{t:'Ping PC2 from PC0, then re-check the ARP cache — PC2\'s MAC should now be listed.',c:'ping 192.168.10.3\narp -a'},{t:'Switch to Simulation mode and capture one fresh ping to see the broadcast ARP request and unicast reply.'}],verify:['<code>arp -a</code> shows the target MAC after a successful ping','All three PCs ping each other','You can identify the ARP request as a Layer 2 broadcast'],success:'You can explain why the first ping triggers ARP and subsequent ones do not.',challenge:'Replace the switch with a hub and re-run the capture. Note how every device now sees the traffic.'},
+  'NB-L3':{obj:'Add Wi-Fi to a home network and securely associate wireless clients using WPA3 (or WPA2 if device-limited).',topo:'[Laptop)))  ((( [Home Router] ))) (((Smartphone]\n                    │\n                  [PC0]',steps:[{t:'Place a <strong>Home Wireless Router</strong> (Network Devices → Wireless), one PC (wired), a Laptop, and a Smartphone.'},{t:'Cable the PC to a LAN port of the home router with copper straight-through.'},{t:'Open the home router → <strong>GUI tab → Wireless</strong>. Set the SSID and security. Use WPA3 if available, WPA2-PSK as a fallback.',c:'SSID: HomeNet\nAuthentication: WPA3-Personal (or WPA2-PSK)\nPassphrase: StrongPass!23'},{t:'On the Laptop, swap the wired module for a <strong>wireless</strong> module (power off the device first in the Physical tab).'},{t:'Laptop → Desktop → <strong>PC Wireless</strong> → Connect to <em>HomeNet</em> and enter the passphrase. Do the same on the Smartphone.'},{t:'Confirm all clients pulled DHCP addresses and can ping the wired PC.'}],verify:['Laptop and Smartphone show as associated to HomeNet','All clients received 192.168.0.x DHCP addresses','Wireless clients can ping the wired PC'],success:'Three clients (1 wired, 2 wireless) communicate through one WPA3-secured home router.',challenge:'Add a guest SSID on a different subnet and verify guests cannot reach the wired PC.'},
+  'NB-L4a':{obj:'Configure the DHCP service on a home router so clients auto-address.',topo:'[PC0]──[Home Router (DHCP)]──[PC1]',steps:[{t:'Place a Home Wireless Router and two wired PCs; cable both to LAN ports.'},{t:'Open the router → <strong>GUI → LAN Setup</strong>. Confirm/adjust the LAN IP and enable the DHCP server.',c:'Router IP: 192.168.0.1\nDHCP: On\nStart IP: 192.168.0.100\nMax users: 50'},{t:'On each PC → IP Configuration, select <strong>DHCP</strong> and wait for a lease.'},{t:'Verify the leased address, gateway, and DNS on each PC.',c:'ipconfig /all'}],verify:['Both PCs show DHCP-assigned addresses in the .100+ range','Default gateway = 192.168.0.1','<code>ping 192.168.0.1</code> succeeds'],success:'Clients obtain addressing automatically with no manual entry.',challenge:'Set a DHCP reservation for one PC so it always gets the same address.'},
+  'NB-L4b':{obj:'Build and verify a complete multi-device home network.',topo:'[Desktop]─┐\n[Laptop)))│\n[Phone)))─┼─[Home Router]\n[Printer]─┘',steps:[{t:'Place a home router, 2 wired PCs, a laptop, a smartphone, and a wireless printer.'},{t:'Cable the wired devices; associate the wireless devices to your WPA3 SSID (see NB-L3).'},{t:'Ensure all devices use DHCP and confirm each pulled an address.'},{t:'From a PC, ping every other device by IP to confirm full reachability.'},{t:'Document the topology: screenshot + a short table of device → IP → connection type.'}],verify:['Every device has a DHCP address','All devices ping each other','You produced an addressing table for the repo'],success:'A realistic 6-device home network works end to end and is documented.',challenge:'Add port forwarding for the printer so it could be reached from the "internet" side.'},
+  'NB-L5':{obj:'Connect the home network to a simulated internet and reach a remote server.',topo:'[PC]──[Home Router]──WAN──[ISP Router]──[Web Server]',steps:[{t:'Build a home network (router + PC). Add a separate router to represent the ISP and a Server.'},{t:'Connect the home router\'s <strong>Internet</strong> port to the ISP router with copper straight-through.'},{t:'On the home router GUI → Internet Setup, set a <strong>Static</strong> WAN IP on the ISP subnet (e.g. 209.165.200.226/30), gateway = ISP interface.'},{t:'On the ISP router, address its interfaces and add a route back to the home LAN (or use NAT on the home router so it is hidden).'},{t:'Configure the Server with an address and enable the HTTP service. From the home PC, browse to the server IP in the Web Browser.'}],verify:['Home PC can ping the ISP router','Home PC can load the server\'s web page','The PC\'s private address is translated at the home-router boundary'],success:'A private home client reaches a public server through a simulated ISP.',challenge:'Add DNS so the PC can reach the server by name instead of IP.'},
+  'NB-L6':{obj:'Assign IPv4 addressing entirely by hand and correct a planted fault.',topo:'[PC0]──[Switch]──[PC1]──[PC2]',steps:[{t:'Place 3 PCs + a switch. You will assign 192.168.5.0/24 by hand.'},{t:'Set PC0 = 192.168.5.10, PC1 = 192.168.5.11, PC2 = 192.168.5.12, mask 255.255.255.0, no gateway needed (single subnet).'},{t:'Deliberately misconfigure PC2 with the wrong mask (255.255.255.128) and try to ping it from PC0.'},{t:'Diagnose: confirm PC2\'s mask puts it in a different network boundary, then correct it.',c:'ipconfig\nping 192.168.5.12'},{t:'Re-test until all three communicate.'}],verify:['You can state network, first/last host, and broadcast for 192.168.5.0/24','The misconfigured PC fails, then succeeds after the fix','All three ping cleanly'],success:'You diagnosed a subnet-mask fault from symptoms alone.',challenge:'Re-address the network as two /25 subnets and add a router so they can still communicate.'},
+  'NB-L7':{obj:'Harden a home network with modern (2026) security defaults.',topo:'[Admin PC]──[Home Router]  ((( clients',steps:[{t:'On the home router GUI → <strong>Administration</strong>, change the default admin password to a strong value.'},{t:'Under Wireless → Security, set <strong>WPA3-Personal</strong> if available (otherwise WPA2-PSK). Never WEP, never Open.'},{t:'Disable <strong>WPS</strong>, disable remote management from the WAN, and disable UPnP unless you need it.'},{t:'Rename the SSID to something non-identifying; understand that hiding the SSID is not a real defense.'},{t:'Write a short before/after security checklist for your portfolio repo.'}],verify:['Admin login no longer uses defaults','Wi-Fi uses WPA3 (or WPA2 if device-limited)','WPS, WAN management, and unnecessary services disabled'],success:'The network passes a 2026 home-hardening checklist you can show in a repo.',challenge:'Research and add MAC filtering, then explain why it is weak as a sole defense.'},
+  'NB-CAP':{obj:'Design, build, secure, and document a realistic connected home from a brief.',topo:'2 desktops · 2 laptops · 2 phones · 1 printer · 1 NAS · guest Wi-Fi',steps:[{t:'<strong>Requirements:</strong> a family of 5 with a home office. Need wired desktops, roaming laptops/phones, a shared printer, a NAS for backups, and an isolated guest network.'},{t:'Produce an <strong>addressing plan</strong> first (on paper / markdown): main LAN range, DHCP scope, any static reservations (printer, NAS), guest range.'},{t:'Build the topology in PT 9: home router, switch if you need more wired ports, all end devices.'},{t:'Implement DHCP, reservations for printer + NAS, and a WPA3-secured main SSID + isolated guest SSID.'},{t:'Apply the full security checklist from NB-L7.'},{t:'Verify: every device reachable on the main LAN, guests isolated, printer/NAS at their reserved IPs.'},{t:'Document: topology screenshot, addressing table, security checklist, and a short README in a GitHub repo.'}],verify:['Addressing plan exists before the build','Reservations work for printer and NAS','Guest network is isolated from the main LAN','Repo contains diagram + table + README'],success:'A complete, secured, documented home network — your first portfolio piece.',challenge:'Add a simulated ISP + web server and expose only the NAS via a single port-forward rule.'},
+  'NE-L1':{obj:'Watch encapsulation in action by tracing one HTTPS request through every layer.',topo:'[PC]──[Switch]──[Router]──[Web Server]',steps:[{t:'Build PC → switch → router → server. Address each interface and enable HTTPS on the server.'},{t:'Enter <strong>Simulation mode</strong> and set the event filter to show ICMP, ARP, DNS, HTTPS, TCP.'},{t:'From the PC\'s Web Browser, request the server\'s page (https://) to generate traffic.'},{t:'Click the PDU at the PC and open <strong>Inbound/Outbound PDU Details</strong>. Note the Layer 7 → 4 → 3 → 2 wrapping (HTTPS → TCP → IP → Ethernet).'},{t:'Step the simulation hop by hop and watch the frame de/re-encapsulate at the switch and router.'}],verify:['You can name the PDU at each layer (data/segment/packet/frame)','You can point to the TCP, IP, and Ethernet headers in PDU details','The HTTPS page loads in the browser'],success:'You can walk someone through encapsulation using your own capture.',challenge:'Add DNS and capture the name-resolution exchange that precedes the HTTPS request.'},
+  'NE-L2':{obj:'Diagnose and fix failures caused by incorrect cable types (in an auto-MDIX era).',topo:'[PC]─?─[Switch]─?─[Switch]─?─[Router]',steps:[{t:'Build PC → Switch → Switch → Router. Intentionally use the wrong cable in places.'},{t:'Observe which links show red/amber instead of green.'},{t:'Recall the classic rule: like devices historically need crossover (switch-switch, router-PC), unlike devices need straight-through. <strong>Auto-MDIX</strong> on modern gear makes this irrelevant in many cases — but still tested.'},{t:'Replace each wrong cable; confirm links come up green.'},{t:'For the router-to-PC direct link, use a crossover (or console for management).'}],verify:['All links are green','You can state the correct cable for each device pair','End-to-end ping succeeds once cabling is fixed'],success:'Every segment uses the correct media and the path is up end to end.',challenge:'Note where auto-MDIX makes cable choice irrelevant on modern gear.'},
+  'NE-L3':{obj:'Observe how a switch learns MAC addresses and builds its forwarding table.',topo:'[PC0]──[Switch]──[PC1]\n          │\n        [PC2]',steps:[{t:'Build 3 PCs on one switch, same subnet. Open the switch CLI.'},{t:'Clear and view the (empty) MAC table.',c:'show mac address-table'},{t:'In Simulation mode, ping from PC0 to PC1 and watch the <strong>first frame flood</strong> out all ports (unknown destination).'},{t:'After the reply, re-check the table — the switch has now learned both MACs to specific ports.',c:'show mac address-table'},{t:'Ping again and confirm the frame is now <strong>forwarded</strong> only to PC1\'s port, not flooded.'}],verify:['First unknown-unicast frame floods; later ones do not','<code>show mac address-table</code> lists learned MAC↔port entries','You can explain dynamic learning and aging'],success:'You can demonstrate flood-then-learn-then-forward behavior on a real switch.',challenge:'Disconnect PC1, wait for the aging timer, and watch its entry disappear.'},
+  'NE-L4':{obj:'Trace an IPv4 packet across two routers and watch TTL decrement.',topo:'[PC0]──[R1]──[R2]──[PC1]',steps:[{t:'Build PC0 → R1 → R2 → PC1. Address all interfaces; put PC0 and PC1 in different subnets.'},{t:'Add static (or a quick dynamic) routes so R1 and R2 know all networks.'},{t:'From PC0, run a traceroute to PC1 to see each hop.',c:'tracert 10.0.2.10'},{t:'In Simulation mode, open PDU details at each router and note the <strong>TTL</strong> field decreasing by 1 per hop.'},{t:'Confirm successful end-to-end ping.'}],verify:['<code>tracert</code> shows two router hops then the destination','TTL decrements at each router in PDU details','PC0 ↔ PC1 ping succeeds'],success:'You can explain TTL and per-hop forwarding from your own capture.',challenge:'Remove one route and observe the ICMP "destination unreachable" behavior.'},
+  'NE-L5a':{obj:'Build subnetting speed and accuracy under time pressure.',topo:'(paper / subnet-calculator drill — no topology required)',steps:[{t:'Generate 20 random address+mask pairs (mix of /24–/30). Use a notebook or a subnet worksheet.'},{t:'For each, write: network address, first usable, last usable, broadcast, usable host count.'},{t:'Use the <strong>magic number</strong> method: 256 − (mask octet) = block size; multiples of the block size are subnet boundaries.'},{t:'Time the full set. Target under 15 minutes with zero errors.'},{t:'Verify a few answers in PT by configuring hosts at the boundaries you calculated.'}],verify:['All five values correct for each question','Completed within target time','Boundary hosts you configured actually communicate'],success:'You can subnet any common prefix quickly and verify it in practice.',challenge:'Repeat weekly and log your time to track improvement.'},
+  'NE-L5b':{obj:'Design and implement an efficient VLSM plan for unequal departments.',topo:'[R1]──┬──VLAN/Subnet per department\n       └── ...',steps:[{t:'<strong>Requirement:</strong> 192.168.10.0/24 for four departments needing 50, 25, 10, and 2 hosts.'},{t:'Allocate largest-first: 50 hosts → /26, 25 → /27, 10 → /28, 2 → /30. Write the exact ranges.'},{t:'Build a router with subinterfaces (or an L3 switch) and a switch per department.'},{t:'Configure each gateway with the first usable address of its subnet.'},{t:'Place a test PC in each department at a valid host address and verify inter-department routing.'}],verify:['No overlapping subnets; address space used efficiently','Each department PC has a correct gateway','PCs in different departments can ping each other'],success:'A working VLSM design with no wasted space and full reachability.',challenge:'Add a fifth department later and fit it without renumbering the others.'},
+  'NE-L6':{obj:'Add IPv6 alongside IPv4 (dual-stack) on a routed network — the 2026 default.',topo:'[PC0]──[R1]──[PC1]   (IPv4 + IPv6)',steps:[{t:'Build PC0 → R1 → PC1. Keep your existing IPv4 addressing.'},{t:'Enable IPv6 routing and address R1\'s interfaces.',c:'ipv6 unicast-routing\ninterface g0/0\n ipv6 address 2001:db8:a::1/64\ninterface g0/1\n ipv6 address 2001:db8:b::1/64'},{t:'Give each PC a static IPv6 address in its respective /64 with the router as gateway.'},{t:'Verify addressing and links on the router.',c:'show ipv6 interface brief\nshow ipv6 route'},{t:'Ping across the routers using IPv6 from each PC.'}],verify:['<code>show ipv6 interface brief</code> shows your GUAs + link-local','IPv6 routes to both /64s appear','PC0 pings PC1 over both IPv4 and IPv6'],success:'The same topology forwards both protocol families simultaneously.',challenge:'Switch the PCs to SLAAC and confirm they auto-generate addresses from the RA.'},
+  'NE-L7':{obj:'Stand up a DHCP server so clients auto-address.',topo:'[PC0]──[Switch]──[DHCP Server]──[PC1]',steps:[{t:'Build 2 PCs + a switch + a Server, all in 192.168.20.0/24.'},{t:'On the Server → Services → <strong>DHCP</strong>, enable the service and define a pool.',c:'Default Gateway: 192.168.20.1\nDNS Server: 192.168.20.5\nStart IP: 192.168.20.100\nSubnet Mask: 255.255.255.0\nMax users: 50'},{t:'Set the Server\'s own NIC to a static 192.168.20.5.'},{t:'On each PC → IP Configuration, choose <strong>DHCP</strong>.'},{t:'Confirm leases and verify the gateway/DNS were delivered.',c:'ipconfig /all'}],verify:['Both PCs receive addresses from the .100+ pool','Gateway and DNS match the pool options','DHCP request appears in Simulation mode (DORA)'],success:'Clients address automatically and you can walk through DORA.',challenge:'Add an exclusion range and a reservation, then prove both behave as configured.'},
+  'NE-L8':{obj:'Capture the ARP process and the default-gateway decision.',topo:'[PC0]──[Switch]──[R1]──[Remote Server]',steps:[{t:'Build PC0 → switch → R1 → server, with PC0 and the server in different subnets.'},{t:'On PC0 clear the ARP cache.',c:'arp -d *'},{t:'Ping a <strong>local</strong> device first and capture the ARP for that host\'s own MAC.'},{t:'Ping the <strong>remote</strong> server and observe PC0 ARP for the <strong>gateway</strong> MAC (not the server\'s) — the local/remote decision in action.',c:'ping <remote-server-ip>\narp -a'},{t:'Confirm the cache holds the gateway MAC for remote destinations.'}],verify:['Local ping ARPs for the host directly','Remote ping ARPs for the default gateway','<code>arp -a</code> reflects the gateway entry'],success:'You can explain why a host ARPs for the gateway when the destination is remote.',challenge:'Remove PC0\'s gateway and show that remote pings fail while local ones still work.'},
+  'NE-L9':{obj:'Configure static and default routing across three routers.',topo:'[PC0]──[R1]──[R2]──[R3]──[PC1]',steps:[{t:'Build the three-router chain with a PC at each end; address every link as its own subnet.'},{t:'On R1, add routes to the networks it does not directly connect.',c:'ip route 10.0.30.0 255.255.255.0 10.0.12.2\nip route 10.0.3.0 255.255.255.0 10.0.12.2'},{t:'Repeat on R2 and R3 for their missing networks (point toward the correct next hop).'},{t:'On the edge router, add a default route toward the "outside".',c:'ip route 0.0.0.0 0.0.0.0 <next-hop>'},{t:'Verify the tables and test end to end.',c:'show ip route\nping <far-PC-ip>'}],verify:['<code>show ip route</code> shows S (static) entries for remote nets','PC0 ↔ PC1 ping succeeds across all three routers','Traceroute shows the expected hop path'],success:'Full reachability achieved with hand-written routes only.',challenge:'Replace all static routes with OSPF single-area and compare the routing tables.'},
+  'NE-L10':{obj:'Capture and dissect a complete TCP session.',topo:'[PC]──[Switch]──[Web Server]',steps:[{t:'Build PC → switch → server; enable HTTP on the server.'},{t:'Enter Simulation mode with the TCP and HTTP filters on.'},{t:'Browse to the server to trigger a connection.'},{t:'Identify the three-way handshake in the capture: <strong>SYN → SYN/ACK → ACK</strong> via the TCP flags in PDU details.'},{t:'Find the data transfer, then the <strong>FIN/ACK</strong> teardown at the end.'}],verify:['You can point to the SYN, SYN/ACK, and ACK frames','Sequence/ack numbers increment as expected','You can locate the FIN teardown'],success:'You can narrate a full TCP open, transfer, and close from your own capture.',challenge:'Capture a DNS lookup (UDP) in the same session and contrast it with TCP — no handshake.'},
+  'NE-L11a':{obj:'Build a working application service stack: DHCP + DNS + HTTPS.',topo:'[Client]──[Switch]──[Server: DHCP+DNS+HTTPS]',steps:[{t:'Build a client + switch + server in 192.168.30.0/24. Give the server a static 192.168.30.5.'},{t:'On the server, enable <strong>DHCP</strong>, <strong>DNS</strong>, and <strong>HTTP/HTTPS</strong>.'},{t:'In DNS, add an A record mapping a name to the server.',c:'Name: www.lab.local\nAddress: 192.168.30.5'},{t:'Set the client to DHCP; confirm it receives an address and the server as DNS.'},{t:'From the client browser, visit <strong>https://www.lab.local</strong> — resolution then page load.'}],verify:['Client gets a DHCP lease with correct DNS','<code>nslookup www.lab.local</code> resolves to .5','The page loads by name, not just by IP'],success:'A client gets addressed, resolves a name, and loads a page — the full stack works.',challenge:'Add a second A record and an email service, then test name resolution for both.'},
+  'NE-L11b':{obj:'Systematically troubleshoot a network with several planted faults.',topo:'[PC0]──[Switch]──[R1]──[R2]──[Server]  (faults hidden)',steps:[{t:'Open the provided broken topology (or have a peer plant 3–4 faults: wrong IP, wrong mask, missing route, shutdown interface).'},{t:'Work <strong>bottom-up</strong>: check physical (link lights), then Layer 2, then Layer 3.'},{t:'Use targeted commands to localize each fault.',c:'ipconfig /all\nping <gateway>\nshow ip interface brief\nshow ip route'},{t:'Fix one fault at a time and re-test after each.'},{t:'Log each fault, how you found it, and the fix, for your repo.'}],verify:['Each fault identified with the command that revealed it','End-to-end connectivity restored','A written troubleshooting log exists'],success:'Connectivity restored methodically with a documented fault log.',challenge:'Have someone plant new faults and beat your previous time-to-resolution.'},
+  'NE-L12':{obj:'Build a small hierarchical (access/distribution/core) topology.',topo:'      [Core]\n      /    \\\n [Dist1]   [Dist2]\n  /   \\      /   \\\n[Acc] [Acc][Acc] [Acc]',steps:[{t:'Place a core L3 switch/router, two distribution switches, and two access switches per distribution.'},{t:'Connect access → distribution → core in the classic three-tier pattern.'},{t:'Address the inter-switch links and put a couple of test PCs at the access layer.'},{t:'Enable routing at the distribution/core so access subnets can reach each other.'},{t:'Verify an access PC under Dist1 can reach an access PC under Dist2 through the core.'}],verify:['Topology follows access → distribution → core','Inter-subnet traffic flows through the core','You can explain redundancy options at each tier'],success:'A clean hierarchical design with end-to-end reachability.',challenge:'Add a redundant core link and describe how STP or routing handles the loop/path choice.'},
+  'NE-CAP-a':{obj:'Take a fresh router and switch from default to fully, securely configured (SSH only, no Telnet).',topo:'[Admin PC]──SSH──[R1]──[SW1]',steps:[{t:'Place a router and switch. Set hostnames and secure the device.',c:'enable\nconfigure terminal\nhostname R1\nno ip domain-lookup\nbanner motd #Authorized access only#'},{t:'Secure console, VTY, and privileged EXEC.',c:'enable secret Str0ngEnable!\nline console 0\n password C0nsole!\n login\n exit\nservice password-encryption'},{t:'Configure SSH only (domain, keys, local user, VTY transport).',c:'ip domain-name lab.local\ncrypto key generate rsa modulus 2048\nip ssh version 2\nusername admin secret Adm1nPass!\nline vty 0 4\n login local\n transport input ssh\n exit'},{t:'Address an interface and bring it up.',c:'interface g0/0\n ip address 192.168.1.1 255.255.255.0\n no shutdown'},{t:'Repeat the secure baseline on the switch (add a management SVI), then save.',c:'copy running-config startup-config'}],verify:['SSH from the admin PC works; Telnet is refused','<code>show run</code> shows encrypted passwords','Interface is up/up and reachable','Config survives a reload (saved)'],success:'Both devices meet a 2026 secure baseline and accept SSH only.',challenge:'Add login throttling with <code>login block-for</code> and test it with bad logins.'},
+  'NE-CAP-b':{obj:'Build and document a small business network end to end on Cisco gear.',topo:'[R1]──[R2]\n  │      │\n[SW1]  [SW2]\n  │      │\nclients clients  (3 subnets, static routing)',steps:[{t:'Apply the secure baseline from NE-CAP-a to both routers and both switches.'},{t:'Design 3 subnets (two LANs + the router-to-router link) and document the addressing plan first.'},{t:'Address all interfaces; bring up the WAN link between R1 and R2.'},{t:'Add static routes so every subnet reaches every other; add a default route at the edge.'},{t:'Configure DHCP for client subnets and verify clients auto-address.'},{t:'Test full reachability, then document: topology, addressing table, configs, and a README.'}],verify:['All subnets reachable end to end','Clients receive DHCP leases','SSH management works on every device','Repo has diagram + addressing table + configs'],success:'A documented, secured, fully routed small-business network — a strong portfolio piece.',challenge:'Swap static routing for OSPF and add a second WAN link as a backup path.'},
+  'SRWE-L1a':{obj:'Apply a secure initial configuration to a switch and router (SSH only).',topo:'[Admin PC]──SSH──[SW1]──[R1]',steps:[{t:'On the switch, set hostname, disable DNS lookup, and add a banner.',c:'hostname SW1\nno ip domain-lookup\nbanner motd #Authorized only#'},{t:'Create a management SVI for remote access.',c:'interface vlan 1\n ip address 192.168.1.2 255.255.255.0\n no shutdown\nip default-gateway 192.168.1.1'},{t:'Secure access and enable SSH v2 only.',c:'enable secret Str0ng!\nip domain-name lab.local\ncrypto key generate rsa modulus 2048\nip ssh version 2\nusername admin secret Adm1n!\nline vty 0 4\n login local\n transport input ssh'},{t:'Apply the same secure baseline to R1 and address g0/0 as 192.168.1.1/24.'},{t:'Save both devices.',c:'copy run start'}],verify:['SSH to SW1 and R1 succeeds from the admin PC','Telnet is rejected','Passwords are encrypted in <code>show run</code>','SVI is up and pings the router'],success:'Both devices are securely reachable over SSH with a saved config.',challenge:'Move management to a dedicated VLAN 99 and re-test.'},
+  'SRWE-L1b':{obj:'Practice config backup, wipe, and restore.',topo:'[Admin PC / TFTP]──[R1]',steps:[{t:'On R1, view the current config and confirm it is saved.',c:'show running-config\ncopy run start'},{t:'Back up the startup config to a TFTP server (place a TFTP server in PT).',c:'copy startup-config tftp:'},{t:'Erase the startup config and reload to simulate a fresh device.',c:'erase startup-config\nreload'},{t:'After reload (skip initial dialog), restore from TFTP.',c:'copy tftp: running-config'},{t:'Confirm the restored config matches and save it.'}],verify:['Backup file appears on the TFTP server','Device boots blank after erase + reload','Restored config matches the original','Config re-saved to startup'],success:'You can perform a full backup-and-restore recovery workflow.',challenge:'Document the exact recovery runbook steps for your repo.'},
+  'SRWE-L2':{obj:'Demonstrate switch MAC learning, flooding, and forwarding.',topo:'[PC0]──[SW1]──[PC1]\n          │\n        [PC2]',steps:[{t:'Build 3 PCs on SW1, same subnet. View the empty MAC table.',c:'show mac address-table'},{t:'In Simulation mode, ping PC0 → PC1; watch the first frame flood out all ports.'},{t:'Re-check the MAC table — entries for PC0 and PC1 are now learned.',c:'show mac address-table'},{t:'Ping again and confirm forwarding only to PC1\'s port.'},{t:'Set a static MAC entry and observe it persists (no aging).',c:'mac address-table static 0001.0001.0001 vlan 1 interface fa0/3'}],verify:['First unknown-unicast floods, later frames are forwarded','Dynamic entries appear after traffic','Static entry shows as STATIC in the table'],success:'You can show flood-learn-forward and the difference between dynamic and static entries.',challenge:'Compare store-and-forward vs cut-through conceptually and note which PT models.'},
+  'SRWE-L3a':{obj:'Create VLANs and trunk two switches with 802.1Q.',topo:'[PCs]──[SW1]══trunk══[SW2]──[PCs]',steps:[{t:'On SW1, create the VLANs.',c:'vlan 10\n name Staff\nvlan 20\n name Students\nvlan 30\n name Servers'},{t:'Assign access ports to VLANs.',c:'interface fa0/1\n switchport mode access\n switchport access vlan 10'},{t:'Configure the inter-switch link as a trunk and disable DTP negotiation (security best practice).',c:'interface g0/1\n switchport mode trunk\n switchport nonegotiate\n switchport trunk native vlan 99'},{t:'Repeat the VLAN + trunk config on SW2 (matching native VLAN).'},{t:'Verify VLANs and trunk status.',c:'show vlan brief\nshow interfaces trunk'}],verify:['<code>show vlan brief</code> lists all VLANs with correct ports','<code>show interfaces trunk</code> shows the link trunking','Same-VLAN PCs across switches can ping; different-VLAN cannot (yet)'],success:'VLANs span both switches over a single 802.1Q trunk with DTP disabled.',challenge:'Restrict the trunk to only carry VLANs 10,20,30,99 with the allowed-VLAN list.'},
+  'SRWE-L3b':{obj:'Find and fix three classic trunking faults.',topo:'[SW1]══(broken trunk)══[SW2]',steps:[{t:'Open a topology with a native-VLAN mismatch, a missing trunk mode on one side, and a too-restrictive allowed-VLAN list.'},{t:'Check trunk status on both switches and read the CDP/native-VLAN mismatch warnings.',c:'show interfaces trunk\nshow interface g0/1 switchport'},{t:'Fix the native VLAN so both ends match.',c:'interface g0/1\n switchport trunk native vlan 99'},{t:'Set both ends to trunk mode and correct the allowed list.',c:'switchport mode trunk\nswitchport trunk allowed vlan 10,20,30,99'},{t:'Re-verify and confirm all VLANs pass.'}],verify:['No native VLAN mismatch messages','Both ends show trunking','All intended VLANs traverse the trunk'],success:'All three trunk faults resolved and verified.',challenge:'Explain the security risk of a native-VLAN mismatch (VLAN hopping).'},
+  'SRWE-L4a':{obj:'Route between VLANs using router-on-a-stick.',topo:'[SW1]══trunk══[R1] (subinterfaces .10 .20 .30)',steps:[{t:'On SW1, configure VLANs and set the link to R1 as a trunk.'},{t:'On R1, create a subinterface per VLAN with 802.1Q encapsulation and a gateway IP.',c:'interface g0/0.10\n encapsulation dot1Q 10\n ip address 192.168.10.1 255.255.255.0\ninterface g0/0.20\n encapsulation dot1Q 20\n ip address 192.168.20.1 255.255.255.0\ninterface g0/0.30\n encapsulation dot1Q 30\n ip address 192.168.30.1 255.255.255.0'},{t:'Bring up the physical interface.',c:'interface g0/0\n no shutdown'},{t:'Set each PC\'s gateway to its VLAN subinterface IP.'},{t:'Verify routing between VLANs.',c:'show ip route\nping <pc-in-other-vlan>'}],verify:['Each subinterface is up with its VLAN IP','PCs in different VLANs can now ping each other','<code>show ip route</code> lists all three connected subnets'],success:'A single router interface routes among three VLANs over one trunk.',challenge:'Add a fourth VLAN and confirm only a config change (no new cabling) is needed.'},
+  'SRWE-L4b':{obj:'Replace router-on-a-stick with a Layer 3 switch using SVIs (the modern default).',topo:'[Access SW]──[L3 SW (SVIs .10 .20 .30)]',steps:[{t:'On the multilayer switch, enable routing.',c:'ip routing'},{t:'Create the VLANs, then an SVI (gateway) per VLAN.',c:'interface vlan 10\n ip address 192.168.10.1 255.255.255.0\ninterface vlan 20\n ip address 192.168.20.1 255.255.255.0\ninterface vlan 30\n ip address 192.168.30.1 255.255.255.0'},{t:'Trunk the link to the access switch and assign access ports to VLANs.'},{t:'Point each PC\'s gateway at the matching SVI.'},{t:'Verify inter-VLAN routing and compare hop count to the RoaS version.',c:'show ip route\nshow ip interface brief'}],verify:['SVIs are up/up for each VLAN','Inter-VLAN ping works','Routing happens in the switch (no external router hop)'],success:'The L3 switch routes between VLANs with SVIs — faster and cleaner than RoaS.',challenge:'Add a routed port (no switchport) uplink and route to an external network.'},
+  'SRWE-L5':{obj:'Tune Rapid PVST+ (the 2026 default): force the root bridge and protect access ports.',topo:'[SW1]──[SW2]\n   \\    /\n   [SW3]  (triangle = loop)',steps:[{t:'Build three switches in a triangle (a physical loop). Enable Rapid PVST+ everywhere.',c:'spanning-tree mode rapid-pvst'},{t:'Confirm STP is blocking one port.',c:'show spanning-tree'},{t:'Force SW1 to become root for the relevant VLAN.',c:'spanning-tree vlan 1 root primary'},{t:'Verify the root changed and note which port is now blocking.',c:'show spanning-tree vlan 1'},{t:'On access ports, enable PortFast and BPDU Guard.',c:'interface range fa0/1 - 24\n spanning-tree portfast\n spanning-tree bpduguard enable'},{t:'Test: plug a switch into a PortFast port and confirm BPDU Guard err-disables it.'}],verify:['Switches running Rapid PVST+ (sub-second convergence)','SW1 is the root bridge after tuning','Exactly one port is blocking to break the loop','BPDU Guard shuts a port that receives a BPDU'],success:'Predictable Rapid PVST+ topology with protected access edges.',challenge:'Set a different root per VLAN (PVST+ load balancing) and observe.'},
+  'SRWE-L6':{obj:'Bundle two links into a LACP EtherChannel.',topo:'[SW1]══(2 links → Po1)══[SW2]',steps:[{t:'Identify two parallel links between SW1 and SW2. Shut them before configuring to avoid loops.'},{t:'On SW1, add both ports to a channel group with LACP active.',c:'interface range g0/1 - 2\n channel-group 1 mode active\n no shutdown'},{t:'On SW2, configure the matching side (active or passive).',c:'interface range g0/1 - 2\n channel-group 1 mode active\n no shutdown'},{t:'Configure the logical Port-Channel as a trunk if needed.',c:'interface port-channel 1\n switchport mode trunk'},{t:'Verify the bundle.',c:'show etherchannel summary'}],verify:['<code>show etherchannel summary</code> shows Po1 with both ports bundled (P)','Protocol shows LACP','Traffic uses the logical channel; no STP block on the second link'],success:'Two physical links act as one logical link with combined bandwidth.',challenge:'Break one member link and confirm the channel stays up on the survivor.'},
+  'SRWE-L7':{obj:'Provide DHCP across subnets using a relay.',topo:'[Clients]──[R-B]──[R-A: DHCP pool]',steps:[{t:'On R-A, configure a DHCP pool and exclude the gateway range.',c:'ip dhcp excluded-address 10.0.2.1 10.0.2.10\nip dhcp pool LAN_B\n network 10.0.2.0 255.255.255.0\n default-router 10.0.2.1\n dns-server 8.8.8.8'},{t:'Ensure R-A has a route to the client subnet (10.0.2.0/24).'},{t:'On R-B, point the client-facing interface at the DHCP server with a relay.',c:'interface g0/0\n ip helper-address <R-A-interface-ip>'},{t:'Set clients to DHCP and confirm leases arrive from across the router.'},{t:'Verify bindings on R-A.',c:'show ip dhcp binding'}],verify:['Clients on R-B\'s LAN receive 10.0.2.x addresses','<code>show ip dhcp binding</code> on R-A lists the leases','Gateway and DNS were delivered'],success:'A central DHCP server addresses clients on a remote subnet via relay.',challenge:'Add a second remote subnet with its own pool and relay.'},
+  'SRWE-L8':{obj:'Configure IPv6 dynamic addressing with SLAAC and stateful DHCPv6.',topo:'[PC]──[R1]  (SLAAC, then DHCPv6)',steps:[{t:'Enable IPv6 routing and address R1\'s LAN interface.',c:'ipv6 unicast-routing\ninterface g0/0\n ipv6 address 2001:db8:1::1/64\n no shutdown'},{t:'Leave the RA defaults so the client uses <strong>SLAAC</strong>; set the PC NIC to "Automatic" IPv6 and confirm it builds an address from the /64.'},{t:'Now switch to <strong>stateful DHCPv6</strong>: create a pool and flag the RA so clients ask the server.',c:'ipv6 dhcp pool LAN1\n address prefix 2001:db8:1::/64\n dns-server 2001:4860:4860::8888\ninterface g0/0\n ipv6 nd managed-config-flag\n ipv6 dhcp server LAN1'},{t:'Renew the client and confirm it now gets its address from the DHCPv6 server, not SLAAC.'},{t:'Verify on the router.',c:'show ipv6 dhcp binding\nshow ipv6 interface brief'}],verify:['Client builds a SLAAC address before the change','After the managed flag, client uses DHCPv6','<code>show ipv6 dhcp binding</code> lists the client'],success:'You can demonstrate both stateless (SLAAC) and stateful (DHCPv6) addressing.',challenge:'Configure stateless DHCPv6 (other-config flag) to hand out only DNS while SLAAC sets the address.'},
+  'SRWE-L9':{obj:'Provide gateway redundancy with HSRP and test failover.',topo:'[LAN]──[SW]──┬──[R1] (active)\n             └──[R2] (standby)',steps:[{t:'Address R1 and R2 in the same LAN subnet (e.g. .2 and .3); the virtual IP will be .1.'},{t:'Configure HSRP on both, making R1 preferred.',c:'interface g0/0\n standby 1 ip 192.168.1.1\n standby 1 priority 110\n standby 1 preempt'},{t:'On R2 use the default priority (100) and add preempt.',c:'interface g0/0\n standby 1 ip 192.168.1.1\n standby 1 preempt'},{t:'Set client gateways to the <strong>virtual IP</strong> .1. Confirm R1 is Active.',c:'show standby brief'},{t:'Shut R1\'s LAN interface and watch R2 become Active with no client outage; restore R1 and confirm preempt.'}],verify:['<code>show standby brief</code> shows R1 Active, R2 Standby','Clients keep pinging through the failover','R1 reclaims Active after recovery (preempt)'],success:'Gateway redundancy works — a router failure is invisible to clients.',challenge:'Add interface tracking so R1 yields if its WAN uplink (not just the LAN) goes down.'},
+  'SRWE-L10':{obj:'Observe a LAN attack to motivate the defenses in the next module.',topo:'[Attacker]──[SW]──[Victim] [DHCP]',steps:[{t:'Build a switch with a couple of clients and a DHCP server.'},{t:'Simulate <strong>MAC flooding</strong> conceptually: discuss how a flooded CAM table forces the switch to fail-open and flood frames.'},{t:'Simulate <strong>DHCP starvation/spoofing</strong>: add a rogue DHCP server and watch a client potentially accept a rogue lease/gateway.'},{t:'Note the symptoms each attack produces from the victim\'s perspective.'},{t:'Write down which Module 3.11 feature mitigates each (port security, DHCP snooping).'}],verify:['You can describe MAC flooding and its impact','You can show a rogue DHCP handing out a bad gateway','You mapped each attack to its mitigation'],success:'You understand the attacks well enough to configure targeted defenses next.',challenge:'Research VLAN hopping and explain how native-VLAN hygiene and disabling DTP prevent it.'},
+  'SRWE-L11a':{obj:'Lock down access ports with port security.',topo:'[PC]──[SW1 fa0/1: port-security]',steps:[{t:'On an access port, enable port security with sticky learning and a violation action.',c:'interface fa0/1\n switchport mode access\n switchport port-security\n switchport port-security maximum 1\n switchport port-security mac-address sticky\n switchport port-security violation shutdown'},{t:'Connect the legitimate PC and generate traffic so its MAC is learned (sticky).'},{t:'Verify the learned MAC and the port-security status.',c:'show port-security interface fa0/1\nshow port-security address'},{t:'Disconnect the PC and connect a different device to trigger a violation (port err-disables).'},{t:'Recover the port.',c:'interface fa0/1\n shutdown\n no shutdown'}],verify:['Sticky MAC appears in the running config','A rogue device err-disables the port','<code>show port-security</code> shows the violation count'],success:'Unauthorized devices are blocked automatically on access ports.',challenge:'Switch the violation mode to restrict and compare the behavior (no shutdown, just drops + logs).'},
+  'SRWE-L11b':{obj:'Apply a full access-layer hardening pass.',topo:'[Clients]──[SW1]──[R1: DHCP]',steps:[{t:'Enable DHCP snooping globally and trust only the uplink toward the real DHCP server.',c:'ip dhcp snooping\nip dhcp snooping vlan 10\ninterface g0/1\n ip dhcp snooping trust'},{t:'Enable Dynamic ARP Inspection for the VLAN and trust the same uplink.',c:'ip arp inspection vlan 10\ninterface g0/1\n ip arp inspection trust'},{t:'Apply PortFast + BPDU Guard on all access ports.'},{t:'Disable all unused ports.',c:'interface range fa0/13 - 24\n shutdown'},{t:'Verify each protection.',c:'show ip dhcp snooping\nshow ip arp inspection\nshow spanning-tree summary'}],verify:['Rogue DHCP offers are dropped on untrusted ports','Spoofed ARP is rejected by DAI','Unused ports are administratively down'],success:'The access layer resists rogue DHCP, ARP spoofing, and BPDU injection.',challenge:'Add port security on top and document the complete switch-hardening checklist.'},
+  'SRWE-L12':{obj:'Plan AP placement and channels for a small office (including 6 GHz / Wi-Fi 6E if used).',topo:'[AP1 ch1]  [AP2 ch6]  [AP3 ch11]  (2.4GHz)\n  + 5GHz / 6GHz overlay',steps:[{t:'Sketch a small office floor plan and decide how many APs you need for coverage + capacity.'},{t:'For 2.4 GHz, assign only non-overlapping channels <strong>1, 6, 11</strong> to adjacent APs to avoid co-channel interference.'},{t:'For 5 GHz and 6 GHz, note the much larger pool of non-overlapping channels; use 5/6 GHz where dense capacity is needed.'},{t:'Decide SSIDs, band steering, and which security to use — <strong>WPA3</strong> as the default, WPA2 only for legacy gear.'},{t:'Document the plan: AP locations, channels, power levels, and rationale.'}],verify:['Adjacent APs never share a 2.4 GHz channel','You justified 2.4 vs 5 vs 6 GHz choices','A written site plan exists for the repo'],success:'A modern wireless plan that avoids interference and uses WPA3.',challenge:'Add a heat-map sketch and identify likely dead zones to fix.'},
+  'SRWE-L13a':{obj:'Stand up a WLAN with a wireless LAN controller using WPA3.',topo:'[WLC]──[SW]──[LWAP)))  (((Wireless Client]',steps:[{t:'Place a WLC, a switch, a lightweight AP, and a wireless client. Cable the WLC and AP to the switch.'},{t:'Provide the AP an address (often via DHCP) so it can discover and register with the WLC.'},{t:'In the WLC management GUI, create a new <strong>WLAN/SSID</strong>.'},{t:'Set Layer 2 security to <strong>WPA3-Personal</strong> (SAE) with a strong passphrase. Use WPA2-PSK only if the client doesn\'t support WPA3.'},{t:'On the client, associate to the SSID, enter the key, and confirm it gets an address and connectivity.'}],verify:['The AP shows as registered/joined on the WLC','The WLAN/SSID is active with WPA3','The wireless client associates and pings the wired side'],success:'A controller-based WPA3 WLAN with a registered AP and a connected client.',challenge:'Add a second WLAN for a different department on its own VLAN.'},
+  'SRWE-L13b':{obj:'Build an enterprise WLAN mapped to a VLAN with WPA3-Enterprise.',topo:'[WLC]──trunk──[SW]   WLAN→VLAN, WPA3-Enterprise',steps:[{t:'Trunk the switch port to the WLC so multiple VLANs can be carried.'},{t:'On the WLC, create a WLAN and map it to a dedicated VLAN/interface (e.g. VLAN 50).'},{t:'Set security to <strong>WPA3-Enterprise (802.1X)</strong> pointing at a RADIUS/AAA server (add one in PT).'},{t:'Associate a client using user credentials (not a shared PSK).'},{t:'Verify the client lands in VLAN 50 and is segmented from other VLANs.'}],verify:['WLAN is mapped to the correct VLAN','Client authenticates via 802.1X, not PSK','Client is reachable only within its VLAN policy'],success:'An enterprise WPA3 WLAN with per-user auth and VLAN segmentation.',challenge:'Add a guest WLAN with web auth on an isolated VLAN.'},
+  'SRWE-L14':{obj:'Predict router path selection, then verify it.',topo:'[PC0]──[R1]══[R2]══[R3]──[PC1] (multiple paths)',steps:[{t:'Build a topology where more than one path to a destination exists.'},{t:'On a router, read the routing table and identify the route codes (C, L, S, O...).',c:'show ip route'},{t:'For a given destination, predict which entry wins using <strong>longest-prefix match</strong>, then administrative distance, then metric.'},{t:'Verify your prediction with a traceroute from the source PC.',c:'tracert <dest>'},{t:'Change a route\'s AD or add a more specific route and re-predict + re-verify.'}],verify:['You can read every field/code in the routing table','Your predicted path matches the traceroute','You can explain LPM > AD > metric ordering'],success:'You can reason about path selection before testing — and be right.',challenge:'Add a static route more specific than a dynamic one and prove it takes over.'},
+  'SRWE-L15a':{obj:'Configure full IPv4 + IPv6 static reachability on three routers.',topo:'[R1]══[R2]══[R3]  (dual-stack static)',steps:[{t:'Address every link with both IPv4 and IPv6 (one subnet/prefix per link).'},{t:'Enable IPv6 routing on all routers.',c:'ipv6 unicast-routing'},{t:'On R1, add IPv4 and IPv6 routes to the networks beyond R2.',c:'ip route 10.0.3.0 255.255.255.0 10.0.12.2\nipv6 route 2001:db8:3::/64 2001:db8:12::2'},{t:'Repeat on R2 and R3 for their missing networks; add a default route at the edge.',c:'ip route 0.0.0.0 0.0.0.0 <next-hop>\nipv6 route ::/0 <next-hop-v6>'},{t:'Verify both tables and ping end to end over each protocol.',c:'show ip route\nshow ipv6 route'}],verify:['Both <code>show ip route</code> and <code>show ipv6 route</code> list all remote nets','End-to-end ping works over IPv4 and IPv6','Default route present at the edge'],success:'A dual-stack network fully reachable using static routes only.',challenge:'Summarize several contiguous subnets into one static summary route.'},
+  'SRWE-L15b':{obj:'Configure a floating static route for automatic failover.',topo:'[R1]══primary══[R2]\n   ╲___backup___╱',steps:[{t:'Build two paths between R1 and R2 (a primary and a slower backup link).'},{t:'Add the primary static route with default AD (1).',c:'ip route 10.0.2.0 255.255.255.0 10.0.12.2'},{t:'Add a <strong>floating</strong> static over the backup with a higher AD so it stays dormant.',c:'ip route 10.0.2.0 255.255.255.0 10.0.99.2 5'},{t:'Confirm only the primary is installed.',c:'show ip route'},{t:'Shut the primary link and confirm the floating route activates; restore and confirm it goes dormant again.'}],verify:['Only the AD-1 route appears while the primary is up','Backup installs automatically when the primary fails','Traffic continues during the failover'],success:'A backup path takes over automatically and steps aside on recovery.',challenge:'Measure how many pings drop during failover and explain why.'},
+  'SRWE-CAP':{obj:'Integrate everything into a documented small-to-medium business campus (2026 stack).',topo:'[Core/L3]──[Dist]──[Access SWs]──clients + [WLC/AP WPA3] + [Edge R: DHCP/FHRP/static]',steps:[{t:'<strong>Plan first:</strong> VLANs per department, an addressing plan (incl. management VLAN), and where routing, wireless, and the edge live. Document before building.'},{t:'Apply the secure baseline (SSH only, banners, passwords) to every device.'},{t:'Build the switched core: VLANs, 802.1Q trunks (DTP off), EtherChannel between core/dist, Rapid PVST+ root tuning.'},{t:'Add inter-VLAN routing on the L3 switch (SVIs) and DHCP for client VLANs (relay if central).'},{t:'Add HSRP for gateway redundancy and static/default routing to the edge.'},{t:'Stand up the WLAN (WLC + AP) on its own VLAN with WPA3.'},{t:'Run a full security pass: port security, DHCP snooping, DAI, BPDU Guard, disable unused ports.'},{t:'Verify end to end, then document: topology, addressing table, per-device configs, and a README.'}],verify:['All VLANs route correctly with redundant gateways','Wireless clients land on their VLAN over WPA3 and reach resources','Security features verified individually','Repo contains full diagram + addressing + configs + README'],success:'A complete, redundant, secured, documented 2026 SMB campus — your flagship SRWE portfolio piece.',challenge:'Write a one-page "as-built" doc and a short failure-test log (what you broke and how it recovered).'}
+};
+/* ============ RENDER ============ */
+const LAB_DOCS = 'https://www.netacad.com/courses/packet-tracer';
+let currentLab = null;
+let currentTab = 'overview';
+const filterState = { c1:{q:'',f:'all'}, c2:{q:'',f:'all'}, c3:{q:'',f:'all'} };
+
+function renderModules(courseKey, containerId) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = courses[courseKey].map(m => {
+    const labsHtml = m.labsList.length ? `
+      <div class="module-section">
+        <h4>// Packet Tracer Labs (${m.labsList.length}) — click to open the full guide</h4>
+        <div class="labs-grid">
+          ${m.labsList.map(lab => `
+            <div class="lab" data-lab="${lab.id}">
+              <span class="lab-tag">${lab.id}</span>
+              <div>
+                <div class="lab-title">${lab.title}</div>
+                <div class="lab-desc">${lab.desc}</div>
+              </div>
+              <div class="lab-difficulty" title="Difficulty ${lab.diff}/3">
+                ${[1,2,3].map(i=>`<span class="dot ${i<=lab.diff?'on':''}"></span>`).join('')}
+              </div>
+              <button class="lab-open" onclick="openGuide('${lab.id}')">Open Guide ▸</button>
+            </div>`).join('')}
+        </div>
+      </div>` : '';
+    const v11Badge = m.v11 ? '<span class="module-badge v11">v1.1</span>' : '';
+    const searchText = (m.title + ' ' + m.overview + ' ' + m.topics.join(' ') + ' ' + m.labsList.map(l => l.title + ' ' + l.desc + ' ' + l.id).join(' ')).toLowerCase();
+    return `
+      <div class="module" data-key="${courseKey}-${m.n}" data-cli="${m.hasCli?1:0}" data-v11="${m.v11?1:0}" data-search="${searchText.replace(/"/g,'&quot;')}">
+        <div class="module-head" onclick="toggleModule(this.parentElement)">
+          <span class="module-num">${m.n}</span>
+          <span class="module-title">${m.title}</span>
+          ${m.labs>0?`<span class="module-badge lab">${m.labs} LAB${m.labs>1?'S':''}</span>`:'<span class="module-badge">CONCEPT</span>'}
+          ${v11Badge}
+          <span class="module-time">${m.time}</span>
+          <span class="module-toggle">▼</span>
+        </div>
+        <div class="module-body"><div class="module-content">
+          <p class="module-overview">${m.v11?'<span class="tag">v1.1 New</span>':''}${m.overview}</p>
+          <div class="module-section"><h4>// Learning Objectives</h4><ul>${m.objectives.map(o=>`<li>${o}</li>`).join('')}</ul></div>
+          <div class="module-section"><h4>// Topics Covered</h4><ul>${m.topics.map(t=>`<li>${t}</li>`).join('')}</ul></div>
+          ${labsHtml}
+          <div class="module-actions">
+            <button class="btn primary" onclick="markDone(event,'${courseKey}-${m.n}')">Mark Module Complete</button>
+            <a class="btn" href="${LAB_DOCS}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Get Packet Tracer 9 ▸</a>
+          </div>
+        </div></div>
+      </div>`;
+  }).join('') + '<div class="empty-state" style="display:none;" data-empty><strong>No matches</strong>Try a different search term or filter.</div>';
+}
+
+function toggleModule(el) { el.classList.toggle('open'); }
+
+function switchTab(tabId) {
+  currentTab = tabId;
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelector(`.tab[data-tab="${tabId}"]`)?.classList.add('active');
+  document.getElementById(tabId).classList.add('active');
+  window.scrollTo({ top: document.querySelector('.tab-section').offsetTop - 80, behavior: 'smooth' });
+}
+document.querySelectorAll('.tab').forEach(b => b.addEventListener('click', () => switchTab(b.dataset.tab)));
+
+/* ---- search + filter ---- */
+function applyFilter(courseKey) {
+  const state = filterState[courseKey];
+  const container = document.getElementById('modules-' + courseKey);
+  if (!container) return;
+  const modules = container.querySelectorAll('.module');
+  const p = loadProgress();
+  let visible = 0;
+  modules.forEach(m => {
+    const key = m.dataset.key;
+    const isDone = !!p[key];
+    const hasCli = m.dataset.cli === '1';
+    const isV11 = m.dataset.v11 === '1';
+    const isInProgress = m.classList.contains('open') && !isDone;
+    const text = m.dataset.search || '';
+    const q = state.q.trim().toLowerCase();
+    let pass = true;
+    if (q && !text.includes(q)) pass = false;
+    if (state.f === 'labs' && !m.querySelector('.labs-grid')) pass = false;
+    if (state.f === 'cli' && !hasCli) pass = false;
+    if (state.f === 'v11' && !isV11) pass = false;
+    if (state.f === 'done' && !isDone) pass = false;
+    if (state.f === 'in-progress' && (isDone || !isInProgress)) pass = false;
+    m.style.display = pass ? '' : 'none';
+    if (pass) visible++;
+  });
+  const empty = container.querySelector('[data-empty]');
+  if (empty) empty.style.display = visible === 0 ? '' : 'none';
+}
+
+document.querySelectorAll('.search-input').forEach(input => {
+  input.addEventListener('input', e => {
+    const c = input.dataset.course;
+    filterState[c].q = e.target.value;
+    applyFilter(c);
+  });
+});
+
+document.querySelectorAll('.chips').forEach(group => {
+  const c = group.dataset.course;
+  group.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      group.querySelectorAll('.chip').forEach(x => x.classList.remove('active'));
+      chip.classList.add('active');
+      filterState[c].f = chip.dataset.filter;
+      applyFilter(c);
+    });
+  });
+});
+
+/* ---- guide modal ---- */
+function cmdBlock(c) {
+  const esc = c.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  return `<pre class="cmd">${esc}</pre>`;
+}
+function openGuide(id) {
+  const g = GUIDES[id];
+  currentLab = id;
+  document.getElementById('g-tag').textContent = id;
+  let title = id;
+  Object.values(courses).forEach(arr => arr.forEach(m => m.labsList.forEach(l => { if (l.id === id) title = l.title; })));
+  document.getElementById('g-title').textContent = title;
+  const body = document.getElementById('g-body');
+  if (!g) {
+    body.innerHTML = `<p style="color:var(--text-mute);font-style:italic;">Guide content coming soon for this lab.</p>`;
+  } else {
+    body.innerHTML = `
+      <div class="guide-meta"><span>LAB <b>${id}</b></span><span>STATUS <b class="g-status">—</b></span><span>PT VERSION <b>9.0+</b></span></div>
+      <div class="guide-h">Objective</div>
+      <p class="guide-obj">${g.obj}</p>
+      <div class="guide-h">Topology</div>
+      <div class="topo">${g.topo.replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>
+      <div class="guide-h">Steps</div>
+      <div class="steps">${g.steps.map(s => `<div class="step"><p>${s.t}</p>${s.c ? cmdBlock(s.c) : ''}</div>`).join('')}</div>
+      <div class="guide-h">Verification</div>
+      <ul class="verify-list">${g.verify.map(v => `<li>${v}</li>`).join('')}</ul>
+      <div class="guide-h">Success Criteria</div>
+      <div class="success-box">${g.success}</div>
+      <div class="guide-h">Stretch Challenge</div>
+      <div class="challenge-box">${g.challenge}</div>`;
+  }
+  updateGuideStatus();
+  document.getElementById('overlay').classList.add('open');
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeGuide() {
+  document.getElementById('overlay').classList.remove('open');
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+  currentLab = null;
+}
+function updateGuideStatus() {
+  const p = loadProgress();
+  const done = currentLab && p['lab:' + currentLab];
+  const btn = document.getElementById('g-done');
+  btn.textContent = done ? '✓ Lab Complete — undo' : 'Mark Lab Complete';
+  btn.style.background = done ? 'transparent' : '';
+  btn.style.color = done ? 'var(--neon)' : '';
+  const st = document.querySelector('.g-status');
+  if (st) st.textContent = done ? 'COMPLETE' : 'NOT STARTED';
+}
+function toggleLabDone() {
+  if (!currentLab) return;
+  const p = loadProgress();
+  p['lab:' + currentLab] = !p['lab:' + currentLab];
+  saveProgress(p);
+  applyProgress();
+  updateGuideStatus();
+  const btn = document.getElementById('g-done');
+  btn.classList.remove('flash'); void btn.offsetWidth; btn.classList.add('flash');
+}
+
+/* ---- progress ---- */
+function loadProgress() {
+  try { return JSON.parse(localStorage.getItem('netops_cisco_v3') || '{}'); }
+  catch { return {}; }
+}
+function saveProgress(p) { localStorage.setItem('netops_cisco_v3', JSON.stringify(p)); }
+function markDone(e, key) {
+  e.stopPropagation();
+  const p = loadProgress();
+  p[key] = !p[key];
+  saveProgress(p);
+  applyProgress();
+  const mod = document.querySelector(`.module[data-key="${key}"]`);
+  if (mod) { mod.classList.remove('flash'); void mod.offsetWidth; mod.classList.add('flash'); }
+}
+function applyProgress() {
+  const p = loadProgress();
+  document.querySelectorAll('.module').forEach(m => { m.classList.toggle('done', !!p[m.dataset.key]); });
+  document.querySelectorAll('.lab').forEach(l => { l.classList.toggle('lab-done', !!p['lab:' + l.dataset.lab]); });
+  const counts = { c1:0, c2:0, c3:0 };
+  const totals = { c1: courses.c1.length, c2: courses.c2.length, c3: courses.c3.length };
+  ['c1','c2','c3'].forEach(c => {
+    counts[c] = courses[c].filter(m => p[`${c}-${m.n}`]).length;
+    const pct = Math.round(counts[c] / totals[c] * 100);
+    const set = (sel, val) => { const el = document.querySelector(sel); if (el) el.textContent = val; };
+    set('.prog-' + c, `${counts[c]}/${totals[c]}`);
+    set('.dp-' + c, pct + '%');
+    set('.ds-' + c, `${counts[c]}/${totals[c]}`);
+    const db = document.querySelector('.db-' + c); if (db) db.style.width = pct + '%';
+    const cb = document.querySelector('.cb-' + c); if (cb) cb.style.width = pct + '%';
+  });
+  const totalMods = totals.c1 + totals.c2 + totals.c3;
+  const doneMods = counts.c1 + counts.c2 + counts.c3;
+  const overall = Math.round(doneMods / totalMods * 100);
+  const hp = document.querySelector('.hp-pct'); if (hp) hp.textContent = overall + '%';
+  const hb = document.querySelector('.hp-bar'); if (hb) hb.style.width = overall + '%';
+}
+function resetProgress() {
+  if (confirm('Reset all curriculum progress? This cannot be undone.')) {
+    localStorage.removeItem('netops_cisco_v3');
+    applyProgress();
+  }
+}
+
+/* ---- count-up hero stats ---- */
+function countUp() {
+  document.querySelectorAll('[data-count]').forEach(el => {
+    const target = +el.dataset.count;
+    let cur = 0;
+    const step = Math.max(1, Math.ceil(target / 30));
+    const tick = () => {
+      cur = Math.min(target, cur + step);
+      el.textContent = cur;
+      if (cur < target) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+}
+
+/* ---- keyboard shortcuts ---- */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    if (document.getElementById('modal').classList.contains('open')) { closeGuide(); return; }
+    document.activeElement && document.activeElement.blur && document.activeElement.blur();
+    return;
+  }
+  const isTyping = ['INPUT','TEXTAREA'].includes(document.activeElement?.tagName);
+  if (isTyping) return;
+  if (e.key === '/') {
+    e.preventDefault();
+    const tab = currentTab;
+    if (tab !== 'overview') {
+      const input = document.querySelector(`#${tab} .search-input`);
+      if (input) input.focus();
+    } else {
+      switchTab('course-1');
+      setTimeout(() => document.querySelector('#course-1 .search-input')?.focus(), 400);
+    }
+  }
+  if (e.key === '0') switchTab('overview');
+  if (e.key === '1') switchTab('course-1');
+  if (e.key === '2') switchTab('course-2');
+  if (e.key === '3') switchTab('course-3');
+});
+
+/* ---- kbd hint visibility ---- */
+const hint = document.getElementById('kbdHint');
+let hintTimer;
+function showHint() {
+  hint.classList.add('show');
+  clearTimeout(hintTimer);
+  hintTimer = setTimeout(() => hint.classList.remove('show'), 6000);
+}
+window.addEventListener('load', () => setTimeout(showHint, 1500));
+document.addEventListener('mousemove', () => {
+  if (!hint.classList.contains('show')) return;
+  clearTimeout(hintTimer);
+  hintTimer = setTimeout(() => hint.classList.remove('show'), 6000);
+});
+
+/* ---- init ---- */
+renderModules('c1', 'modules-c1');
+renderModules('c2', 'modules-c2');
+renderModules('c3', 'modules-c3');
+applyProgress();
+countUp();
+</script>
+</body>
+</html>
