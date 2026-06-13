@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="NETOPS // Cisco Networking Track — self-paced Networking Basics, Networking Essentials, and SRWE (CCNA 2) with 47 guided Packet Tracer labs. Aligned to CCNA 200-301 v1.1 (2026)." />
-<title>NETOPS // Cisco Networking Track — 2026 v1.1</title>
+<meta name="description" content="NETOPS // IT Track — self-paced Cisco networking (Networking Basics, Networking Essentials, SRWE) + Active Directory Foundations. 56 guided labs. Aligned to CCNA 200-301 v1.1 and AZ-800 (2026)." />
+<title>NETOPS // IT Track — Networking + Active Directory · 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Syne:wght@500;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -140,7 +140,7 @@ header{border-bottom:1px solid var(--border);background:rgba(7,11,17,0.88);backd
 .btn.primary{background:var(--neon);color:var(--bg);border-color:var(--neon);font-weight:700}
 .btn.primary:hover{background:transparent;color:var(--neon);box-shadow:0 0 16px var(--neon-glow)}
 .path-section{padding:0 0 80px}
-.dash{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:56px}
+.dash{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:56px}
 .dash-card{background:var(--surface);padding:30px;position:relative}
 .dash-card .dc-id{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--magenta);letter-spacing:0.12em;margin-bottom:10px}
 .dash-card .dc-name{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;margin-bottom:18px}
@@ -148,7 +148,7 @@ header{border-bottom:1px solid var(--border);background:rgba(7,11,17,0.88);backd
 .dash-card .dc-sub{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-mute);margin-top:6px;letter-spacing:0.05em}
 .dash-card .bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:18px}
 .dash-card .bar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--neon),var(--blue));transition:width 0.6s;box-shadow:0 0 8px var(--neon-glow)}
-.path-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:48px 0}
+.path-flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:48px 0}
 .path-card{background:var(--surface);border:1px solid var(--border);padding:32px 28px;position:relative;transition:all 0.3s;cursor:pointer;overflow:hidden}
 .path-card:hover{border-color:var(--neon);transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,255,209,0.08)}
 .path-card::before{content:attr(data-num);position:absolute;top:24px;right:24px;font-family:'Syne',sans-serif;font-weight:800;font-size:80px;line-height:1;color:var(--border);transition:color 0.3s;letter-spacing:-0.04em}
@@ -179,7 +179,7 @@ header{border-bottom:1px solid var(--border);background:rgba(7,11,17,0.88);backd
 .prereq-item a{color:var(--blue);text-decoration:none;border-bottom:1px dotted var(--blue)}
 .prereq-item a:hover{color:var(--neon);border-bottom-color:var(--neon)}
 footer{border-top:1px solid var(--border);padding:56px 0 64px;margin-top:88px;background:var(--surface)}
-.footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px}
+.footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;gap:36px}
 .foot-col h5{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;color:var(--text-mute);text-transform:uppercase;margin-bottom:14px}
 .foot-col p,.foot-col a{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text-dim);display:block;padding:4px 0;text-decoration:none;line-height:1.5}
 .foot-col a:hover{color:var(--neon)}
@@ -222,29 +222,72 @@ pre.cmd{background:#040608;border:1px solid var(--border);border-radius:4px;padd
 .modal-foot{padding:24px 32px 40px;border-top:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap}
 @media (max-width:1000px){.footer-inner{grid-template-columns:1fr 1fr}}
 @media (max-width:900px){.container{padding:0 20px}.hero{padding:56px 0 48px}.hero p{font-size:17px}.stats{grid-template-columns:repeat(2,1fr)}.stat-value{font-size:42px}.course-header{grid-template-columns:1fr;gap:24px}.course-title{font-size:38px}.objectives ul{grid-template-columns:1fr}.module-head{grid-template-columns:1fr auto;gap:8px;padding:18px 20px}.module-num,.module-time{display:none}.module-badge{font-size:9px;padding:4px 8px}.module-content{padding:16px 20px 20px}.dash{grid-template-columns:1fr}.path-flow{grid-template-columns:1fr}.approach-grid{grid-template-columns:1fr}.prereqs-list{grid-template-columns:1fr}.prereqs{padding:28px 24px}.header-prog .bar{display:none}.header-prog{font-size:10.5px}.lab{grid-template-columns:auto 1fr;padding:14px 16px;gap:12px}.lab-difficulty{display:none}.lab-open{grid-column:1 / -1;text-align:center;padding:10px}.modal{width:100%}.modal-body{padding:24px 20px}.modal-top{padding:20px}.currency-banner{grid-template-columns:1fr;gap:14px;padding:24px}.footer-inner{grid-template-columns:1fr;gap:24px}.approach h2{font-size:32px}.modules-header h2{font-size:24px}.search-bar{padding:12px 14px}.search-kbd{display:none}.chip{font-size:10.5px;padding:5px 10px}.tab-bar{top:60px}.kbd-hint{display:none}}
+.certs{margin-top:64px;padding-top:64px;border-top:1px solid var(--border);}
+.certs-head{margin-bottom:40px;}
+.certs-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.22em;color:var(--magenta);margin-bottom:14px;display:flex;align-items:center;gap:14px;}
+.certs-eyebrow::before{content:'';width:32px;height:1px;background:var(--magenta);}
+.certs h2{font-family:'Syne',sans-serif;font-weight:800;font-size:42px;letter-spacing:-0.025em;margin-bottom:16px;line-height:1.05;}
+.certs-sub{color:var(--text-dim);font-size:16.5px;max-width:760px;line-height:1.55;}
+.cert-tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+.cert-tier{background:var(--surface);border:1px solid var(--border);padding:28px 26px;position:relative;transition:border-color 0.3s,transform 0.3s;}
+.cert-tier:hover{border-color:var(--neon-dim);transform:translateY(-3px);}
+.tier-head{display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--border);margin-bottom:18px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;}
+.tier-num{color:var(--magenta);font-weight:700;}
+.tier-label{color:var(--text-mute);flex:1;text-transform:uppercase;}
+.tier-cost{color:var(--neon);font-weight:600;}
+.cert-tier h3{font-family:'Syne',sans-serif;font-weight:700;font-size:22px;line-height:1.2;margin-bottom:10px;letter-spacing:-0.01em;}
+.cert-tier .tier-blurb{font-size:14px;color:var(--text-dim);margin-bottom:20px;line-height:1.55;}
+.cert-list{display:flex;flex-direction:column;gap:10px;}
+.cert-item{padding:13px 14px;background:var(--surface-2);border:1px solid var(--border);border-radius:3px;transition:all 0.2s;}
+.cert-item:hover{border-color:var(--neon-dim);background:var(--surface-3);}
+.ci-name{font-size:14px;font-weight:500;color:var(--text);margin-bottom:5px;line-height:1.3;}
+.ci-meta{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text-mute);letter-spacing:0.02em;line-height:1.4;}
+.ci-meta .price{color:var(--yellow);font-weight:600;}
+@media (max-width:900px){.cert-tiers{grid-template-columns:1fr;}.certs h2{font-size:30px;}}
+.bundle{margin-top:64px;padding-top:64px;border-top:1px solid var(--border);}
+.bundle-head{margin-bottom:40px;}
+.bundle-eyebrow{font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.22em;color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:14px;}
+.bundle-eyebrow::before{content:'';width:32px;height:1px;background:var(--blue);}
+.bundle h2{font-family:'Syne',sans-serif;font-weight:800;font-size:42px;letter-spacing:-0.025em;margin-bottom:16px;line-height:1.05;}
+.bundle-sub{color:var(--text-dim);font-size:16.5px;max-width:760px;line-height:1.55;}
+.bundle-sub strong{color:var(--neon);font-weight:500;}
+.bundle-tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;}
+.bundle-track{background:var(--surface);border:1px solid var(--border);padding:26px 24px;transition:border-color 0.3s,transform 0.3s;display:flex;flex-direction:column;}
+.bundle-track:hover{border-color:var(--blue);transform:translateY(-3px);}
+.bt-head{display:flex;align-items:center;gap:14px;padding-bottom:16px;border-bottom:1px solid var(--border);margin-bottom:16px;}
+.bt-tag{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--blue);background:rgba(77,171,255,0.1);padding:5px 10px;border-radius:3px;letter-spacing:0.1em;font-weight:700;}
+.bt-title{font-family:'Syne',sans-serif;font-weight:700;font-size:18px;letter-spacing:-0.01em;line-height:1.2;}
+.bt-list{list-style:none;display:flex;flex-direction:column;gap:9px;flex:1;}
+.bt-list li{font-size:13.5px;color:var(--text-dim);padding-left:18px;position:relative;line-height:1.45;}
+.bt-list li::before{content:'›';position:absolute;left:0;color:var(--blue);font-weight:700;}
+.bt-list li b{color:var(--text);font-weight:500;}
+.bt-list li i{font-style:normal;color:var(--text-mute);font-size:11.5px;font-family:'JetBrains Mono',monospace;display:block;margin-top:2px;letter-spacing:0.02em;}
+.bt-foot{margin-top:18px;padding-top:14px;border-top:1px dashed var(--border);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--neon);letter-spacing:0.04em;line-height:1.5;}
+.bt-foot strong{color:var(--text);font-weight:600;}
+@media (max-width:900px){.bundle h2{font-size:30px;}}
 </style>
 </head>
 <body>
 <header>
   <div class="container header-inner">
     <div class="brand-block">
-      <div class="brand"><div class="brand-mark">N</div><div>NETOPS<span>//</span>CISCO TRACK</div></div>
-      <div class="status-pill"><span class="status-dot"></span>ONLINE · v1.1 · 2026</div>
+      <div class="brand"><div class="brand-mark">N</div><div>NETOPS<span>//</span>IT TRACK</div></div>
+      <div class="status-pill"><span class="status-dot"></span>ONLINE · 2026 · CCNA v1.1 + AZ-800</div>
     </div>
     <div class="header-prog"><span>OVERALL <b class="hp-pct">0%</b></span><span class="bar"><i class="hp-bar"></i></span></div>
   </div>
 </header>
 <section class="hero">
   <div class="container">
-    <div class="hero-eyebrow">Networking Basics · Networking Essentials · SRWE (CCNA 2)</div>
-    <h1>Basics. Essentials.<br><span class="accent">Switching, routing<br>&amp; wireless.</span><span class="cursor"></span></h1>
-    <p>A three-course Cisco NetAcad foundation, rebuilt as a fully interactive, self-paced track. Every lab opens a complete step-by-step guide with real IOS commands, verification, and a stretch challenge. <strong>Aligned to the CCNA 200-301 v1.1 blueprint</strong> and updated for Packet Tracer 9.0 with WPA3, Rapid PVST+, and modern security defaults.</p>
-    <div class="hero-badges"><span class="hb live">● 2026 CONTENT</span><span class="hb">CCNA 200-301 v1.1</span><span class="hb">Packet Tracer 9.0+</span><span class="hb amber">WPA3 · Rapid PVST+</span></div>
+    <div class="hero-eyebrow">Networking · Switching · Routing · Wireless · Active Directory</div>
+    <h1>Networks.<br><span class="accent">Servers. Directories.<br>End to end.</span><span class="cursor"></span></h1>
+    <p>A self-paced IT foundations track that pairs the three-course Cisco NetAcad sequence with a hands-on Active Directory curriculum — the two pillars of every entry-level IT role — plus the full <strong>Junior Cybersecurity Analyst (JCA)</strong> path now unlocked. Every lab opens a complete step-by-step guide. <strong>Aligned to CCNA 200-301 v1.1, AZ-800, and the Cisco JCA Career Certificate</strong>, current for 2026 and built to age well.</p>
+    <div class="hero-badges"><span class="hb live">● 2026 CONTENT</span><span class="hb">CCNA 200-301 v1.1</span><span class="hb">AZ-800 (Windows Server)</span><span class="hb">JCA Career Cert</span><span class="hb">Packet Tracer 9.0+</span><span class="hb amber">WPA3 · Rapid PVST+ · AD DS · Cyber</span></div>
     <div class="stats">
-      <div class="stat"><div class="stat-value" data-count="3">0</div><div class="stat-label">Cisco Courses</div></div>
-      <div class="stat"><div class="stat-value" data-count="37">0</div><div class="stat-label">Modules</div></div>
-      <div class="stat"><div class="stat-value" data-count="47">0</div><div class="stat-label">Guided Labs</div></div>
-      <div class="stat"><div class="stat-value">~190h</div><div class="stat-label">Total Effort</div></div>
+      <div class="stat"><div class="stat-value" data-count="4">0</div><div class="stat-label">Courses</div></div>
+      <div class="stat"><div class="stat-value" data-count="46">0</div><div class="stat-label">Modules</div></div>
+      <div class="stat"><div class="stat-value" data-count="56">0</div><div class="stat-label">Guided Labs</div></div>
+      <div class="stat"><div class="stat-value">~220h</div><div class="stat-label">Total Effort</div></div>
     </div>
   </div>
 </section>
@@ -254,6 +297,7 @@ pre.cmd{background:#040608;border:1px solid var(--border);border-radius:4px;padd
     <button class="tab" data-tab="course-1"><span class="num">01</span>NETWORKING BASICS</button>
     <button class="tab" data-tab="course-2"><span class="num">02</span>NETWORKING ESSENTIALS</button>
     <button class="tab" data-tab="course-3"><span class="num">03</span>SWITCHING · ROUTING · WIRELESS</button>
+    <button class="tab" data-tab="course-4"><span class="num">04</span>ACTIVE DIRECTORY</button>
   </div>
   <div class="tab-content active" id="overview"><div class="path-section">
     <div class="course-header"><div>
@@ -265,18 +309,125 @@ pre.cmd{background:#040608;border:1px solid var(--border);border-radius:4px;padd
       <div class="dash-card"><div class="dc-id">// 01 · NETWORKING BASICS</div><div class="dc-name">Foundations</div><div class="dc-pct dp-c1">0%</div><div class="dc-sub"><span class="ds-c1">0/8</span> modules</div><div class="bar"><i class="db-c1"></i></div></div>
       <div class="dash-card"><div class="dc-id">// 02 · NETWORKING ESSENTIALS</div><div class="dc-name">The Bridge</div><div class="dc-pct dp-c2">0%</div><div class="dc-sub"><span class="ds-c2">0/13</span> modules</div><div class="bar"><i class="db-c2"></i></div></div>
       <div class="dash-card"><div class="dc-id">// 03 · SRWE (CCNA 2)</div><div class="dc-name">CCNA Depth</div><div class="dc-pct dp-c3">0%</div><div class="dc-sub"><span class="ds-c3">0/16</span> modules</div><div class="bar"><i class="db-c3"></i></div></div>
+      <div class="dash-card"><div class="dc-id">// 04 · ACTIVE DIRECTORY</div><div class="dc-name">Systems</div><div class="dc-pct dp-c4">0%</div><div class="dc-sub"><span class="ds-c4">0/9</span> modules</div><div class="bar"><i class="db-c4"></i></div></div>
     </div>
     <div class="path-flow">
-      <div class="path-card" data-num="01" onclick="switchTab('course-1')"><div class="pc-id">CISCO // NETWORKING BASICS</div><h3>Networking Basics</h3><p>Your entry point. Home networks, components and types, wireless and mobile, connecting to the internet, IP addressing fundamentals, and basic security.</p><div class="pc-stats"><div><strong>8</strong>MODULES</div><div><strong>9</strong>LABS</div><div><strong>~40h</strong>EFFORT</div></div><span class="cert-line">↳ no prerequisites</span></div>
-      <div class="path-card" data-num="02" onclick="switchTab('course-2')"><div class="pc-id">CISCO // NETWORKING ESSENTIALS</div><h3>Networking Essentials</h3><p>The bridge to CCNA. Protocols and models, media, the access layer, IPv4/IPv6, DHCP, ARP, routing, TCP/UDP, and building a small Cisco network.</p><div class="pc-stats"><div><strong>13</strong>MODULES</div><div><strong>17</strong>LABS</div><div><strong>~70h</strong>EFFORT</div></div><span class="cert-line">↳ preps for CCST Networking</span></div>
-      <div class="path-card" data-num="03" onclick="switchTab('course-3')"><div class="pc-id">CISCO // SRWE (CCNA 2)</div><h3>Switching, Routing &amp; Wireless Essentials</h3><p>CCNA-level depth. VLANs, inter-VLAN routing, STP &amp; Rapid PVST+, EtherChannel, DHCP, FHRP, LAN + switch security, WLAN (WPA3), static routing.</p><div class="pc-stats"><div><strong>16</strong>MODULES</div><div><strong>22</strong>LABS</div><div><strong>~80h</strong>EFFORT</div></div><span class="cert-line">↳ builds toward CCNA 200-301 v1.1</span></div>
+      <div class="path-card" data-num="01" onclick="switchTab('course-1')"><div class="pc-id">CISCO // NETWORKING BASICS</div><h3>Networking Basics</h3><p>Your entry point. Home networks, components and types, wireless and mobile, connecting to the internet, IP addressing fundamentals, and basic security.</p><div class="pc-stats"><div><strong>8</strong>MODULES</div><div><strong>9</strong>LABS</div><div><strong>~40h</strong>EFFORT</div></div><span class="cert-line">↳ Earns NetAcad badge · preps CCST Networking ($125)</span></div>
+      <div class="path-card" data-num="02" onclick="switchTab('course-2')"><div class="pc-id">CISCO // NETWORKING ESSENTIALS</div><h3>Networking Essentials</h3><p>The bridge to CCNA. Protocols and models, media, the access layer, IPv4/IPv6, DHCP, ARP, routing, TCP/UDP, and building a small Cisco network.</p><div class="pc-stats"><div><strong>13</strong>MODULES</div><div><strong>17</strong>LABS</div><div><strong>~70h</strong>EFFORT</div></div><span class="cert-line">↳ Earns NetAcad badge · direct prep for CCST Networking ($125)</span></div>
+      <div class="path-card" data-num="03" onclick="switchTab('course-3')"><div class="pc-id">CISCO // SRWE (CCNA 2)</div><h3>Switching, Routing &amp; Wireless Essentials</h3><p>CCNA-level depth. VLANs, inter-VLAN routing, STP &amp; Rapid PVST+, EtherChannel, DHCP, FHRP, LAN + switch security, WLAN (WPA3), static routing.</p><div class="pc-stats"><div><strong>16</strong>MODULES</div><div><strong>22</strong>LABS</div><div><strong>~80h</strong>EFFORT</div></div><span class="cert-line">↳ Earns NetAcad badge · builds toward CCNA 200-301 v1.1 ($330)</span></div>
+      <div class="path-card" data-num="04" onclick="switchTab('course-4')"><div class="pc-id">MICROSOFT // ACTIVE DIRECTORY</div><h3>Active Directory Foundations</h3><p>The systems half of every helpdesk and sysadmin job. Stand up Windows Server 2025, install AD DS, build OUs/users/groups, apply AGDLP, join clients, run the 5-ticket helpdesk runbook. PowerShell throughout.</p><div class="pc-stats"><div><strong>9</strong>MODULES</div><div><strong>9</strong>LABS</div><div><strong>~30h</strong>EFFORT</div></div><span class="cert-line">↳ Earns MS Learn trophy · preps MS-900 ($99) + AZ-800 ($165)</span></div>
     </div>
     <div class="approach"><h2>How this works.</h2><div class="approach-grid">
       <div class="approach-item"><h4>// 01 · Read the module</h4><p>Each module gives concise concept notes, objectives, and topics — what it is, why it matters, where it shows up in production today.</p></div>
       <div class="approach-item"><h4>// 02 · Open the lab guide</h4><p>Click any lab to open a full walkthrough: topology, numbered steps with real IOS commands, verification, success criteria, and a stretch challenge.</p></div>
       <div class="approach-item"><h4>// 03 · Build &amp; document</h4><p>Build it in Packet Tracer 9, mark it done, and capture it in a GitHub repo. By the end you have 47 documented builds.</p></div>
     </div></div>
-    <div class="currency-banner"><div class="icon">v1.1</div><div><h3>Current for 2026 — built to age well</h3><p>Aligned to the <strong>CCNA 200-301 v1.1</strong> blueprint (Feb 2026 content refresh, valid through 2027+). v1.1 additions are baked in where they fit: <strong>Rapid PVST+</strong> in STP, <strong>WPA3</strong> as the default wireless security, and cloud / automation context in the design and capstone modules. The fundamentals — switching, routing, VLANs, subnetting, IPv6, FHRP — are stable knowledge.</p></div></div>
+    <div class="currency-banner"><div class="icon">2026</div><div><h3>Current for 2026 — built to age well</h3><p>Aligned to the <strong>CCNA 200-301 v1.1</strong> blueprint (Feb 2026 content refresh, valid through 2027+) and the <strong>AZ-800 Windows Server Hybrid Administrator</strong> objectives. Modern defaults baked in: <strong>Rapid PVST+</strong>, <strong>WPA3</strong>, SSH-only baselines, dual-stack IPv6, WS 2025 with PowerShell-first AD admin. The fundamentals — switching, routing, subnetting, AD DS, AGDLP, Kerberos — are stable knowledge that doesn't expire with blueprints.</p></div></div>
+    <div class="certs">
+      <div class="certs-head">
+        <div class="certs-eyebrow">CERTIFICATION PATH</div>
+        <h2>Every course earns something.</h2>
+        <p class="certs-sub">Free digital badges as you go, paid certs for the resume. No module is just for fun — each one ladders toward credentials hiring managers recognize. Exam fees are approximate (verify on the vendor site).</p>
+      </div>
+      <div class="cert-tiers">
+
+        <div class="cert-tier">
+          <div class="tier-head"><span class="tier-num">01</span><span class="tier-label">Free Badges</span><span class="tier-cost">$0</span></div>
+          <h3>Earn while you learn.</h3>
+          <p class="tier-blurb">Auto-issued through Cisco NetAcad and Microsoft Learn when you complete the matching free course in parallel with this curriculum. Real digital badges (Credly / Microsoft Learn) you can post on LinkedIn.</p>
+          <div class="cert-list">
+            <div class="cert-item"><div class="ci-name">Cisco NetAcad — Networking Basics</div><div class="ci-meta">via Course 01 · NetAcad digital badge on completion</div></div>
+            <div class="cert-item"><div class="ci-name">Cisco NetAcad — Networking Essentials</div><div class="ci-meta">via Course 02 · NetAcad digital badge on completion</div></div>
+            <div class="cert-item"><div class="ci-name">Cisco NetAcad — SRWE</div><div class="ci-meta">via Course 03 · NetAcad digital badge on completion</div></div>
+            <div class="cert-item"><div class="ci-name">Microsoft Learn — AD DS path</div><div class="ci-meta">via Course 04 · trophy + XP, shareable on LinkedIn</div></div>
+            <div class="cert-item"><div class="ci-name">Cisco JCA Career Certificate</div><div class="ci-meta">complete the 6-course JCA path + pass exam · real Cisco certificate</div></div>
+          </div>
+        </div>
+
+        <div class="cert-tier">
+          <div class="tier-head"><span class="tier-num">02</span><span class="tier-label">Entry-Level Certs</span><span class="tier-cost">~$99–$392</span></div>
+          <h3>First one on the resume.</h3>
+          <p class="tier-blurb">The credentials that get you past helpdesk applicant tracking systems. Pick one or two based on your target — Cisco-leaning roles want CCST, vendor-neutral helpdesks want Network+ or Security+.</p>
+          <div class="cert-list">
+            <div class="cert-item"><div class="ci-name">Cisco CCST Networking</div><div class="ci-meta"><span class="price">$125</span> · Courses 01 + 02 · best Cisco entry cert</div></div>
+            <div class="cert-item"><div class="ci-name">Cisco CCST Cybersecurity</div><div class="ci-meta"><span class="price">$125</span> · Intro Cyber + Network Defense · cyber entry</div></div>
+            <div class="cert-item"><div class="ci-name">CompTIA Network+ (N10-009)</div><div class="ci-meta"><span class="price">$369</span> · Courses 01 + 02 + parts of 03 · vendor-neutral</div></div>
+            <div class="cert-item"><div class="ci-name">CompTIA Security+ (SY0-701)</div><div class="ci-meta"><span class="price">$392</span> · already studying · DoD 8570 baseline</div></div>
+            <div class="cert-item"><div class="ci-name">Microsoft MS-900 (M365 Fundamentals)</div><div class="ci-meta"><span class="price">$99</span> · Course 04 context · cheapest Microsoft entry</div></div>
+            <div class="cert-item"><div class="ci-name">LPI Linux Essentials (010-160)</div><div class="ci-meta"><span class="price">$120</span> · Linux Essentials NetAcad course preps it</div></div>
+            <div class="cert-item"><div class="ci-name">PCEP-30-02 (Python Institute)</div><div class="ci-meta"><span class="price">$30</span> · Python Essentials 1 preps it · cheap resume win</div></div>
+          </div>
+        </div>
+
+        <div class="cert-tier">
+          <div class="tier-head"><span class="tier-num">03</span><span class="tier-label">Mid-Level Certs</span><span class="tier-cost">~$165–$369</span></div>
+          <h3>Career-grade credentials.</h3>
+          <p class="tier-blurb">These open junior network engineer and sysadmin roles. Six months in with two of these and you're in $70–95K territory for the NY/NJ metro. The destination of this track.</p>
+          <div class="cert-list">
+            <div class="cert-item"><div class="ci-name">Cisco CCNA 200-301 v1.1</div><div class="ci-meta"><span class="price">$330</span> · Courses 01 + 02 + 03 combined · industry standard</div></div>
+            <div class="cert-item"><div class="ci-name">Cisco CyberOps Associate (CBROPS 200-201)</div><div class="ci-meta"><span class="price">$300</span> · SOC analyst role · post-JCA Career Cert</div></div>
+            <div class="cert-item"><div class="ci-name">Microsoft AZ-800 (Windows Server Hybrid)</div><div class="ci-meta"><span class="price">$165</span> · Course 04 + future 05 / 06 · sysadmin track</div></div>
+            <div class="cert-item"><div class="ci-name">CompTIA Server+ (SK0-005)</div><div class="ci-meta"><span class="price">$369</span> · Course 04 + future 05 · vendor-neutral server admin</div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="bundle">
+      <div class="bundle-head">
+        <div class="bundle-eyebrow">YOUR NETACAD BUNDLE</div>
+        <h2>The whole library — unlocked.</h2>
+        <p class="bundle-sub">All courses below are in your NetAcad dashboard right now. Use them as the <strong>textbook + assessment</strong> side; this site is the <strong>lab + portfolio</strong> side. Together they cover four full career tracks with real credentials at every milestone.</p>
+      </div>
+      <div class="bundle-tracks">
+
+        <div class="bundle-track">
+          <div class="bt-head"><span class="bt-tag">01</span><span class="bt-title">Foundations</span></div>
+          <ul class="bt-list">
+            <li><b>Networking Basics</b><i>pairs with on-site Course 01</i></li>
+            <li><b>Computer Hardware Basics</b><i>A+ adjacent · build vocab</i></li>
+            <li><b>IT Customer Support Basics</b><i>helpdesk fundamentals</i></li>
+            <li><b>Getting Started with Cisco Packet Tracer</b><i>PT mastery on-ramp</i></li>
+            <li><b>Introduction to Cybersecurity</b><i>security awareness · feeds JCA path</i></li>
+          </ul>
+          <div class="bt-foot">→ Five NetAcad badges to display on LinkedIn / Credly</div>
+        </div>
+
+        <div class="bundle-track">
+          <div class="bt-head"><span class="bt-tag">02</span><span class="bt-title">Cisco Networking → CCNA</span></div>
+          <ul class="bt-list">
+            <li><b>Networking Essentials</b><i>pairs with on-site Course 02 · preps CCST Networking</i></li>
+            <li><b>CCNA 1: Introduction to Networks (ITN)</b><i>first of three CCNA modules</i></li>
+            <li><b>CCNA 2: Switching, Routing &amp; Wireless Essentials</b><i>pairs with on-site Course 03</i></li>
+            <li><b>CCNA 3: Enterprise Networking, Security &amp; Automation (ENSA)</b><i>OSPF, ACLs, NAT, automation</i></li>
+          </ul>
+          <div class="bt-foot">→ Sit <strong>CCNA 200-301 v1.1 ($330)</strong> after all three CCNA modules</div>
+        </div>
+
+        <div class="bundle-track">
+          <div class="bt-head"><span class="bt-tag">03</span><span class="bt-title">Junior Cybersecurity Analyst</span></div>
+          <ul class="bt-list">
+            <li><b>Network Defense</b><i>Intermediate · monitor &amp; protect</i></li>
+            <li><b>Endpoint Security</b><i>Intermediate · secure to the edge</i></li>
+            <li><b>Network Security</b><i>Intermediate, instructor-led · integrity &amp; intrusion</i></li>
+            <li><b>Cyber Threat Management</b><i>Intermediate · governance &amp; response</i></li>
+            <li><b>CyberOps Associate</b><i>Intermediate, instructor-led · SOC role training</i></li>
+          </ul>
+          <div class="bt-foot">→ Pass <strong>JCA Career Path Exam (free)</strong> for the Cisco JCA Career Certificate, then sit <strong>CCST Cybersecurity ($125)</strong> or <strong>CyberOps Associate ($300)</strong></div>
+        </div>
+
+        <div class="bundle-track">
+          <div class="bt-head"><span class="bt-tag">04</span><span class="bt-title">Programming &amp; Systems</span></div>
+          <ul class="bt-list">
+            <li><b>Linux Essentials (NDG)</b><i>preps LPI Linux Essentials cert</i></li>
+            <li><b>Python Essentials 1</b><i>preps PCEP-30-02 ($30) · already covered for you</i></li>
+            <li><b>2522-NET345-61 (College of Westchester)</b><i>IoT &amp; cloud in Packet Tracer</i></li>
+          </ul>
+          <div class="bt-foot">→ Two cheap certs: <strong>Linux Essentials ($120)</strong> + <strong>PCEP ($30)</strong> = $150 for two more resume bullets</div>
+        </div>
+
+      </div>
+    </div>
     <div class="prereqs"><h3>Before you start</h3><div class="prereqs-list">
       <div class="prereq-item"><span class="check">[✓]</span><span>Install <a href="https://www.netacad.com/courses/packet-tracer" target="_blank" rel="noopener">Cisco Packet Tracer 9.0+</a> (free with NetAcad; Windows / macOS 10.14+ / Ubuntu 20.04+)</span></div>
       <div class="prereq-item"><span class="check">[✓]</span><span>Install <a href="https://www.virtualbox.org/" target="_blank" rel="noopener">VirtualBox</a> 7+ with a Windows 10/11 client VM</span></div>
@@ -287,7 +438,7 @@ pre.cmd{background:#040608;border:1px solid var(--border);border-radius:4px;padd
     </div></div>
   </div></div>
   <div class="tab-content" id="course-1">
-    <div class="course-header"><div><div class="course-id">// CISCO NETWORKING BASICS</div><h2 class="course-title">Networking<br>Basics.</h2><p class="course-desc">The on-ramp. No prerequisites. Learn what a network is, how the pieces connect, how data moves, and how to build and secure a small home network — most of it simulated in Packet Tracer 9.</p></div>
+    <div class="course-header"><div><div class="course-id">// CISCO NETWORKING BASICS</div><h2 class="course-title">Networking<br>Basics.</h2><p class="course-desc">The on-ramp. No prerequisites. Learn what a network is, how the pieces connect, how data moves, and how to build and secure a small home network — most of it simulated in Packet Tracer 9. <strong>Earns the Cisco NetAcad "Networking Basics" digital badge</strong> and starts the path to <strong>CCST Networking ($125)</strong>.</p></div>
     <div class="course-meta"><div class="meta-row"><span class="k">Modules</span><span class="v">8</span></div><div class="meta-row"><span class="k">PT Labs</span><span class="v neon">9</span></div><div class="meta-row"><span class="k">Effort</span><span class="v">~40 hours</span></div><div class="meta-row"><span class="k">Level</span><span class="v">Beginner</span></div><div class="meta-row"><span class="k">Cisco Map</span><span class="v">Net Basics</span></div><div class="meta-row"><span class="k">Updated</span><span class="v neon">2026</span></div><div class="course-bar"><i class="cb-c1"></i></div></div></div>
     <div class="search-bar"><div class="search-wrap"><span class="search-icon">⌕</span><input class="search-input" data-course="c1" type="text" placeholder="Search modules, topics, or labs..." /><span class="search-kbd">/</span></div><div class="chips" data-course="c1"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="labs">Labs</button><button class="chip" data-filter="cli">With CLI</button><button class="chip" data-filter="in-progress">In progress</button><button class="chip" data-filter="done">Complete</button></div></div>
     <div class="objectives"><h3>// Learning Outcomes</h3><ul><li>Explain how devices communicate on a network</li><li>Identify network components, types, and media</li><li>Describe wireless and mobile network operation</li><li>Build and simulate a small home network in PT</li><li>Explain how a device gets online and gets an IP</li><li>Apply WPA3-era security to a home network</li></ul></div>
@@ -295,7 +446,7 @@ pre.cmd{background:#040608;border:1px solid var(--border);border-radius:4px;padd
     <div id="modules-c1"></div>
   </div>
   <div class="tab-content" id="course-2">
-    <div class="course-header"><div><div class="course-id">// CISCO NETWORKING ESSENTIALS</div><h2 class="course-title">Networking<br>Essentials.</h2><p class="course-desc">The bridge into CCNA. Go under the hood — protocols and models, media and the access layer, the full IP story, DHCP, ARP, routing between networks, transport protocols, and your first real Cisco IOS configuration.</p></div>
+    <div class="course-header"><div><div class="course-id">// CISCO NETWORKING ESSENTIALS</div><h2 class="course-title">Networking<br>Essentials.</h2><p class="course-desc">The bridge into CCNA. Go under the hood — protocols and models, media and the access layer, the full IP story, DHCP, ARP, routing between networks, transport protocols, and your first real Cisco IOS configuration. <strong>Earns the NetAcad "Networking Essentials" badge</strong> and directly preps the <strong>CCST Networking ($125)</strong> exam — Cisco's entry credential.</p></div>
     <div class="course-meta"><div class="meta-row"><span class="k">Modules</span><span class="v">13</span></div><div class="meta-row"><span class="k">PT Labs</span><span class="v neon">17</span></div><div class="meta-row"><span class="k">Effort</span><span class="v">~70 hours</span></div><div class="meta-row"><span class="k">Level</span><span class="v">Beginner→Inter.</span></div><div class="meta-row"><span class="k">Cisco Map</span><span class="v">Net Essentials</span></div><div class="meta-row"><span class="k">Updated</span><span class="v neon">2026</span></div><div class="course-bar"><i class="cb-c2"></i></div></div></div>
     <div class="search-bar"><div class="search-wrap"><span class="search-icon">⌕</span><input class="search-input" data-course="c2" type="text" placeholder="Search modules, topics, or labs..." /><span class="search-kbd">/</span></div><div class="chips" data-course="c2"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="labs">Labs</button><button class="chip" data-filter="cli">With CLI</button><button class="chip" data-filter="in-progress">In progress</button><button class="chip" data-filter="done">Complete</button></div></div>
     <div class="objectives"><h3>// Learning Outcomes</h3><ul><li>Explain protocols, OSI/TCP-IP models, and encapsulation</li><li>Describe media and the access layer with Ethernet switching</li><li>Work fluently with IPv4 addressing and segmentation</li><li>Apply IPv6 addressing formats and rules</li><li>Explain DHCP, ARP, and how gateways route between networks</li><li>Compare TCP and UDP and identify app-layer services</li><li>Use network testing utilities to troubleshoot</li><li>Build and verify a small Cisco network in PT</li></ul></div>
@@ -303,24 +454,33 @@ pre.cmd{background:#040608;border:1px solid var(--border);border-radius:4px;padd
     <div id="modules-c2"></div>
   </div>
   <div class="tab-content" id="course-3">
-    <div class="course-header"><div><div class="course-id">// CISCO SRWE · CCNA 2 · v1.1</div><h2 class="course-title">Switching, Routing<br>&amp; Wireless Essentials.</h2><p class="course-desc">CCNA-level depth on switching and router operations for SMB networks. The 16-module SRWE sequence with v1.1 updates (Rapid PVST+, WPA3, cloud context): VLANs and inter-VLAN routing, STP, EtherChannel, dynamic addressing, FHRP, LAN and switch security, wireless with a WLC, and static routing — capped with a full campus build.</p></div>
+    <div class="course-header"><div><div class="course-id">// CISCO SRWE · CCNA 2 · v1.1</div><h2 class="course-title">Switching, Routing<br>&amp; Wireless Essentials.</h2><p class="course-desc">CCNA-level depth on switching and router operations for SMB networks. The 16-module SRWE sequence with v1.1 updates (Rapid PVST+, WPA3, cloud context): VLANs and inter-VLAN routing, STP, EtherChannel, dynamic addressing, FHRP, LAN and switch security, wireless with a WLC, and static routing — capped with a full campus build. <strong>Earns the NetAcad "SRWE" badge</strong> and ladders into <strong>CCNA 200-301 v1.1 ($330)</strong> — the industry standard for junior network engineer roles.</p></div>
     <div class="course-meta"><div class="meta-row"><span class="k">Modules</span><span class="v">16</span></div><div class="meta-row"><span class="k">PT Labs</span><span class="v neon">22</span></div><div class="meta-row"><span class="k">Effort</span><span class="v">~80 hours</span></div><div class="meta-row"><span class="k">Level</span><span class="v">Intermediate</span></div><div class="meta-row"><span class="k">Cisco Map</span><span class="v">SRWE v7+v1.1</span></div><div class="meta-row"><span class="k">Updated</span><span class="v neon">2026</span></div><div class="course-bar"><i class="cb-c3"></i></div></div></div>
     <div class="search-bar"><div class="search-wrap"><span class="search-icon">⌕</span><input class="search-input" data-course="c3" type="text" placeholder="Search modules, topics, or labs..." /><span class="search-kbd">/</span></div><div class="chips" data-course="c3"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="labs">Labs</button><button class="chip" data-filter="cli">With CLI</button><button class="chip" data-filter="v11">v1.1 New</button><button class="chip" data-filter="in-progress">In progress</button><button class="chip" data-filter="done">Complete</button></div></div>
     <div class="objectives"><h3>// Learning Outcomes</h3><ul><li>Configure VLANs and inter-VLAN routing securely</li><li>Troubleshoot inter-VLAN routing on L3 devices</li><li>Build redundancy with STP / Rapid PVST+ and EtherChannel</li><li>Support reliable networks with dynamic addressing and FHRP</li><li>Configure dynamic address allocation in IPv6</li><li>Configure a WLAN using a WLC with WPA3 security</li><li>Configure switch security to mitigate LAN attacks</li><li>Configure IPv4 and IPv6 static routing</li></ul></div>
     <div class="modules-header"><h2>Modules</h2><div class="progress-info">PROGRESS <span class="prog-c3">0/16</span> COMPLETE</div></div>
     <div id="modules-c3"></div>
   </div>
+  <div class="tab-content" id="course-4">
+    <div class="course-header"><div><div class="course-id">// MICROSOFT ACTIVE DIRECTORY · AZ-800 ALIGNED</div><h2 class="course-title">Active Directory<br>Foundations.</h2><p class="course-desc">The systems half of every helpdesk and sysadmin job. Stand up a Windows Server 2025 lab, install AD DS, build users/groups/OUs with proper delegation, apply Microsoft's AGDLP best practice, join clients, and run the 5 helpdesk tickets you'll see your first week. PowerShell integrated throughout. <strong>Earns Microsoft Learn AD DS path trophy</strong> and preps <strong>MS-900 ($99)</strong> and <strong>AZ-800 ($165)</strong> — Microsoft's Windows Server Hybrid Administrator cert.</p></div>
+    <div class="course-meta"><div class="meta-row"><span class="k">Modules</span><span class="v">9</span></div><div class="meta-row"><span class="k">Hands-On Labs</span><span class="v neon">9</span></div><div class="meta-row"><span class="k">Effort</span><span class="v">~30 hours</span></div><div class="meta-row"><span class="k">Level</span><span class="v">Beginner→Inter.</span></div><div class="meta-row"><span class="k">Cert Map</span><span class="v">AZ-800</span></div><div class="meta-row"><span class="k">Updated</span><span class="v neon">2026</span></div><div class="course-bar"><i class="cb-c4"></i></div></div></div>
+    <div class="search-bar"><div class="search-wrap"><span class="search-icon">⌕</span><input class="search-input" data-course="c4" type="text" placeholder="Search modules, topics, or labs in Active Directory..." /><span class="search-kbd">/</span></div><div class="chips" data-course="c4"><button class="chip active" data-filter="all">All</button><button class="chip" data-filter="labs">Labs</button><button class="chip" data-filter="cli">With PowerShell</button><button class="chip" data-filter="in-progress">In progress</button><button class="chip" data-filter="done">Complete</button></div></div>
+    <div class="objectives"><h3>// Learning Outcomes</h3><ul><li>Explain AD DS, DNS dependency, forest/tree/domain/OU</li><li>Install AD DS and promote a domain controller</li><li>Design and create OU structures with delegated control</li><li>Create users and groups via ADUC and PowerShell</li><li>Apply AGDLP for permission assignment</li><li>Join Windows clients and troubleshoot trust issues</li><li>Execute the 5 most common helpdesk AD tickets fluently</li><li>Document a complete small-business AD deployment</li></ul></div>
+    <div class="modules-header"><h2>Modules</h2><div class="progress-info">PROGRESS <span class="prog-c4">0/9</span> COMPLETE</div></div>
+    <div id="modules-c4"></div>
+  </div>
 </div></section>
 <footer><div class="container">
   <div class="footer-inner">
-    <div class="foot-col"><div class="logo">NETOPS // CISCO TRACK</div><p>A self-paced Cisco networking foundation for IT professionals re-entering or sharpening switching, routing, and wireless skills.</p><p style="margin-top:12px;color:var(--text-mute);">Reviewed against Cisco blueprint:<br><b style="color:var(--neon);">May 2026 · CCNA 200-301 v1.1</b></p></div>
-    <div class="foot-col"><h5>// Cisco Resources</h5><a href="https://www.netacad.com/" target="_blank" rel="noopener">NetAcad Home ↗</a><a href="https://www.netacad.com/courses/packet-tracer" target="_blank" rel="noopener">Packet Tracer 9.0 ↗</a><a href="https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html" target="_blank" rel="noopener">CCNA 200-301 ↗</a><a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/entry/ccst-networking.html" target="_blank" rel="noopener">CCST Networking ↗</a></div>
+    <div class="foot-col"><div class="logo">NETOPS // IT TRACK</div><p>A self-paced IT foundations track pairing Cisco networking with Active Directory — the two pillars of every helpdesk and junior sysadmin role.</p><p style="margin-top:12px;color:var(--text-mute);">Reviewed against blueprints:<br><b style="color:var(--neon);">May 2026 · CCNA 200-301 v1.1 + AZ-800</b></p></div>
+    <div class="foot-col"><h5>// Networking Resources</h5><a href="https://www.netacad.com/" target="_blank" rel="noopener">NetAcad Home ↗</a><a href="https://www.netacad.com/courses/packet-tracer" target="_blank" rel="noopener">Packet Tracer 9.0 ↗</a><a href="https://www.cisco.com/c/en/us/training-events/training-certifications/exams/current-list/ccna-200-301.html" target="_blank" rel="noopener">CCNA 200-301 ↗</a><a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/entry/ccst-networking.html" target="_blank" rel="noopener">CCST Networking ↗</a></div>
+    <div class="foot-col"><h5>// AD Resources</h5><a href="https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2025" target="_blank" rel="noopener">WS 2025 Eval ↗</a><a href="https://learn.microsoft.com/en-us/training/paths/active-directory-domain-services/" target="_blank" rel="noopener">Microsoft Learn: AD DS ↗</a><a href="https://learn.microsoft.com/en-us/certifications/exams/az-800/" target="_blank" rel="noopener">AZ-800 Exam ↗</a><a href="https://tryhackme.com/room/winadbasics" target="_blank" rel="noopener">TryHackMe AD Basics ↗</a></div>
     <div class="foot-col"><h5>// Tools</h5><a href="https://www.virtualbox.org/" target="_blank" rel="noopener">VirtualBox ↗</a><a href="https://obsidian.md/" target="_blank" rel="noopener">Obsidian ↗</a><a href="https://github.com/" target="_blank" rel="noopener">GitHub ↗</a><a href="https://learningnetwork.cisco.com/" target="_blank" rel="noopener">Cisco Learning ↗</a></div>
     <div class="foot-col"><h5>// Progress</h5><p>Saves to your browser via localStorage. Wipes with the reset button or clearing site data.</p><button class="reset-btn" style="margin-top:14px;" onclick="resetProgress()">Reset Progress</button></div>
   </div>
-  <div class="foot-bottom"><span>© NETOPS · Aligned to Cisco NetAcad &amp; CCNA 200-301 v1.1 · Self-paced</span><span>Ship a portfolio repo →</span></div>
+  <div class="foot-bottom"><span>© NETOPS · Aligned to Cisco NetAcad / CCNA 200-301 v1.1 + AZ-800 · Self-paced</span><span>Ship a portfolio repo →</span></div>
 </div></footer>
-<div class="kbd-hint" id="kbdHint"><span><kbd>/</kbd>search</span><span><kbd>1-3</kbd>tabs</span><span><kbd>0</kbd>overview</span><span><kbd>Esc</kbd>close</span></div>
+<div class="kbd-hint" id="kbdHint"><span><kbd>/</kbd>search</span><span><kbd>1-4</kbd>tabs</span><span><kbd>0</kbd>overview</span><span><kbd>Esc</kbd>close</span></div>
 <div class="modal-overlay" id="overlay" onclick="closeGuide()"></div>
 <aside class="modal" id="modal">
   <div class="modal-top"><div><span class="modal-tag" id="g-tag">LAB</span><h2 id="g-title">Lab</h2></div><button class="modal-close" onclick="closeGuide()" aria-label="Close">✕</button></div>
@@ -519,6 +679,53 @@ const courses = {
       objectives:['Apply a routing troubleshooting method','Diagnose missing/wrong/floating routes','Integrate all SRWE domains','Document a complete build'],
       topics:['Troubleshooting methodology','Common static-route errors','show ip route diagnosis','End-to-end verification','Portfolio docs'],
       labsList:[{id:'SRWE-CAP',title:'SMB Campus Capstone',desc:'Access + L3 distribution, VLANs, inter-VLAN routing, EtherChannel, Rapid PVST+, WLAN (WPA3), DHCP, FHRP, static routing, full security. Document it all.',diff:3}] }
+  ],
+  c4: [
+    { n:'4.1', title:'What is Active Directory?', time:'3h', labs:0, hasCli:false,
+      overview:'Microsoft\'s directory service for centralizing identity, authentication, and authorization in Windows environments. Roughly 95% of medium-to-large organizations run AD. Built on top of DNS and LDAP; uses Kerberos as the primary auth protocol since Windows 2000.',
+      objectives:['Define AD DS and distinguish it from AD LDS / AD CS / AD FS','Explain the AD-DNS dependency','Identify forest, tree, domain, OU, and Global Catalog','Describe the 5 FSMO roles','Explain Kerberos vs NTLM at a high level'],
+      topics:['AD DS vs AD LDS / AD CS / AD FS','Forest / tree / domain / OU','Domain controllers and Global Catalog','FSMO roles (Schema, Domain Naming, PDC, RID, IM)','Kerberos vs NTLM','LDAP fundamentals'],
+      labsList:[] },
+    { n:'4.2', title:'Build the Lab Environment', time:'3h', labs:1, hasCli:true,
+      overview:'A self-contained VirtualBox lab where you can break things safely. Windows Server 2025 from the Microsoft Evaluation Center is free for 180 days and resettable. Snapshots are your friend — take one before every risky change.',
+      objectives:['Download Windows Server 2025 evaluation','Build a VM with appropriate specs','Configure host-only/internal networking','Take baseline snapshots'],
+      topics:['Microsoft Evaluation Center','VirtualBox VM creation','Network adapter modes (NAT, host-only, internal)','Server Core vs Desktop Experience','Snapshots and reversion'],
+      labsList:[{id:'AD-L1',title:'Build the Windows Server 2025 VM',desc:'Download the eval ISO, create the VM in VirtualBox, install with Desktop Experience, rename, set static IP, snapshot.',diff:1}] },
+    { n:'4.3', title:'Install AD DS & Promote a Domain Controller', time:'4h', labs:1, hasCli:true,
+      overview:'Install the AD DS role and promote the server to a domain controller, creating a new forest. The first DC in a new forest creates the schema, the forest root domain, and becomes holder of all 5 FSMO roles by default.',
+      objectives:['Install the AD DS role','Promote to a domain controller in a new forest','Choose appropriate functional levels','Set and protect the DSRM password'],
+      topics:['Add Roles and Features wizard','dcpromo / Install-ADDSForest','Forest and domain functional levels','NetBIOS name','DSRM (Directory Services Restore Mode) password'],
+      labsList:[{id:'AD-L2',title:'Promote DC01 to Forest Root',desc:'Install AD DS role, promote to a domain controller for a new forest (lab.local), verify with Get-ADDomain and dcdiag.',diff:2}] },
+    { n:'4.4', title:'DNS Integration & Verification', time:'3h', labs:1, hasCli:true,
+      overview:'AD is married to DNS. Domain controllers register SRV records that clients use to find services (LDAP, Kerberos, Global Catalog). AD-integrated zones replicate as part of AD itself. If DNS breaks, AD breaks — period.',
+      objectives:['Inspect AD-integrated DNS zones','Verify the four DC SRV record categories','Create a reverse lookup zone','Run dcdiag and interpret results'],
+      topics:['AD-integrated DNS zones','_msdcs / _sites / _tcp / _udp folders','SRV records (_ldap, _kerberos, _gc)','Forward vs reverse zones','dcdiag and repadmin'],
+      labsList:[{id:'AD-L3',title:'Verify DNS Integration',desc:'Inspect AD-integrated zones, verify DC SRV records with nslookup, create a reverse zone, run dcdiag and repadmin /replsummary.',diff:2}] },
+    { n:'4.5', title:'Organizational Units & Delegation', time:'3h', labs:1, hasCli:true,
+      overview:'OUs structure objects for management and policy application. Good OU design uses purpose first (Users, Computers, Service Accounts, Servers), then department or location. Delegation lets you give specific permissions (e.g. "reset passwords in Sales") without making someone a domain admin.',
+      objectives:['Design an OU structure (function vs geography)','Create OUs and protect from accidental deletion','Delegate specific control to non-admins','Verify delegated permissions'],
+      topics:['OU design patterns','Protect from accidental deletion flag','Delegation of Control Wizard','Common delegated tasks','OU vs container distinction'],
+      labsList:[{id:'AD-L4',title:'OU Design & Delegation',desc:'Build a multi-level OU structure (Corp Users / Corp Computers / Service Accounts), protect against deletion, delegate password resets to a junior admin.',diff:2}] },
+    { n:'4.6', title:'Users, Groups & Computers', time:'5h', labs:2, hasCli:true,
+      overview:'The bread and butter of AD admin. Create users in ADUC for one-offs, PowerShell for scale. Master group scope (Domain Local, Global, Universal) and apply Microsoft\'s <strong>AGDLP</strong> best practice: Accounts go into Global groups, Global groups go into Domain Local groups, Domain Local groups receive Permissions.',
+      objectives:['Create users in ADUC and via New-ADUser','Bulk-create users from a CSV','Differentiate group types and scopes','Apply AGDLP for permission assignment'],
+      topics:['User account attributes and UPN','New-ADUser, Set-ADUser, Get-ADUser','Security vs Distribution groups','Group scopes: Domain Local / Global / Universal','AGDLP / IGDLA best practice'],
+      labsList:[{id:'AD-L5',title:'Create Users — GUI + PowerShell',desc:'Create users in ADUC, then bulk-create 10 users via PowerShell from a CSV. Verify with Get-ADUser.',diff:2},{id:'AD-L6',title:'Groups & AGDLP',desc:'Implement AGDLP end to end: Global groups for accounts, Domain Local groups for resource access, NTFS permissions on the Domain Local. Verify access flows correctly.',diff:3}] },
+    { n:'4.7', title:'Joining Clients to the Domain', time:'3h', labs:1, hasCli:true,
+      overview:'Take a Windows 11 client from workgroup → domain-joined. The client gets a computer account in AD. Domain credentials authenticate via Kerberos with the DC. Trust relationship failures are one of the most common helpdesk tickets — know how to fix them.',
+      objectives:['Set DNS correctly so the client can find the DC','Join a Windows 11 client to the domain','Sign in with a domain user account','Diagnose and repair broken trust relationships'],
+      topics:['DNS configuration on the client','Domain join process (Settings vs PowerShell)','Computer account creation','Authentication flow (Kerberos)','Trust relationship repair (Reset-ComputerMachinePassword, Test-ComputerSecureChannel)'],
+      labsList:[{id:'AD-L7',title:'Join a Win 11 Client',desc:'Spin up a Win 11 VM, set DNS to DC01, join to lab.local, sign in as a domain user, verify computer object in ADUC.',diff:2}] },
+    { n:'4.8', title:'Helpdesk Daily Tasks Runbook', time:'4h', labs:1, hasCli:true,
+      overview:'What you actually do day one in an IT job. The same 5 tickets account for the majority of tier-1 AD work: password resets, account unlocks, group membership changes, account disables on offboarding, and computer trust relationship repairs. Memorize the GUI path AND the PowerShell one-liner for each.',
+      objectives:['Reset a user password (ADUC + PowerShell)','Unlock an account','Add/remove group membership','Disable and move accounts on offboarding','Repair a broken trust relationship'],
+      topics:['Password reset best practices','Account lockout policies','Group membership changes','Offboarding workflow','Trust relationship repair'],
+      labsList:[{id:'AD-L8',title:'The 5-Ticket Helpdesk Runbook',desc:'Practice the 5 most common AD tickets end to end. Document each as a markdown runbook entry for your repo. Time yourself — target under 5 min per ticket.',diff:2}] },
+    { n:'4.9', title:'Capstone — Small Business AD', time:'6h', labs:1, hasCli:true,
+      overview:'Build a complete small-business AD environment from a brief: 25 users across 3 departments, proper OU structure, AGDLP groups, a baseline password policy, an alternate admin account, and a joined client. Document the whole thing for your GitHub portfolio.',
+      objectives:['Translate requirements into a domain design','Bulk-provision users from a CSV','Apply AGDLP and a baseline password policy','Document a complete deployment for portfolio'],
+      topics:['Requirements gathering','Bulk user provisioning','Tiered admin accounts','Password policies','Portfolio documentation'],
+      labsList:[{id:'AD-CAP',title:'Small Business AD Capstone',desc:'25 users, 3 departments, full OU + AGDLP structure, password policy, alternate admin, 2 joined clients. Complete GitHub writeup with topology, addressing, naming convention, and runbook.',diff:3}] }
   ]
 };
 const GUIDES = {
@@ -568,13 +775,105 @@ const GUIDES = {
   'SRWE-L14':{obj:'Predict router path selection, then verify it.',topo:'[PC0]──[R1]══[R2]══[R3]──[PC1] (multiple paths)',steps:[{t:'Build a topology where more than one path to a destination exists.'},{t:'On a router, read the routing table and identify the route codes (C, L, S, O...).',c:'show ip route'},{t:'For a given destination, predict which entry wins using <strong>longest-prefix match</strong>, then administrative distance, then metric.'},{t:'Verify your prediction with a traceroute from the source PC.',c:'tracert <dest>'},{t:'Change a route\'s AD or add a more specific route and re-predict + re-verify.'}],verify:['You can read every field/code in the routing table','Your predicted path matches the traceroute','You can explain LPM > AD > metric ordering'],success:'You can reason about path selection before testing — and be right.',challenge:'Add a static route more specific than a dynamic one and prove it takes over.'},
   'SRWE-L15a':{obj:'Configure full IPv4 + IPv6 static reachability on three routers.',topo:'[R1]══[R2]══[R3]  (dual-stack static)',steps:[{t:'Address every link with both IPv4 and IPv6 (one subnet/prefix per link).'},{t:'Enable IPv6 routing on all routers.',c:'ipv6 unicast-routing'},{t:'On R1, add IPv4 and IPv6 routes to the networks beyond R2.',c:'ip route 10.0.3.0 255.255.255.0 10.0.12.2\nipv6 route 2001:db8:3::/64 2001:db8:12::2'},{t:'Repeat on R2 and R3 for their missing networks; add a default route at the edge.',c:'ip route 0.0.0.0 0.0.0.0 <next-hop>\nipv6 route ::/0 <next-hop-v6>'},{t:'Verify both tables and ping end to end over each protocol.',c:'show ip route\nshow ipv6 route'}],verify:['Both <code>show ip route</code> and <code>show ipv6 route</code> list all remote nets','End-to-end ping works over IPv4 and IPv6','Default route present at the edge'],success:'A dual-stack network fully reachable using static routes only.',challenge:'Summarize several contiguous subnets into one static summary route.'},
   'SRWE-L15b':{obj:'Configure a floating static route for automatic failover.',topo:'[R1]══primary══[R2]\n   ╲___backup___╱',steps:[{t:'Build two paths between R1 and R2 (a primary and a slower backup link).'},{t:'Add the primary static route with default AD (1).',c:'ip route 10.0.2.0 255.255.255.0 10.0.12.2'},{t:'Add a <strong>floating</strong> static over the backup with a higher AD so it stays dormant.',c:'ip route 10.0.2.0 255.255.255.0 10.0.99.2 5'},{t:'Confirm only the primary is installed.',c:'show ip route'},{t:'Shut the primary link and confirm the floating route activates; restore and confirm it goes dormant again.'}],verify:['Only the AD-1 route appears while the primary is up','Backup installs automatically when the primary fails','Traffic continues during the failover'],success:'A backup path takes over automatically and steps aside on recovery.',challenge:'Measure how many pings drop during failover and explain why.'},
-  'SRWE-CAP':{obj:'Integrate everything into a documented small-to-medium business campus (2026 stack).',topo:'[Core/L3]──[Dist]──[Access SWs]──clients + [WLC/AP WPA3] + [Edge R: DHCP/FHRP/static]',steps:[{t:'<strong>Plan first:</strong> VLANs per department, an addressing plan (incl. management VLAN), and where routing, wireless, and the edge live. Document before building.'},{t:'Apply the secure baseline (SSH only, banners, passwords) to every device.'},{t:'Build the switched core: VLANs, 802.1Q trunks (DTP off), EtherChannel between core/dist, Rapid PVST+ root tuning.'},{t:'Add inter-VLAN routing on the L3 switch (SVIs) and DHCP for client VLANs (relay if central).'},{t:'Add HSRP for gateway redundancy and static/default routing to the edge.'},{t:'Stand up the WLAN (WLC + AP) on its own VLAN with WPA3.'},{t:'Run a full security pass: port security, DHCP snooping, DAI, BPDU Guard, disable unused ports.'},{t:'Verify end to end, then document: topology, addressing table, per-device configs, and a README.'}],verify:['All VLANs route correctly with redundant gateways','Wireless clients land on their VLAN over WPA3 and reach resources','Security features verified individually','Repo contains full diagram + addressing + configs + README'],success:'A complete, redundant, secured, documented 2026 SMB campus — your flagship SRWE portfolio piece.',challenge:'Write a one-page "as-built" doc and a short failure-test log (what you broke and how it recovered).'}
+  'SRWE-CAP':{obj:'Integrate everything into a documented small-to-medium business campus (2026 stack).',topo:'[Core/L3]──[Dist]──[Access SWs]──clients + [WLC/AP WPA3] + [Edge R: DHCP/FHRP/static]',steps:[{t:'<strong>Plan first:</strong> VLANs per department, an addressing plan (incl. management VLAN), and where routing, wireless, and the edge live. Document before building.'},{t:'Apply the secure baseline (SSH only, banners, passwords) to every device.'},{t:'Build the switched core: VLANs, 802.1Q trunks (DTP off), EtherChannel between core/dist, Rapid PVST+ root tuning.'},{t:'Add inter-VLAN routing on the L3 switch (SVIs) and DHCP for client VLANs (relay if central).'},{t:'Add HSRP for gateway redundancy and static/default routing to the edge.'},{t:'Stand up the WLAN (WLC + AP) on its own VLAN with WPA3.'},{t:'Run a full security pass: port security, DHCP snooping, DAI, BPDU Guard, disable unused ports.'},{t:'Verify end to end, then document: topology, addressing table, per-device configs, and a README.'}],verify:['All VLANs route correctly with redundant gateways','Wireless clients land on their VLAN over WPA3 and reach resources','Security features verified individually','Repo contains full diagram + addressing + configs + README'],success:'A complete, redundant, secured, documented 2026 SMB campus — your flagship SRWE portfolio piece.',challenge:'Write a one-page "as-built" doc and a short failure-test log (what you broke and how it recovered).'},
+
+  'AD-L1':{obj:'Stand up a Windows Server 2025 VM in VirtualBox as the foundation for your AD lab.',topo:'[Host OS] → [VirtualBox] → [DC01: WS 2025] (later: [Win 11 Client])',steps:[
+    {t:'Download the <strong>Windows Server 2025 evaluation ISO</strong> from the Microsoft Evaluation Center (free, 180-day trial, fully resettable).'},
+    {t:'In VirtualBox: New → Name <em>DC01</em>, Type Microsoft Windows, Version Windows 2022 (64-bit). 4 GB RAM, 60 GB dynamically allocated disk, 2 CPUs.'},
+    {t:'Settings → Network → Adapter 1 → <strong>Internal Network</strong> (name <em>ADLab</em>) — this isolates the lab from your real network. Boot from the ISO.'},
+    {t:'Install <strong>Windows Server 2025 Standard with Desktop Experience</strong>. Choose Custom install. Wait for first boot. Set the Administrator password.'},
+    {t:'After sign-in, rename the server and set a static IP.',c:'# In an admin PowerShell on the new server:\nRename-Computer -NewName DC01 -Restart\n# After reboot:\nNew-NetIPAddress -InterfaceAlias "Ethernet" -IPAddress 10.10.10.10 -PrefixLength 24 -DefaultGateway 10.10.10.1\nSet-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 127.0.0.1'},
+    {t:'Take a VirtualBox <strong>snapshot</strong> named "Fresh Install" so you can revert if anything goes sideways later.'}
+  ],verify:['Server hostname is DC01 (verify with <code>hostname</code>)','Static IP set to 10.10.10.10/24','DNS pointing at 127.0.0.1 (will become the DC itself)','VirtualBox snapshot "Fresh Install" exists'],success:'A clean Windows Server 2025 VM ready for the AD DS role install.',challenge:'Create a second VM (CLIENT01, Windows 11) on the same Internal Network now — you\'ll join it to the domain in AD-L7.'},
+
+  'AD-L2':{obj:'Install the AD DS role on DC01 and promote it to a domain controller, creating a new forest.',topo:'[DC01: WS 2025] → first DC of new forest lab.local',steps:[
+    {t:'Open <strong>Server Manager</strong> → Manage → <em>Add Roles and Features</em>.'},
+    {t:'Wizard: Role-based or feature-based install → Select DC01 from the pool → Server Roles → check <strong>Active Directory Domain Services</strong> → accept the supporting features prompt → Next → Install.'},
+    {t:'When install finishes, click the yellow <strong>notification flag</strong> in Server Manager → <em>Promote this server to a domain controller</em>.'},
+    {t:'Deployment Configuration: <strong>Add a new forest</strong> → Root domain name <em>lab.local</em>.'},
+    {t:'Domain Controller Options: leave functional levels at Windows Server 2016 or higher → leave DNS server checked → set the <strong>DSRM password</strong> (write it down).'},
+    {t:'Accept defaults for DNS delegation, NetBIOS name, paths. Review → <em>Install</em>. Server reboots when done.'},
+    {t:'After reboot, sign in as <strong>LAB\\Administrator</strong> with your original admin password. Verify with PowerShell:',c:'Get-ADDomain\nGet-ADForest\ndcdiag /v'}
+  ],verify:['<code>Get-ADDomain</code> returns lab.local','<code>Get-ADForest</code> shows DC01 as the schema master and naming master','<code>dcdiag</code> shows mostly green (initial run may have benign warnings)','Login is now LAB\\Administrator, not the local Administrator'],success:'DC01 is a fully functional domain controller for the lab.local forest.',challenge:'Read <code>Get-ADDomainController</code> output and identify all 5 FSMO role holders.'},
+
+  'AD-L3':{obj:'Verify AD-integrated DNS is healthy and that critical SRV records exist for service discovery.',topo:'[DC01: DC + DNS] — inspect zones and SRV records',steps:[
+    {t:'Open <strong>DNS Manager</strong> (Server Manager → Tools → DNS).'},
+    {t:'Expand DC01 → Forward Lookup Zones → <em>lab.local</em>. Confirm the four AD-specific folders exist: <strong>_msdcs, _sites, _tcp, _udp</strong>.'},
+    {t:'Drill into <em>_tcp</em>. You should see SRV records for <strong>_ldap</strong>, <strong>_kerberos</strong>, <strong>_gc</strong> (Global Catalog), <strong>_kpasswd</strong>. Each should point to DC01.'},
+    {t:'Query SRV records from PowerShell to prove a client could find them:',c:'nslookup -type=SRV _ldap._tcp.lab.local\nnslookup -type=SRV _kerberos._tcp.lab.local\nResolve-DnsName -Name _ldap._tcp.lab.local -Type SRV'},
+    {t:'Create a <strong>reverse lookup zone</strong> for 10.10.10.0/24 (Reverse Lookup Zones → New Zone → Primary, AD-integrated → 10.10.10.x network).'},
+    {t:'Run health checks:',c:'dcdiag /test:dns\nrepadmin /replsummary\nGet-DnsServerZone'}
+  ],verify:['All four _msdcs/_sites/_tcp/_udp folders present','SRV queries return DC01.lab.local','Reverse lookup zone exists','dcdiag DNS test passes'],success:'AD-integrated DNS is healthy and clients will be able to locate domain services.',challenge:'Stop the DNS Server service (<code>Stop-Service DNS</code>), try to log in from a hypothetical client, and document exactly what breaks. Then restart and recover.'},
+
+  'AD-L4':{obj:'Design and create an OU structure with delegated permissions — no one needs Domain Admin to reset passwords.',topo:'lab.local → Corp Users / Corp Computers / Service Accounts / Servers',steps:[
+    {t:'Sketch the OU plan on paper first. Recommended pattern — top level by <strong>purpose</strong>, second level by <strong>department</strong>:\n  Corp Users → IT, Sales, Finance, Marketing\n  Corp Computers → Workstations, Laptops\n  Service Accounts\n  Servers'},
+    {t:'Open <strong>Active Directory Users and Computers (ADUC)</strong>. Enable View → Advanced Features so you can see all attributes.'},
+    {t:'Right-click <em>lab.local</em> → New → Organizational Unit → create <strong>Corp Users</strong> (leave "Protect from accidental deletion" checked).'},
+    {t:'Inside Corp Users, create sub-OUs: IT, Sales, Finance, Marketing. Repeat the protect-from-deletion checkbox for each.'},
+    {t:'Try to <strong>delete the IT OU</strong> — Windows will refuse. Right-click → Properties → Object tab → uncheck protect → delete. (Then re-create and re-protect for the next step.)'},
+    {t:'Create a junior admin user <em>helpdesk1</em> in Corp Users → IT (use New → User in ADUC).'},
+    {t:'Right-click the <strong>Sales</strong> OU → <strong>Delegate Control</strong> → add <em>helpdesk1</em> → select "Reset user passwords and force password change at next logon" → Finish.'},
+    {t:'Test: sign in as helpdesk1 on DC01 (you may need to add helpdesk1 to "Remote Desktop Users" or use Run-As). Open ADUC and try to reset a password in Sales (works) and in Finance (denied).'}
+  ],verify:['OU tree visible in ADUC matches the planned structure','Each OU has "Protect from accidental deletion" enabled','helpdesk1 can reset passwords in Sales but NOT in Finance','You can recite when to use OUs vs containers'],success:'A clean, defensible OU structure with delegated control — production-grade pattern.',challenge:'Add a third level for geographic locations (NYC, LA) under each department and document the tradeoffs of geography-first vs function-first OU design.'},
+
+  'AD-L5':{obj:'Create users two ways — ADUC for one-offs, PowerShell for scale.',topo:'lab.local / Corp Users / IT — new accounts',steps:[
+    {t:'In ADUC, navigate to <em>Corp Users → IT</em>. Right-click → New → User. Create:\n  Full name: John Doe\n  User logon name (UPN): jdoe@lab.local\n  SAM account name: jdoe'},
+    {t:'Set an initial password and check <strong>"User must change password at next logon."</strong> Finish.'},
+    {t:'Now via PowerShell — open an admin PowerShell on DC01:',c:'New-ADUser -Name "Jane Smith" -GivenName Jane -Surname Smith `\n  -SamAccountName jsmith -UserPrincipalName jsmith@lab.local `\n  -Path "OU=IT,OU=Corp Users,DC=lab,DC=local" `\n  -AccountPassword (ConvertTo-SecureString "TempPass!23" -AsPlainText -Force) `\n  -Enabled $true -ChangePasswordAtLogon $true'},
+    {t:'Build a quick CSV file <em>newusers.csv</em> with columns Name, SamAccountName, UPN, Department, and 10 rows of fake users.'},
+    {t:'Bulk-create with one PowerShell pipeline:',c:'Import-Csv .\\newusers.csv | ForEach-Object {\n  New-ADUser -Name $_.Name -SamAccountName $_.SamAccountName `\n    -UserPrincipalName $_.UPN -Department $_.Department `\n    -Path "OU=$($_.Department),OU=Corp Users,DC=lab,DC=local" `\n    -AccountPassword (ConvertTo-SecureString "Welcome!23" -AsPlainText -Force) `\n    -Enabled $true -ChangePasswordAtLogon $true\n}'},
+    {t:'Verify:',c:'Get-ADUser -Filter * -SearchBase "OU=Corp Users,DC=lab,DC=local" | Select Name, SamAccountName, Enabled'}
+  ],verify:['jdoe and jsmith visible in ADUC under IT','10 CSV-imported users in their correct department OUs','<code>Get-ADUser -Filter *</code> returns all created accounts','All have "ChangePasswordAtLogon" flag set'],success:'You can provision one user or fifty — GUI or pipeline — with confidence.',challenge:'Write a one-liner that disables every account in the Finance OU, then another that re-enables them. (Hint: <code>Get-ADUser -SearchBase ... | Disable-ADAccount</code>.)'},
+
+  'AD-L6':{obj:'Implement Microsoft\'s AGDLP best practice — the right way to assign permissions in AD.',topo:'Users → Global Group → Domain Local Group → NTFS Permission',steps:[
+    {t:'<strong>AGDLP = Accounts → Global → Domain Local → Permission.</strong> Memorize this. It scales, it cleanly handles multi-domain forests, and it\'s what every Microsoft-trained admin uses.'},
+    {t:'Create a <em>Groups</em> OU under lab.local for organization. Inside, create two sub-OUs: <em>Global</em> and <em>DomainLocal</em>.'},
+    {t:'Create the Global groups (these hold user accounts):',c:'New-ADGroup -Name "GG_Sales_Staff" -GroupScope Global -GroupCategory Security `\n  -Path "OU=Global,OU=Groups,DC=lab,DC=local"\nNew-ADGroup -Name "GG_IT_Staff" -GroupScope Global -GroupCategory Security `\n  -Path "OU=Global,OU=Groups,DC=lab,DC=local"'},
+    {t:'Create the Domain Local groups (these will hold resource permissions):',c:'New-ADGroup -Name "DL_HRFiles_Read" -GroupScope DomainLocal -GroupCategory Security `\n  -Path "OU=DomainLocal,OU=Groups,DC=lab,DC=local"\nNew-ADGroup -Name "DL_HRFiles_Modify" -GroupScope DomainLocal -GroupCategory Security `\n  -Path "OU=DomainLocal,OU=Groups,DC=lab,DC=local"'},
+    {t:'Wire it up — users into Global, Global into Domain Local:',c:'# Accounts → Global\nAdd-ADGroupMember -Identity GG_Sales_Staff -Members jdoe, jsmith\n# Global → Domain Local\nAdd-ADGroupMember -Identity DL_HRFiles_Read -Members GG_Sales_Staff'},
+    {t:'Create a folder <em>C:\\Shares\\HR</em> on DC01 (or any file server). Share it. On the NTFS Security tab, grant <strong>DL_HRFiles_Read</strong> read permission — and ONLY that group.'},
+    {t:'Test: from a domain client, jdoe (member of GG_Sales_Staff → DL_HRFiles_Read) can read the share. A user NOT in either group cannot. The permission chain works through the nesting.'},
+    {t:'Verify the chain:',c:'Get-ADGroupMember DL_HRFiles_Read\nGet-ADGroup DL_HRFiles_Read -Properties Members\nGet-ADUser jdoe -Properties MemberOf | Select -ExpandProperty MemberOf'}
+  ],verify:['GG_ and DL_ groups exist with the right scopes','Global is a member of Domain Local','NTFS permission is on the Domain Local group only','jdoe gets access through the nested chain, not directly'],success:'You can explain AGDLP without notes and implement it in under 5 minutes.',challenge:'Now do the same scenario with <strong>Universal</strong> groups. Explain in writing when Universal beats Global (multi-domain forests) and what the replication cost is.'},
+
+  'AD-L7':{obj:'Join a Windows 11 client to lab.local and authenticate as a domain user.',topo:'[DC01] ←─ Internal Network ─→ [CLIENT01: Win 11]',steps:[
+    {t:'On CLIENT01, set DNS to point at DC01. <strong>This is the single most common reason domain joins fail.</strong>',c:'# On CLIENT01, admin PowerShell:\nSet-DnsClientServerAddress -InterfaceAlias "Ethernet" -ServerAddresses 10.10.10.10'},
+    {t:'Verify connectivity and DNS resolution:',c:'ping DC01.lab.local\nnslookup DC01.lab.local\nResolve-DnsName lab.local'},
+    {t:'Join the domain. Either GUI: Settings → System → About → Domain or workgroup → Change → Domain → <em>lab.local</em> → enter LAB\\Administrator credentials.'},
+    {t:'Or PowerShell (faster):',c:'Add-Computer -DomainName lab.local -Credential (Get-Credential) -Restart'},
+    {t:'After reboot, on the sign-in screen choose "Other user" and sign in as <strong>jdoe@lab.local</strong> with the password you set in AD-L5.'},
+    {t:'Back on DC01, verify the computer object exists:',c:'Get-ADComputer CLIENT01\nGet-ADComputer -Filter * | Select Name, DistinguishedName'},
+    {t:'Move the computer object into the right OU:',c:'Move-ADObject -Identity (Get-ADComputer CLIENT01).DistinguishedName `\n  -TargetPath "OU=Workstations,OU=Corp Computers,DC=lab,DC=local"'}
+  ],verify:['Client successfully joined (no "could not find domain" errors)','Domain user jdoe can sign in on CLIENT01','Computer object visible in ADUC under Corp Computers/Workstations','<code>Test-ComputerSecureChannel</code> returns True'],success:'A domain-joined Win 11 client authenticating against your DC.',challenge:'Use <code>Redircmp</code> to change the default location for new computer objects so future joins go into Corp Computers/Workstations automatically.'},
+
+  'AD-L8':{obj:'Run the 5 most common tier-1 AD helpdesk tickets fluently — both GUI and PowerShell.',topo:'[DC01] + [CLIENT01] — 5 standard tickets',steps:[
+    {t:'<strong>Ticket #1 — Password reset.</strong> "I forgot my password." In ADUC: right-click user → Reset Password → check "User must change at next logon." PowerShell:',c:'Set-ADAccountPassword -Identity jdoe -Reset `\n  -NewPassword (ConvertTo-SecureString "Temp!23" -AsPlainText -Force)\nSet-ADUser jdoe -ChangePasswordAtLogon $true'},
+    {t:'<strong>Ticket #2 — Account unlocked.</strong> User typed wrong password too many times. ADUC: user properties → Account tab → "Unlock account." PowerShell:',c:'Unlock-ADAccount -Identity jdoe\n# Or to find all locked accounts at once:\nSearch-ADAccount -LockedOut | Select Name, SamAccountName'},
+    {t:'<strong>Ticket #3 — Group membership change.</strong> "I need access to the HR share." Add user to the right group:',c:'Add-ADGroupMember -Identity DL_HRFiles_Read -Members jdoe\n# Verify:\nGet-ADUser jdoe -Properties MemberOf | Select -ExpandProperty MemberOf'},
+    {t:'<strong>Ticket #4 — Account disable on offboarding.</strong> "Sarah from Finance left yesterday." Disable, move to a Disabled Users OU, remove from groups, document.',c:'Disable-ADAccount -Identity ssmith\nMove-ADObject -Identity (Get-ADUser ssmith).DistinguishedName `\n  -TargetPath "OU=Disabled Users,DC=lab,DC=local"\n# Optional per company policy:\nGet-ADUser ssmith -Properties MemberOf | Select -ExpandProperty MemberOf | `\n  ForEach-Object { Remove-ADGroupMember -Identity $_ -Members ssmith -Confirm:$false }'},
+    {t:'<strong>Ticket #5 — Broken trust relationship.</strong> "I can\'t log in — it says trust failed." Reset the computer\'s machine password. On the client (as local admin):',c:'# From CLIENT01, signed in as local admin:\nReset-ComputerMachinePassword -Server DC01.lab.local `\n  -Credential (Get-Credential LAB\\Administrator)\n# Or as a last resort, leave + rejoin the domain.'},
+    {t:'Document each ticket in a markdown runbook (<em>runbook.md</em>) for your GitHub repo. Include: trigger phrase, exact steps, GUI + PowerShell, verification step, target resolution time.'},
+    {t:'Time yourself on each ticket. Target: under 5 minutes per ticket including documentation.'}
+  ],verify:['All 5 tickets executed end to end','PowerShell equivalent practiced for each','runbook.md exists with all 5 entries','You can execute any single ticket in under 5 minutes'],success:'You can confidently handle the 5 most common AD tickets — the bulk of tier-1 helpdesk work.',challenge:'Add 3 more common tickets to the runbook: shared mailbox access, profile path change, and login script assignment.'},
+
+  'AD-CAP':{obj:'Build, document, and verify a complete small-business AD environment — your flagship systems portfolio piece.',topo:'[DC01] + (optional DC02) + [CLIENT01, CLIENT02] · corp.lab domain · 25 users',steps:[
+    {t:'<strong>Plan first (document before building).</strong> Requirements: 25 users, 3 departments (IT/Sales/Ops), shared file access by department, a separate admin account from the built-in Administrator, baseline password policy. Produce: forest/domain diagram, OU plan, group naming convention (e.g. <em>GG_Dept_Function</em>, <em>DL_Resource_Access</em>), addressing table.'},
+    {t:'Build DC01 with AD DS + DNS in a new forest <em>corp.lab</em> (use the AD-L1 → AD-L4 workflow). Optionally add DC02 as a second domain controller for redundancy (right-click Server Manager → Add Roles → AD DS → promote → "Add to existing domain").'},
+    {t:'Create the OU structure per your plan: Corp Users (IT, Sales, Ops), Corp Computers, Service Accounts, Groups (Global, DomainLocal), Disabled Users.'},
+    {t:'Build <em>users.csv</em> with 25 rows. Bulk-create all 25 via PowerShell (the AD-L5 pipeline).'},
+    {t:'Create Global groups per department, Domain Local groups per resource. Wire AGDLP. Create at least one shared folder permissioned via Domain Local groups only.'},
+    {t:'Set a baseline password policy. Use the Default Domain Policy GPO (or a fine-grained password policy for the Domain Admins group):',c:'# Tighten the Default Domain Policy:\nSet-ADDefaultDomainPasswordPolicy -Identity corp.lab `\n  -MinPasswordLength 14 -ComplexityEnabled $true `\n  -LockoutThreshold 5 -LockoutDuration (New-TimeSpan -Minutes 15)'},
+    {t:'Create a separate admin account <em>admin.dajoni</em> in Service Accounts OU. Add to Domain Admins. <strong>Stop using the built-in Administrator</strong> for daily work — that\'s tier-0 hygiene.'},
+    {t:'Join CLIENT01 (and ideally CLIENT02) to corp.lab. Test logon with multiple user accounts and verify each lands in the correct group memberships.'},
+    {t:'<strong>Document everything in a GitHub repo:</strong>\n  • Topology diagram (draw.io or Mermaid)\n  • OU diagram\n  • Addressing table\n  • Group naming convention with examples\n  • The 5-ticket runbook from AD-L8\n  • Screenshots of <code>Get-ADDomain</code>, <code>Get-ADUser -Filter *</code>, <code>dcdiag</code>\n  • README explaining the build and how to reproduce it'}
+  ],verify:['25 users provisioned via PowerShell','OU structure matches the planned design','AGDLP applied to at least one shared resource','Password policy enforced (test by trying a weak password)','Separate admin account exists and works','2 joined clients authenticate domain users','Complete documentation in a public GitHub repo'],success:'A documented, defensible, end-to-end small-business AD deployment — directly demonstrable in any helpdesk or junior sysadmin interview.',challenge:'Add a fine-grained password policy (FGPP) that requires Domain Admins to use 20-character passwords while regular users have 14. Document why tier-0 (admin) accounts get stricter rules.'}
 };
+
 /* ============ RENDER ============ */
 const LAB_DOCS = 'https://www.netacad.com/courses/packet-tracer';
 let currentLab = null;
 let currentTab = 'overview';
-const filterState = { c1:{q:'',f:'all'}, c2:{q:'',f:'all'}, c3:{q:'',f:'all'} };
+const filterState = { c1:{q:'',f:'all'}, c2:{q:'',f:'all'}, c3:{q:'',f:'all'}, c4:{q:'',f:'all'} };
 
 function renderModules(courseKey, containerId) {
   const container = document.getElementById(containerId);
@@ -767,9 +1066,9 @@ function applyProgress() {
   const p = loadProgress();
   document.querySelectorAll('.module').forEach(m => { m.classList.toggle('done', !!p[m.dataset.key]); });
   document.querySelectorAll('.lab').forEach(l => { l.classList.toggle('lab-done', !!p['lab:' + l.dataset.lab]); });
-  const counts = { c1:0, c2:0, c3:0 };
-  const totals = { c1: courses.c1.length, c2: courses.c2.length, c3: courses.c3.length };
-  ['c1','c2','c3'].forEach(c => {
+  const counts = { c1:0, c2:0, c3:0, c4:0 };
+  const totals = { c1: courses.c1.length, c2: courses.c2.length, c3: courses.c3.length, c4: courses.c4.length };
+  ['c1','c2','c3','c4'].forEach(c => {
     counts[c] = courses[c].filter(m => p[`${c}-${m.n}`]).length;
     const pct = Math.round(counts[c] / totals[c] * 100);
     const set = (sel, val) => { const el = document.querySelector(sel); if (el) el.textContent = val; };
@@ -779,8 +1078,8 @@ function applyProgress() {
     const db = document.querySelector('.db-' + c); if (db) db.style.width = pct + '%';
     const cb = document.querySelector('.cb-' + c); if (cb) cb.style.width = pct + '%';
   });
-  const totalMods = totals.c1 + totals.c2 + totals.c3;
-  const doneMods = counts.c1 + counts.c2 + counts.c3;
+  const totalMods = totals.c1 + totals.c2 + totals.c3 + totals.c4;
+  const doneMods = counts.c1 + counts.c2 + counts.c3 + counts.c4;
   const overall = Math.round(doneMods / totalMods * 100);
   const hp = document.querySelector('.hp-pct'); if (hp) hp.textContent = overall + '%';
   const hb = document.querySelector('.hp-bar'); if (hb) hb.style.width = overall + '%';
@@ -831,6 +1130,7 @@ document.addEventListener('keydown', e => {
   if (e.key === '1') switchTab('course-1');
   if (e.key === '2') switchTab('course-2');
   if (e.key === '3') switchTab('course-3');
+  if (e.key === '4') switchTab('course-4');
 });
 
 /* ---- kbd hint visibility ---- */
@@ -852,6 +1152,7 @@ document.addEventListener('mousemove', () => {
 renderModules('c1', 'modules-c1');
 renderModules('c2', 'modules-c2');
 renderModules('c3', 'modules-c3');
+renderModules('c4', 'modules-c4');
 applyProgress();
 countUp();
 </script>
