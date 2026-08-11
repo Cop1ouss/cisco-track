@@ -16,6 +16,8 @@ body{font-family:'IBM Plex Sans',system-ui,sans-serif;background:var(--bg);color
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,255,209,0.05),transparent 70%);pointer-events:none;z-index:0}
 body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,0.012) 0,rgba(255,255,255,0.012) 1px,transparent 1px,transparent 3px);pointer-events:none;z-index:0;animation:scan 8s linear infinite}
 @keyframes scan{0%{transform:translateY(0)}100%{transform:translateY(3px)}}
+@keyframes flash{0%{transform:scale(1);box-shadow:0 0 0 rgba(0,0,0,0)}30%{transform:scale(1.03);box-shadow:0 0 28px var(--neon-glow)}100%{transform:scale(1);box-shadow:0 0 0 rgba(0,0,0,0)}}
+.flash{animation:flash .5s ease-out}
 .container{max-width:1320px;margin:0 auto;padding:0 32px;position:relative;z-index:1}
 header{border-bottom:1px solid var(--border);background:rgba(7,11,17,0.88);backdrop-filter:blur(14px);position:sticky;top:0;z-index:90}
 .header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;gap:24px;flex-wrap:wrap}
@@ -1105,8 +1107,9 @@ function closeGuide() {
 function updateGuideStatus() {
   const p = loadProgress();
   const done = currentLab && p['lab:' + currentLab];
+  const DONE_LABELS = ['✓ Lab Complete — undo', '✓ Nailed it — undo', '✓ Cleared — undo', '✓ Ship it — undo', '✓ Clean run — undo'];
   const btn = document.getElementById('g-done');
-  btn.textContent = done ? '✓ Lab Complete — undo' : 'Mark Lab Complete';
+  btn.textContent = done ? DONE_LABELS[Math.floor(Math.random() * DONE_LABELS.length)] : 'Mark Lab Complete';
   btn.style.background = done ? 'transparent' : '';
   btn.style.color = done ? 'var(--neon)' : '';
   const st = document.querySelector('.g-status');
