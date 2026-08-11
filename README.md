@@ -44,6 +44,8 @@ Content maps to **CCNA 200-301 v1.1** (the 2025+ exam blueprint — Rapid PVST+,
 
 > **AZ-800/AZ-801 retire September 30, 2026** and consolidate into **AZ-802**. Course 4's content is still valid Windows Server hybrid-admin material either way, but if you're certifying after that date, target AZ-802 instead of AZ-800.
 
+> **CCNA 200-301 v1.1 retires February 2, 2027**, replaced by **v2.0** the next day. Confirmed against Cisco's own exam-topics PDF — v2.0 restructures the blueprint into five domains (not six) with a much heavier troubleshoot/diagnose emphasis, plus new topics (SFTP/SCP, storm control, RA guard, DNS-record troubleshooting, OSPFv3, agentic AI) not yet in courses 1–3/5. Courses 1–5 still target v1.1; a v2.0 content pass is a future project, not something in progress.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
