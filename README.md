@@ -42,6 +42,8 @@ Repo → **Settings → Pages → Source: Deploy from a branch → `main` / `(ro
 
 Content maps to **CCNA 200-301 v1.1** (the 2025+ exam blueprint — Rapid PVST+, WPA3, IaaS/PaaS/SaaS, cloud-managed networking) for courses 1–3 and 5, **AZ-800** (Windows Server hybrid administration) fundamentals for course 4, and the **Cisco Junior Cybersecurity Analyst (JCA)** Career Certificate.
 
+> **AZ-800/AZ-801 retire September 30, 2026** and consolidate into **AZ-802**. Course 4's content is still valid Windows Server hybrid-admin material either way, but if you're certifying after that date, target AZ-802 instead of AZ-800.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
