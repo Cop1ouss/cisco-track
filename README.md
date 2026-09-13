@@ -1,5 +1,8 @@
 # NETOPS // IT Track
 
+![category](https://img.shields.io/badge/category-Networking%20%26%20Certs-0ea5e9)
+![status](https://img.shields.io/badge/status-active-34d399)
+
 A self-paced networking + systems administration curriculum tracker, built as a single-file interactive web app. Covers everything from home-network basics through enterprise switching/routing/automation to Windows Server Active Directory — aligned to **CCNA 200-301 v1.1**, **AZ-800**, and the **Cisco Junior Cybersecurity Analyst (JCA)** path.
 
 **[Open the tracker →](https://cop1ouss.github.io/cisco-track/)** *(enable GitHub Pages on this repo to activate — see below)*
@@ -47,6 +50,13 @@ Content maps to **CCNA 200-301 v1.1** (the 2025+ exam blueprint — Rapid PVST+,
 > **CCNA 200-301 v1.1 retires February 2, 2027**, replaced by **v2.0** the next day. Confirmed against Cisco's own exam-topics PDF — v2.0 restructures the blueprint into five domains (not six) with a much heavier troubleshoot/diagnose emphasis, plus new topics (SFTP/SCP, storm control, RA guard, DNS-record troubleshooting, OSPFv3, agentic AI) not yet in courses 1–3/5. Courses 1–5 still target v1.1; a v2.0 content pass is a future project, not something in progress.
 
 > **MS-900 (M365 Fundamentals) retired March 31, 2026** and can no longer be earned — dropped from the app's cert list entirely. Microsoft's loose successor is **AB-900** (Microsoft 365 Copilot and Agent Administration Fundamentals), confirmed live on Microsoft Learn but still in beta and scoped to Copilot/AI-agent admin, not general M365/Windows-Server fundamentals — not a direct swap-in for what MS-900 was doing here.
+
+## Related
+
+Same "Networking & Certs" category as [`ccna-tracker`](https://github.com/Cop1ouss/ccna-tracker)
+(the hands-on/gamified test-prep companion to this repo's curriculum notes),
+[`secplus-tracker`](https://github.com/Cop1ouss/secplus-tracker), and
+[`subnet-calculator`](https://github.com/Cop1ouss/subnet-calculator).
 
 ## License
 
