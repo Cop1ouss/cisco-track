@@ -5,7 +5,7 @@
 
 A self-paced networking + systems administration curriculum tracker, built as a single-file interactive web app. Covers everything from home-network basics through enterprise switching/routing/automation to Windows Server Active Directory — aligned to **CCNA 200-301 v1.1**, **AZ-800**, and the **Cisco Junior Cybersecurity Analyst (JCA)** path.
 
-**[Open the tracker →](https://cop1ouss.github.io/cisco-track/)** *(enable GitHub Pages on this repo to activate — see below)*
+**[Open the tracker →](https://cop1ouss.github.io/cisco-track/)**
 
 ## What's in here
 
@@ -21,7 +21,7 @@ A self-paced networking + systems administration curriculum tracker, built as a 
 
 ## Why a single HTML file
 
-`index.html` is a self-contained progress tracker — no build step, no dependencies, no server. Open it in a browser (or host it on GitHub Pages) and it just works:
+`index.html` is a self-contained progress tracker — no build step, no dependencies, no server. Open it in a browser, or use the live version on GitHub Pages:
 
 - **Search & filter** every module by keyword, labs-only, CLI-only, or completion status
 - **Per-lab completion tracking** saved to `localStorage` — progress persists across sessions on the same browser
@@ -37,15 +37,11 @@ Progress is stored locally in your browser only — nothing is sent anywhere, an
 3. Click into a lab for the guided walkthrough, then mark it complete.
 4. Courses 1–3 and 5 use **Cisco Packet Tracer** (free via the Cisco Networking Academy / Skills for All). Course 4 uses **VirtualBox** with a free 180-day Windows Server 2025 evaluation.
 
-### Enabling GitHub Pages
-
-Repo → **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**. The tracker will be live at `https://cop1ouss.github.io/cisco-track/`.
-
 ## Alignment
 
 Content maps to **CCNA 200-301 v1.1** (the 2025+ exam blueprint — Rapid PVST+, WPA3, IaaS/PaaS/SaaS, cloud-managed networking) for courses 1–3 and 5, **AZ-800** (Windows Server hybrid administration) fundamentals for course 4, and the **Cisco Junior Cybersecurity Analyst (JCA)** Career Certificate.
 
-> **AZ-800/AZ-801 retire September 30, 2026** and consolidate into **AZ-802**. Course 4's content is still valid Windows Server hybrid-admin material either way, but if you're certifying after that date, target AZ-802 instead of AZ-800.
+> **AZ-800/AZ-801 were scheduled to retire on September 30, 2026** and consolidate into **AZ-802**. Course 4's content is still valid Windows Server hybrid-admin material either way; check Microsoft Learn for the current exam before you book.
 
 > **CCNA 200-301 v1.1 retires February 2, 2027**, replaced by **v2.0** the next day. Confirmed against Cisco's own exam-topics PDF — v2.0 restructures the blueprint into five domains (not six) with a much heavier troubleshoot/diagnose emphasis, plus new topics (SFTP/SCP, storm control, RA guard, DNS-record troubleshooting, OSPFv3, agentic AI) not yet in courses 1–3/5. Courses 1–5 still target v1.1; a v2.0 content pass is a future project, not something in progress.
 
