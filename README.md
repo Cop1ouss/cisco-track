@@ -1,11 +1,27 @@
-# NETOPS // IT Track
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/readme/banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset=".github/readme/banner-light.svg">
+  <img alt="cisco-track" src=".github/readme/banner-dark.svg" width="100%">
+</picture>
 
-![category](https://img.shields.io/badge/category-Networking%20%26%20Certs-0ea5e9)
-![status](https://img.shields.io/badge/status-active-34d399)
+<p align="center">
+  <a href="https://cop1ouss.github.io/cisco-track/"><img alt="Open the tracker →" src="https://img.shields.io/badge/Open%20the%20tracker%20%E2%86%92-89b4fa?style=for-the-badge&labelColor=1e1e2e"></a>
+</p>
+<p align="center">
+  <img alt="CCNA 200-301" src="https://img.shields.io/badge/CCNA%20200--301-1e1e2e?style=flat-square&logo=cisco&logoColor=89dceb">
+  <img alt="AZ-800" src="https://img.shields.io/badge/AZ--800-1e1e2e?style=flat-square&logo=microsoftazure&logoColor=89b4fa">
+  <img alt="HTML" src="https://img.shields.io/badge/HTML-1e1e2e?style=flat-square&logo=html5&logoColor=fab387">
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-1e1e2e?style=flat-square&logo=javascript&logoColor=f9e2af">
+  <img alt="MIT license" src="https://img.shields.io/badge/MIT%20license-1e1e2e?style=flat-square&logo=opensourceinitiative&logoColor=a6e3a1">
+</p>
+
+<p align="center">
+  <img alt="Desktop view" src=".github/readme/screenshot-desktop.png" width="74%">
+  &nbsp;
+  <img alt="Phone view" src=".github/readme/screenshot-phone.png" width="21%">
+</p>
 
 A self-paced networking + systems administration curriculum tracker, built as a single-file interactive web app. Covers everything from home-network basics through enterprise switching/routing/automation to Windows Server Active Directory — aligned to **CCNA 200-301 v1.1**, **AZ-800**, and the **Cisco Junior Cybersecurity Analyst (JCA)** path.
-
-**[Open the tracker →](https://cop1ouss.github.io/cisco-track/)**
 
 ## What's in here
 
@@ -57,3 +73,7 @@ Same "Networking & Certs" category as [`ccna-tracker`](https://github.com/Cop1ou
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+<p align="center"><sub>Part of <a href="https://github.com/Cop1ouss">Uncook</a> · built off systems · © 2026 Dajoni Gomez</sub></p>
