@@ -35,7 +35,7 @@ for f in files(".html", ".htm", ".md"):
         text = re.sub(r"```.*?```", "", text, flags=re.S)  # code blocks are examples, not links
         refs = MD_REF.findall(text) + HTML_REF.findall(text)
     else:
-        text = re.sub(r"<script\b[^>]*>.*?</script>", "", text, flags=re.S | re.I)  # JS builds its own URLs
+        text = re.sub(r"<script\b[^>]*>.*?</script[^>]*>", "", text, flags=re.S | re.I)  # JS builds its own URLs
         refs = HTML_REF.findall(text)
     for ref in refs:
         ref = ref.strip()
@@ -50,7 +50,7 @@ for f in files(".html", ".htm", ".md"):
             errors.append(f"{f.relative_to(ROOT)}: broken link -> {ref}")
 
 # JavaScript syntax: standalone .js files and inline <script> blocks, via `node --check`.
-SCRIPT = re.compile(r"<script\b([^>]*)>(.*?)</script>", re.S | re.I)
+SCRIPT = re.compile(r"<script\b([^>]*)>(.*?)</script[^>]*>", re.S | re.I)
 count["js"] = 0
 if shutil.which("node"):
     def node_check(code, suffix, label):
