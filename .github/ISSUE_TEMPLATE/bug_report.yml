@@ -1,0 +1,21 @@
+name: Bug report
+description: Something is broken or looks wrong
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what did you see instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Open...\n2. Click...\n3. See..."
+  - type: input
+    id: device
+    attributes:
+      label: Browser and device
+      placeholder: "Firefox 140 on Windows 11, Safari on iPhone..."

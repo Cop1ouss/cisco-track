@@ -7,6 +7,9 @@
   <a href="https://cop1ouss.github.io/cisco-track/"><img alt="Open the tracker" src="https://img.shields.io/badge/%E2%96%B6%20open%20the%20tracker-live%20on%20GitHub%20Pages-89b4fa?style=for-the-badge&labelColor=1e1e2e"></a>
 </p>
 <p align="center">
+  <a href="https://github.com/Cop1ouss/cisco-track/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/Cop1ouss/cisco-track/ci.yml?style=flat-square&label=CI&labelColor=1e1e2e&color=a6e3a1"></a>
+  <a href="https://github.com/Cop1ouss/cisco-track/actions/workflows/codeql.yml"><img alt="CodeQL" src="https://img.shields.io/github/actions/workflow/status/Cop1ouss/cisco-track/codeql.yml?style=flat-square&label=CodeQL&labelColor=1e1e2e&color=89b4fa"></a>
+  <a href="SECURITY.md"><img alt="Security policy" src="https://img.shields.io/badge/security-policy-f38ba8?style=flat-square&labelColor=1e1e2e"></a>
   <img alt="CCNA: 200-301 v1.1" src="https://img.shields.io/badge/CCNA-200--301%20v1.1-89b4fa?style=flat-square&labelColor=1e1e2e">
   <img alt="AZ--800: fundamentals" src="https://img.shields.io/badge/AZ--800-fundamentals-89b4fa?style=flat-square&labelColor=1e1e2e">
   <img alt="Cisco: JCA" src="https://img.shields.io/badge/Cisco-JCA-89b4fa?style=flat-square&labelColor=1e1e2e">
@@ -64,13 +67,19 @@ Content maps to **CCNA 200-301 v1.1** (the 2025+ exam blueprint — Rapid PVST+,
 ## Related
 
 Same "Networking & Certs" category as [`ccna-tracker`](https://github.com/Cop1ouss/ccna-tracker)
-(the hands-on/gamified test-prep companion to this repo's curriculum notes),
-[`secplus-tracker`](https://github.com/Cop1ouss/secplus-tracker), and
-[`subnet-calculator`](https://github.com/Cop1ouss/subnet-calculator).
+(the hands-on/gamified test-prep companion to this repo's curriculum notes) and
+[`secplus-tracker`](https://github.com/Cop1ouss/secplus-tracker).
 
-## License
 
-MIT — see [LICENSE](LICENSE).
+
+## Project docs
+
+| | |
+| --- | --- |
+| 📋 [PRD](docs/PRD.md) | The problem, the goal, scope and the finish line |
+| 🛡️ [Security policy](SECURITY.md) | How to report a vulnerability privately |
+| ⚖️ [License](LICENSE) | MIT |
+| 🧪 [CI](.github/workflows/ci.yml) | What runs on every pull request |
 
 ---
 
