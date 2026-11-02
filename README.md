@@ -1,11 +1,25 @@
-# NETOPS // IT Track
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+  <img alt="cisco-track banner" src="assets/banner-light.svg" width="100%">
+</picture>
 
-![category](https://img.shields.io/badge/category-Networking%20%26%20Certs-0ea5e9)
-![status](https://img.shields.io/badge/status-active-34d399)
+<p align="center">
+  <a href="https://cop1ouss.github.io/cisco-track/"><img alt="Open the tracker" src="https://img.shields.io/badge/%E2%96%B6%20open%20the%20tracker-live%20on%20GitHub%20Pages-89b4fa?style=for-the-badge&labelColor=1e1e2e"></a>
+</p>
+<p align="center">
+  <img alt="CCNA: 200-301 v1.1" src="https://img.shields.io/badge/CCNA-200--301%20v1.1-89b4fa?style=flat-square&labelColor=1e1e2e">
+  <img alt="AZ--800: fundamentals" src="https://img.shields.io/badge/AZ--800-fundamentals-89b4fa?style=flat-square&labelColor=1e1e2e">
+  <img alt="Cisco: JCA" src="https://img.shields.io/badge/Cisco-JCA-89b4fa?style=flat-square&labelColor=1e1e2e">
+  <img alt="build: none · one HTML file" src="https://img.shields.io/badge/build-none%20%C2%B7%20one%20HTML%20file-a6e3a1?style=flat-square&labelColor=1e1e2e">
+  <img alt="license: MIT" src="https://img.shields.io/badge/license-MIT-a6adc8?style=flat-square&labelColor=1e1e2e">
+</p>
+
+<p align="center">
+  <a href="https://cop1ouss.github.io/cisco-track/"><img alt="cisco-track on desktop" src="assets/screenshot-desktop.png" width="72%"></a>
+  <a href="https://cop1ouss.github.io/cisco-track/"><img alt="cisco-track on a phone" src="assets/screenshot-phone.png" width="22%"></a>
+</p>
 
 A self-paced networking + systems administration curriculum tracker, built as a single-file interactive web app. Covers everything from home-network basics through enterprise switching/routing/automation to Windows Server Active Directory — aligned to **CCNA 200-301 v1.1**, **AZ-800**, and the **Cisco Junior Cybersecurity Analyst (JCA)** path.
-
-**[Open the tracker →](https://cop1ouss.github.io/cisco-track/)**
 
 ## What's in here
 
@@ -57,3 +71,7 @@ Same "Networking & Certs" category as [`ccna-tracker`](https://github.com/Cop1ou
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+<p align="center"><sub>Built by <a href="https://github.com/Cop1ouss">Dajoni Gomez</a> · part of the <a href="https://cop1ouss.github.io/Cop1ouss/">Uncook</a> journey log</sub></p>
