@@ -1,11 +1,27 @@
-# NETOPS // IT Track
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/readme/banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset=".github/readme/banner-light.svg">
+  <img alt="cisco-track" src=".github/readme/banner-dark.svg" width="100%">
+</picture>
 
-![category](https://img.shields.io/badge/category-Networking%20%26%20Certs-0ea5e9)
-![status](https://img.shields.io/badge/status-active-34d399)
+<p align="center">
+  <a href="https://cop1ouss.github.io/cisco-track/"><img alt="Open the tracker →" src="https://img.shields.io/badge/Open%20the%20tracker%20%E2%86%92-89b4fa?style=for-the-badge&labelColor=1e1e2e"></a>
+</p>
+<p align="center">
+  <img alt="CCNA 200-301" src="https://img.shields.io/badge/CCNA%20200--301-1e1e2e?style=flat-square&logo=cisco&logoColor=89dceb">
+  <img alt="AZ-800" src="https://img.shields.io/badge/AZ--800-1e1e2e?style=flat-square&logo=microsoftazure&logoColor=89b4fa">
+  <img alt="HTML" src="https://img.shields.io/badge/HTML-1e1e2e?style=flat-square&logo=html5&logoColor=fab387">
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-1e1e2e?style=flat-square&logo=javascript&logoColor=f9e2af">
+  <img alt="MIT license" src="https://img.shields.io/badge/MIT%20license-1e1e2e?style=flat-square&logo=opensourceinitiative&logoColor=a6e3a1">
+</p>
+
+<p align="center">
+  <img alt="Desktop view" src=".github/readme/screenshot-desktop.png" width="74%">
+  &nbsp;
+  <img alt="Phone view" src=".github/readme/screenshot-phone.png" width="21%">
+</p>
 
 A self-paced networking + systems administration curriculum tracker, built as a single-file interactive web app. Covers everything from home-network basics through enterprise switching/routing/automation to Windows Server Active Directory — aligned to **CCNA 200-301 v1.1**, **AZ-800**, and the **Cisco Junior Cybersecurity Analyst (JCA)** path.
-
-**[Open the tracker →](https://cop1ouss.github.io/cisco-track/)** *(enable GitHub Pages on this repo to activate — see below)*
 
 ## What's in here
 
@@ -21,7 +37,7 @@ A self-paced networking + systems administration curriculum tracker, built as a 
 
 ## Why a single HTML file
 
-`index.html` is a self-contained progress tracker — no build step, no dependencies, no server. Open it in a browser (or host it on GitHub Pages) and it just works:
+`index.html` is a self-contained progress tracker — no build step, no dependencies, no server. Open it in a browser, or use the live version on GitHub Pages:
 
 - **Search & filter** every module by keyword, labs-only, CLI-only, or completion status
 - **Per-lab completion tracking** saved to `localStorage` — progress persists across sessions on the same browser
@@ -37,15 +53,11 @@ Progress is stored locally in your browser only — nothing is sent anywhere, an
 3. Click into a lab for the guided walkthrough, then mark it complete.
 4. Courses 1–3 and 5 use **Cisco Packet Tracer** (free via the Cisco Networking Academy / Skills for All). Course 4 uses **VirtualBox** with a free 180-day Windows Server 2025 evaluation.
 
-### Enabling GitHub Pages
-
-Repo → **Settings → Pages → Source: Deploy from a branch → `main` / `(root)`**. The tracker will be live at `https://cop1ouss.github.io/cisco-track/`.
-
 ## Alignment
 
 Content maps to **CCNA 200-301 v1.1** (the 2025+ exam blueprint — Rapid PVST+, WPA3, IaaS/PaaS/SaaS, cloud-managed networking) for courses 1–3 and 5, **AZ-800** (Windows Server hybrid administration) fundamentals for course 4, and the **Cisco Junior Cybersecurity Analyst (JCA)** Career Certificate.
 
-> **AZ-800/AZ-801 retire September 30, 2026** and consolidate into **AZ-802**. Course 4's content is still valid Windows Server hybrid-admin material either way, but if you're certifying after that date, target AZ-802 instead of AZ-800.
+> **AZ-800/AZ-801 were scheduled to retire on September 30, 2026** and consolidate into **AZ-802**. Course 4's content is still valid Windows Server hybrid-admin material either way; check Microsoft Learn for the current exam before you book.
 
 > **CCNA 200-301 v1.1 retires February 2, 2027**, replaced by **v2.0** the next day. Confirmed against Cisco's own exam-topics PDF — v2.0 restructures the blueprint into five domains (not six) with a much heavier troubleshoot/diagnose emphasis, plus new topics (SFTP/SCP, storm control, RA guard, DNS-record troubleshooting, OSPFv3, agentic AI) not yet in courses 1–3/5. Courses 1–5 still target v1.1; a v2.0 content pass is a future project, not something in progress.
 
@@ -61,3 +73,7 @@ Same "Networking & Certs" category as [`ccna-tracker`](https://github.com/Cop1ou
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+
+<p align="center"><sub>Part of <a href="https://github.com/Cop1ouss">Uncook</a> · built off systems · © 2026 Dajoni Gomez</sub></p>
